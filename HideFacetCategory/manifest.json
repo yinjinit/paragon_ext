@@ -1,0 +1,38 @@
+{
+    "name": "HideFacetCategory",
+    "fantasyName": "HideFacetCategory",
+    "vendor": "TavanoTeam",
+    "version": "1.0.2",
+    "type": "extension",
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": ">=19.1.7",
+        "SCS": ">=19.1.7"
+    },
+    "description": "Hide Facet Categories based on the url parameters on the current page",
+    "skins": [],
+    "assets": {
+        "img": {
+            "files": []
+        },
+        "fonts": {
+            "files": []
+        },
+        "services": {
+            "files": []
+        }
+    },
+    "javascript": {
+        "entry_points": {
+            "shopping": "Modules/Category/JavaScript/TavanoTeam.HideFacetCategory.Category.js"
+        },
+        "application": {
+            "shopping": {
+                "files": [
+                    "Modules/Category/JavaScript/TavanoTeam.HideFacetCategory.Category.js"
+                ]
+            }
+        }
+    },
+    "local_folder": "Workspace\\HideFacetCategory"
+}

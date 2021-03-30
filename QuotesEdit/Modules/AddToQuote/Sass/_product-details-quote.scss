@@ -1,0 +1,42 @@
+.quote-message{
+  @extend .global-views-message;
+  @extend .global-views-message-success;
+  margin: $sc-margin-lv3;
+  display: none;
+}
+
+.quote-message-new{
+  margin-bottom: 10px !important;
+  margin-top: 0;
+}
+
+#list-quotes-to-add{
+  max-height: 200px;
+  overflow: scroll;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+
+.quote-icon-plus{
+  padding: 5px;
+  font-size: 14px;
+}
+
+.search-quote-value{
+  @extend .input-large;
+  margin: 10px;
+  width: calc(100% - 20px) !important;
+}
+
+.product-list-control-item-label.quote{
+  border-bottom: 1px solid #ececec;
+  padding: 5px;
+  margin-bottom: 0;
+  &:hover{
+    background: #ececec;
+  }
+}
+.product-list-control-nolists-messages{
+  margin-left: 15px;
+}

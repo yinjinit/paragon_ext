@@ -1,0 +1,153 @@
+{
+    "name": "QuotesEdit",
+    "fantasyName": "Quotes Edit",
+    "vendor": "AwaLabs",
+    "version": "1.0.3",
+    "type": "extension",
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": ">=19.1.1",
+        "SCS": ">=19.1.1"
+    },
+    "description": "Quotes Edit",
+    "skins": [],
+    "assets": {
+        "img": {
+            "files": []
+        },
+        "fonts": {
+            "files": []
+        },
+        "services": {
+            "files": [
+                "services/QuoteEdit.Service.ss",
+                "services/AddToQuote.Service.ss",
+                "services/CopyQuote.Service.ss",
+                "services/ShareQuote.Service.ss"
+            ]
+        }
+    },
+    "configuration": {
+        "files": [
+            "Modules/ShareQuote/Configuration/Configuration.json"
+        ]
+    },
+    "sass": {
+        "entry_points": {
+            "shopping": "Modules/QuotesEdit/Sass/_quotes_edit.scss",
+            "myaccount": "Modules/QuotesEdit/Sass/_quotes_edit.scss"
+        },
+        "files": [
+            "Modules/QuotesEdit/Sass/_quotes_edit.scss",
+            "Modules/QuoteToSalesOrderWizard/Sass/_quote-to-sale-order-wizard.scss",
+            "Modules/AddToQuote/Sass/_product-details-quote.scss",
+            "Modules/ShareQuote/Sass/_share-quote.scss"
+        ]
+    },
+    "templates": {
+        "application": {
+            "shopping": {
+                "files": [
+                    "Modules/AddToQuote/Templates/product_detail_to_quote.tpl",
+                    "Modules/AddToQuote/Templates/product_quote_control_new_item.tpl",
+                    "Modules/AddToQuote/Templates/product_quote_control.tpl",
+                    "Modules/AddToQuote/Templates/product_quote_control_item.tpl",
+                    "Modules/ShareQuote/Templates/share_quote_modal.tpl",
+                    "Modules/QuoteToSalesOrderWizard/Templates/order_wizard_shipmethod_module_myaccount.tpl"
+                ]
+            },
+            "myaccount": {
+                "files": [
+                    "Modules/QuotesEdit/Templates/quotes_edit.tpl",
+                    "Modules/QuotesEdit/Templates/quotes_save_modal.tpl",
+                    "Modules/QuoteToSalesOrderWizard/Templates/quote_to_sale_order_extra_fields.tpl",
+                    "Modules/QuoteToSalesOrderWizard/Templates/quote_to_sale_order_save_button.tpl",
+                    "Modules/RequestQuote/Templates/requestquote_wizard_module_customfields.tpl",
+                    "Modules/AddToQuote/Templates/product_detail_to_quote.tpl",
+                    "Modules/AddToQuote/Templates/product_quote_control_new_item.tpl",
+                    "Modules/AddToQuote/Templates/product_quote_control.tpl",
+                    "Modules/AddToQuote/Templates/product_quote_control_item.tpl",
+                    "Modules/ShareQuote/Templates/share_quote_modal.tpl",
+                    "Modules/QuoteToSalesOrderWizard/Templates/order_wizard_shipmethod_module_myaccount.tpl"
+                ]
+            }
+        }
+    },
+    "javascript": {
+        "entry_points": {
+            "myaccount": "Modules/QuotesEdit/JavaScript/AwaLabs.QuotesEdit.js",
+            "shopping": "Modules/AddToQuote/JavaScript/AwaLabs.AddToQuote.js"
+        },
+        "application": {
+            "myaccount": {
+                "files": [
+                    "Modules/QuotesEdit/JavaScript/AwaLabs.QuotesEdit.js",
+                    "Modules/QuotesEdit/JavaScript/Quotes.Item.Actions.View.js",
+                    "Modules/QuotesEdit/JavaScript/Quotes.Item.Summary.View.js",
+                    "Modules/QuotesEdit/JavaScript/Quotes.Edit.View.js",
+                    "Modules/QuotesEdit/JavaScript/Quotes.Save.Modal.js",
+                    "Modules/QuotesEdit/JavaScript/QuoteEdit.Model.js",
+                    "Modules/QuotesEdit/JavaScript/Quotes.List.View.Name.js",
+                    "Modules/QuoteToSalesOrderWizard/JavaScript/AwaLabs.QuoteToSalesOrderWizard.js",
+                    "Modules/QuoteToSalesOrderWizard/JavaScript/QuoteToSaleOrderWizard.ExtraFields.js",
+                    "Modules/QuoteToSalesOrderWizard/JavaScript/QuoteToSaleOrderWizard.SaveButton.js",
+                    "Modules/AddToQuote/JavaScript/AddToQuote.Model.js",
+                    "Modules/AddToQuote/JavaScript/AwaLabs.AddToQuote.js",
+                    "Modules/RequestQuote/JavaScript/QuoteEdit.RequestQuoteWizard.Configuration.js",
+                    "Modules/RequestQuote/JavaScript/RequestQuoteWizard.Module.CustomFields.js",
+                    "Modules/QuotesEdit/JavaScript/QuoteEdit.Quote.Model.js",
+                    "Modules/AddToQuote/JavaScript/AddToQuote.ProductDetails.js",
+                    "Modules/AddToQuote/JavaScript/AddToQuote.Collection.js",
+                    "Modules/AddToQuote/JavaScript/AddToQuote.Utils.js",
+                    "Modules/AddToQuote/JavaScript/AddToQuote.ControlItem.View.js",
+                    "Modules/AddToQuote/JavaScript/AddToQuote.Control.View.js",
+                    "Modules/QuotesEdit/JavaScript/CopyQuote.Model.js",
+                    "Modules/ShareQuote/JavaScript/AwaLabs.ShareQuote.js",
+                    "Modules/ShareQuote/JavaScript/ShareQuote.View.js",
+                    "Modules/ShareQuote/JavaScript/ShareQuote.Model.js",
+                    "Modules/QuoteToSalesOrderWizard/JavaScript/OrderWizard.Module.Shipmethod.MyAccount.js",
+                    "Modules/QuoteToSalesOrderWizard/JavaScript/QuoteToSaleOrderWizard.Router.js"
+                ]
+            },
+            "shopping": {
+                "files": [
+                    "Modules/AddToQuote/JavaScript/AddToQuote.Model.js",
+                    "Modules/AddToQuote/JavaScript/AwaLabs.AddToQuote.js",
+                    "Modules/QuotesEdit/JavaScript/QuoteEdit.Quote.Model.js",
+                    "Modules/AddToQuote/JavaScript/AddToQuote.ProductDetails.js",
+                    "Modules/AddToQuote/JavaScript/AddToQuote.Collection.js",
+                    "Modules/AddToQuote/JavaScript/AddToQuote.Utils.js",
+                    "Modules/AddToQuote/JavaScript/AddToQuote.ControlItem.View.js",
+                    "Modules/AddToQuote/JavaScript/AddToQuote.Control.View.js",
+                    "Modules/QuotesEdit/JavaScript/CopyQuote.Model.js",
+                    "Modules/ShareQuote/JavaScript/AwaLabs.ShareQuote.js",
+                    "Modules/ShareQuote/JavaScript/ShareQuote.View.js",
+                    "Modules/ShareQuote/JavaScript/ShareQuote.Model.js",
+                    "Modules/QuoteToSalesOrderWizard/JavaScript/OrderWizard.Module.Shipmethod.MyAccount.js",
+                    "Modules/QuoteToSalesOrderWizard/JavaScript/QuoteToSaleOrderWizard.Router.js"
+                ]
+            }
+        }
+    },
+    "ssp-libraries": {
+        "entry_point": "Modules/QuotesEdit/SuiteScript/AwaLabs.QuotesEdit.js",
+        "files": [
+            "Modules/QuotesEdit/SuiteScript/AwaLabs.QuotesEdit.js",
+            "Modules/QuotesEdit/SuiteScript/QuoteEdit.ServiceController.js",
+            "Modules/QuotesEdit/SuiteScript/QuoteEdit.Model.js",
+            "Modules/QuotesEdit/SuiteScript/QuoteEdit.Quote.Model.js",
+            "Modules/QuoteToSalesOrderWizard/SuiteScript/AwaLabs.QuoteToSalesOrderWizard.js",
+            "Modules/QuoteToSalesOrderWizard/SuiteScript/QuoteEdit.QuoteToSalesOrderValidator.Model.js",
+            "Modules/QuoteToSalesOrderWizard/SuiteScript/QuoteEdit.QuoteToSalesOrder.Model.js",
+            "Modules/QuoteToSalesOrderWizard/SuiteScript/QuoteEdit.QuoteToSalesOrder.ServiceController.js",
+            "Modules/AddToQuote/SuiteScript/AwaLabs.AddToQuote.js",
+            "Modules/AddToQuote/SuiteScript/AddToQuote.ServiceController.js",
+            "Modules/AddToQuote/SuiteScript/AddToQuote.Model.js",
+            "Modules/QuotesEdit/SuiteScript/CopyQuote.ServiceController.js",
+            "Modules/ShareQuote/SuiteScript/AwaLabs.ShareQuote.js",
+            "Modules/ShareQuote/SuiteScript/ShareQuote.Model.js",
+            "Modules/ShareQuote/SuiteScript/ShareQuote.ServiceController.js"
+        ]
+    },
+    "local_folder": "Workspace\\QuotesEdit"
+}

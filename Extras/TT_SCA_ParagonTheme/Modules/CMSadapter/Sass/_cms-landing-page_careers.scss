@@ -1,0 +1,44 @@
+//LANDING PAGE
+.theme-landing-page#theme-careers {
+	.slider-content {
+        width: 49%;
+        float: left;
+        @extend %tt-general-margin-bottom;
+        @media (max-width: $screen-md) {
+            width: 100%;
+        }
+    }
+    .info-content {
+        width: 49%;
+        float: right;
+        @extend %tt-general-margin-bottom;
+        &.full-width {
+            width: 100%;
+            margin-bottom: 0;
+        }
+        @media (max-width: $screen-md) {
+            width: 100%;
+        }
+        a:hover {
+            color: $theme-web-color-paragon-blue; 
+        }
+    }
+    i {
+        @extend .fa;
+        font-size: $sc-font-size-xxl;
+        line-height: $sc-target-size;
+        min-width: 28px;
+        color: $theme-web-color-paragon-blue;
+        &.email-icon:after {
+            content: "\f0e0";
+        }
+        &.phone-icon:after {
+            content: "\f095";
+        }
+    }
+    div.btn-see-more-content {
+        a {
+            @extend %tt-btn-orange;
+        }
+    }
+}

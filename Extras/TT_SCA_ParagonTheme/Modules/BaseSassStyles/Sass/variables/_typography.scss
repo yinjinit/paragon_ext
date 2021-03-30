@@ -1,0 +1,87 @@
+//Import Custom Font
+@import url("https://p.typekit.net/p.css?s=1&k=qrk8xcm&ht=tk&f=39182.39183.39184.39187&a=27352956&app=typekit&e=css");
+
+@font-face {
+    font-family:"calibri";
+    src:url("https://use.typekit.net/af/ac6f44/00000000000000003b9b2198/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff2"),url("https://use.typekit.net/af/ac6f44/00000000000000003b9b2198/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff"),url("https://use.typekit.net/af/ac6f44/00000000000000003b9b2198/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("opentype");
+    font-display:auto;font-style:normal;font-weight:700;
+}
+
+@font-face {
+    font-family:"calibri";
+    src:url("https://use.typekit.net/af/22cd8d/00000000000000003b9b2197/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3") format("woff2"),url("https://use.typekit.net/af/22cd8d/00000000000000003b9b2197/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3") format("woff"),url("https://use.typekit.net/af/22cd8d/00000000000000003b9b2197/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3") format("opentype");
+    font-display:auto;font-style:italic;font-weight:700;
+}
+
+@font-face {
+    font-family:"calibri";
+    src:url("https://use.typekit.net/af/4007b8/00000000000000003b9b21d2/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("woff2"),url("https://use.typekit.net/af/4007b8/00000000000000003b9b21d2/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("woff"),url("https://use.typekit.net/af/4007b8/00000000000000003b9b21d2/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("opentype");
+    font-display:auto;font-style:italic;font-weight:400;
+}
+
+@font-face {
+    font-family:"calibri";
+    src:url("https://use.typekit.net/af/7e070e/00000000000000003b9b219b/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"),url("https://use.typekit.net/af/7e070e/00000000000000003b9b219b/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"),url("https://use.typekit.net/af/7e070e/00000000000000003b9b219b/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
+    font-display:auto;font-style:normal;font-weight:400;
+}
+
+// Styleguide 1.2
+$sc-font-size-base: 14px;
+$sc-font-size-xxs: 0.75rem;
+$sc-font-size-xs: 0.87rem;
+$sc-font-size-s: 0.93rem;
+$sc-font-size-m: 1rem;
+$sc-font-size-l: 1.067rem;
+$sc-font-size-xl: 1.2rem;
+$sc-font-size-xxl: 1.47rem;
+$sc-font-size-xxxl: 1.73rem;
+
+//Font Family
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap');
+
+$font-family-primary: "calibri", Helvetica, sans-serif; //Regular fonts
+$font-family-secondary:'Lato',Arial, Helvetica, sans-serif; //Titles, sub-titles
+
+$sc-font-family: $font-family-primary;
+
+//Custom Font Size
+$theme-normal-font-size: 			  $sc-font-size-base; //Regular font size (body, normal fonts, general typos)
+
+// Font weight
+$sc-font-weight-light: 300;
+$sc-font-weight-normal: 400;
+$sc-font-weight-semibold: 600;
+$sc-font-weight-bold: 700;
+
+$sc-navigation-icon-size: 16px;
+
+// TTcustom Size
+$theme-xs-font-size:              10px;
+$theme-sm-font-size:              12px;
+$theme-md-font-size:              14px;
+$theme-md-sec-font-size:          16px;
+$theme-lg-font-size:              18px;
+$theme-xl-font-size:              25px;
+$theme-xxl-font-size:             36px;
+
+
+$theme-landing-sm-font-size:      $theme-lg-font-size;
+$theme-landing-md-font-size:      $theme-md-font-size;
+$theme-landing-lg-font-size:      $theme-xl-font-size;
+$theme-landing-xl-font-size:      36px;
+
+$home-slider-ft-size: 			  60px;
+$home-full-banners-ft-size: 	  40px;
+$home-merch-title-ft-size:        35px;
+$home-top-banner-font-size:       $home-full-banners-ft-size;
+
+$theme-landings-font-size:        $theme-xl-font-size;
+
+// TTcustom Weight
+$theme-font-weight-light:         300;
+$theme-font-weight-normal:        400;
+$theme-font-weight-semi-bold:     600;
+
+
+$sc-tt-font-size-s: $theme-xs-font-size;
+$sc-font-general: $theme-sm-font-size;

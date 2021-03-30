@@ -1,0 +1,65 @@
+{
+    "name": "PMRestrictCheckoutAddress",
+    "fantasyName": "PMRestrictCheckoutAddress",
+    "vendor": "PM",
+    "version": "1.0.31",
+    "type": "extension",
+    "target": "SCA,SCS,SCIS",
+    "target_version": {
+        "SCA": ">=19.1.7",
+        "SCS": ">=19.1.7",
+        "SCIS": "20.2.1"
+    },
+    "description": "Restrict Addresses on Checkout",
+    "skins": [],
+    "sass": {
+        "entry_points": {
+            "checkout": "Modules/PMRestrictCheckoutAddress/Sass/_order_wizard.scss",
+            "myaccount": "Modules/PMRestrictCheckoutAddress/Sass/_order_wizard.scss"
+        },
+        "files": [
+            "Modules/PMRestrictCheckoutAddress/Sass/_order_wizard.scss"
+        ]
+    },
+    "templates": {
+        "application": {
+            "checkout": {
+                "files": [
+                    "Modules/PMRestrictCheckoutAddress/Templates/address_details_custom.tpl",
+                    "Modules/PMRestrictCheckoutAddress/Templates/order_wizard.tpl",
+                    "Modules/PMRestrictCheckoutAddress/Templates/address_module.tpl",
+                    "Modules/PMRestrictCheckoutAddress/Templates/quote_to_salesorder_wizard_step.tpl",
+                    "Modules/PMRestrictCheckoutAddress/Templates/address_list_custom.tpl"
+                ]
+            },
+            "myaccount": {
+                "files": [
+                    "Modules/PMRestrictCheckoutAddress/Templates/request_address_details_custom.tpl",
+                    "Modules/PMRestrictCheckoutAddress/Templates/request_order_wizard_step.tpl",
+                    "Modules/PMRestrictCheckoutAddress/Templates/request_address_module.tpl",
+                    "Modules/PMRestrictCheckoutAddress/Templates/quote_to_salesorder_wizard_step.tpl",
+                    "Modules/PMRestrictCheckoutAddress/Templates/address_list_custom.tpl"
+                ]
+            }
+        }
+    },
+    "javascript": {
+        "entry_points": {
+            "checkout": "Modules/PMRestrictCheckoutAddress/JavaScript/PMRestrictCheckoutAddress.js",
+            "myaccount": "Modules/PMRestrictCheckoutAddress/JavaScript/PMRestrictCheckoutAddress.MyAccount.js"
+        },
+        "application": {
+            "checkout": {
+                "files": [
+                    "Modules/PMRestrictCheckoutAddress/JavaScript/PMRestrictCheckoutAddress.js"
+                ]
+            },
+            "myaccount": {
+                "files": [
+                    "Modules/PMRestrictCheckoutAddress/JavaScript/PMRestrictCheckoutAddress.MyAccount.js"
+                ]
+            }
+        }
+    },
+    "local_folder": "Workspace\\PMRestrictCheckoutAddress"
+}

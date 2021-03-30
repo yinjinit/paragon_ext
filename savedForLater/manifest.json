@@ -1,0 +1,38 @@
+{
+    "name": "savedForLater",
+    "fantasyName": "savedForLater",
+    "vendor": "TavanoTeam",
+    "version": "1.0.7",
+    "type": "extension",
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": ">=19.1.1",
+        "SCS": ">=19.1.1"
+    },
+    "description": "Add missing properties to display them on templates for savedForLater and cart detail",
+    "skins": [],
+    "assets": {
+        "img": {
+            "files": []
+        },
+        "fonts": {
+            "files": []
+        },
+        "services": {
+            "files": []
+        }
+    },
+    "javascript": {
+        "entry_points": {
+            "shopping": "Modules/addProperties/JavaScript/TavanoTeam.savedForLater.addProperties.js"
+        },
+        "application": {
+            "shopping": {
+                "files": [
+                    "Modules/addProperties/JavaScript/TavanoTeam.savedForLater.addProperties.js"
+                ]
+            }
+        }
+    },
+    "local_folder": "Workspace\\savedForLater"
+}

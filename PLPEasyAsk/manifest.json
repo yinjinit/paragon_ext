@@ -1,0 +1,77 @@
+{
+    "name": "PLPEasyAsk",
+    "fantasyName": "PLPEasyAsk",
+    "vendor": "Tavano",
+    "version": "1.0.12",
+    "type": "extension",
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": ">=19.1.7",
+        "SCS": ">=19.1.7"
+    },
+    "description": "PLP Easy Ask extension",
+    "skins": [],
+    "assets": {
+        "img": {
+            "files": []
+        },
+        "fonts": {
+            "files": []
+        },
+        "services": {
+            "files": [
+                "services/PLPEasyAsk.Service.ss",
+                "services/CategoriesHelper.Service.ss"
+            ]
+        }
+    },
+    "configuration": {
+        "files": []
+    },
+    "sass": {
+        "entry_points": {
+            "shopping": "Modules/PLPEasyAsk/Sass/_plpeasyask-plpeasyask.scss"
+        },
+        "files": [
+            "Modules/PLPEasyAsk/Sass/_plpeasyask-plpeasyask.scss"
+        ]
+    },
+    "templates": {
+        "application": {
+            "shopping": {
+                "files": [
+                    "Modules/PLPEasyAsk/Templates/tavano_plpeasyask_plpeasyask.tpl"
+                ]
+            }
+        }
+    },
+    "javascript": {
+        "entry_points": {
+            "shopping": "Modules/PLPEasyAsk/JavaScript/Tavano.PLPEasyAsk.PLPEasyAsk.js"
+        },
+        "application": {
+            "shopping": {
+                "files": [
+                    "Modules/PLPEasyAsk/JavaScript/Tavano.PLPEasyAsk.PLPEasyAsk.js",
+                    "Modules/PLPEasyAsk/JavaScript/PLPEasyAsk.Item.KeyMapping.js",
+                    "Modules/PLPEasyAsk/JavaScript/PLPEasyAsk.Facets.Browse.View.js",
+                    "Modules/PLPEasyAsk/JavaScript/EasyAskSearch.Model.js",
+                    "Modules/PLPEasyAsk/JavaScript/PLP.EasyAsk.Facets.Helper.js",
+                    "Modules/PLPEasyAsk/JavaScript/PLP.EasyAsk.ItemSearcher.View.js",
+                    "Modules/PLPEasyAsk/JavaScript/PLP.EasyAsk.Facets.Item.Cell.View.js"
+                ]
+            }
+        }
+    },
+    "ssp-libraries": {
+        "entry_point": "Modules/PLPEasyAsk/SuiteScript/Tavano.PLPEasyAsk.PLPEasyAsk.js",
+        "files": [
+            "Modules/PLPEasyAsk/SuiteScript/Tavano.PLPEasyAsk.PLPEasyAsk.js",
+            "Modules/PLPEasyAsk/SuiteScript/PLPEasyAsk.ServiceController.js",
+            "Modules/PLPEasyAsk/SuiteScript/EasyAskSearch.Model.js",
+            "Modules/PLPEasyAsk/SuiteScript/CategoriesHelper.Model.js",
+            "Modules/PLPEasyAsk/SuiteScript/CategoriesHelper.ServiceController.js"
+        ]
+    },
+    "local_folder": "Workspace\\PLPEasyAsk"
+}

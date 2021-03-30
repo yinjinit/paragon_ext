@@ -1,0 +1,143 @@
+.myaccount-layout {
+	@extend %sc-layout;
+}
+
+.myaccount-layout-container {
+	@extend .container;
+	.myaccount-layout-breadcrumb {
+		@extend %tt-general-margin-bottom-top;
+	}
+}
+
+.myaccount-layout-header {
+	@include box-shadow(3px 0px 6px $sc-color-secondary);
+  margin-bottom: $sc-margin-lv5;
+}
+
+.myaccount-layout-row{
+	@extend .row;
+}
+
+.myaccount-layout-main{
+	@extend .col-xs-12;
+	@extend .col-sm-9;
+
+	@media (min-width: $screen-md-min){
+		width: 70%;
+	}
+
+	@media (min-width: $screen-sm-min){
+		margin-bottom: 70px;
+	}
+	.page-not-found {
+		overflow: hidden;
+	}
+}
+
+.myaccount-layout-footer {
+	@extend %sc-footer !optional;
+}
+
+.myaccount-layout-title{
+	margin-bottom: $sc-margin-lv4;
+	display:none;
+	@extend %tt-general-margin-bottom-top;
+	@media (min-width: $screen-sm-min){
+		display: block;
+	}
+}
+
+.myaccount-layout-no-javascript-msg {
+	@extend .message-warning;
+	width: 100%;
+}
+
+.myaccount-layout-side-nav{
+
+	@extend .col-sm-3;
+	display: none;
+
+	@media (min-width: $screen-md-min){
+		width: 30%;
+	}
+
+	@media (min-width: $screen-sm-min){
+		display: block;
+	}
+}
+
+.force-hide-side-nav{
+
+	.myaccount-layout-side-nav{
+		display: none;
+	}
+
+	.myaccount-layout-title{
+		display: none;
+	}
+
+	.myaccount-layout-main{
+		@extend .col-sm-12;
+	}
+}
+
+.myaccount-layout-main {
+	@media (min-width: $screen-md-min) {
+		.list-header-view-datepicker-tt {
+			width: 50%;
+			margin-bottom: 10px;
+			float: left;
+			margin-right: 0;
+			margin-top: 12px;
+		}
+	}
+	
+	@media (max-width: $screen-md-max) {
+		//invoices
+		.list-header-view-sorts {
+			label.list-header-view-filters {
+				width: calc(100% - 49px);
+			}
+		}
+		td.recordviews-selectable-td.recordviews-selectable-td-due-date {
+			padding-bottom: 20px;
+		}
+		//Search 
+		.tt-list-header-view-label {
+			margin-top: 15px;
+		}
+		.list-header-view-datepicker-to div.list-header-view-datepicker-container-input {
+			margin: 0;
+		}
+		.list-header-view-filters {
+			padding: 0;
+		}
+		//print & settings
+		section.print-statement,
+		section.profile-information,
+		section.profile-emailpreferences,
+		section.address-list,
+		section.paymentinstrument-creditcard-edit,
+		section.profile-update-password {
+			margin: 0;
+		}
+	}	
+	#QuotesHistory {
+		label.list-header-view-filters-sec > select {
+			display: none;
+		}
+		div.list-header-view-paginator {
+			margin: 0 0 5px; 
+		}
+		.global-views-pagination { 
+			margin-top: 20px; 
+		 } 
+	}
+	.list-header-view-datepicker-container-input {
+		.list-header-view-accordion-body-input {
+			text-align: center;
+		}
+	}
+}
+
+img[class*="creditcard"], .creditcard-header-icon, .global-views-format-payment-method-header-icon{max-width:39px;height:auto!important;}

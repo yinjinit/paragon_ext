@@ -1,0 +1,44 @@
+{
+    "name": "addCategoryMenu",
+    "fantasyName": "addCategoryMenu",
+    "vendor": "TavanoTeam",
+    "version": "1.0.0",
+    "type": "extension",
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": "19.2.0",
+        "SCS": "19.2.0"
+    },
+    "description": "Add the shop by brand link to the main menu",
+    "skins": [],
+    "assets": {
+        "img": {
+            "files": []
+        },
+        "fonts": {
+            "files": []
+        },
+        "services": {
+            "files": []
+        }
+    },
+    "javascript": {
+        "entry_points": {
+            "shopping": "Modules/shopByBrand/JavaScript/TavanoTeam.addCategoryMenu.shopByBrand.js",
+            "myaccount": "Modules/shopByBrand/JavaScript/TavanoTeam.addCategoryMenu.shopByBrand.js"
+        },
+        "application": {
+            "shopping": {
+                "files": [
+                    "Modules/shopByBrand/JavaScript/TavanoTeam.addCategoryMenu.shopByBrand.js"
+                ]
+            },
+            "myaccount": {
+                "files": [
+                    "Modules/shopByBrand/JavaScript/TavanoTeam.addCategoryMenu.shopByBrand.js"
+                ]
+            }
+        }
+    },
+    "local_folder": "Workspace\\addCategoryMenu"
+}

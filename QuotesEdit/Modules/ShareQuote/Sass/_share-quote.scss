@@ -1,0 +1,16 @@
+.share-quote-email{
+  @extend .input-large;
+}
+
+.share-quote-button-link{
+  @extend .button-primary;
+  @extend .button-large;
+}
+.share-quote-button-pdf{
+  @extend .button-secondary;
+  @extend .button-large;
+}
+
+.share-quote-type-label{
+  margin-right: $sc-margin-lv3;
+}

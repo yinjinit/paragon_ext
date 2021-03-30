@@ -1,0 +1,125 @@
+// General settings
+div.layout.sec_facets_facet_browse {
+	header#site-header {
+		margin-bottom: 0px;
+	}
+	@media (min-width: $screen-md-min) {
+		div#main-container {
+	    //padding-top: 145px;
+		}
+	}
+  // Content
+  section.facets-facet-browse { margin-bottom: $theme-base-size * 10; }
+}
+
+// Facet top banner by CMS
+div.facet-top-banner-image {
+  background-attachment: fixed !important;
+  background-position-x: center;
+  padding: $theme-base-size * 18 0;
+  width: 100%;
+  @include parallax-back (inherit);
+	background-size: cover;
+  @media (min-width: $screen-xlg-min) {
+    @include parallax-back (cover);
+	}
+  @media (min-width: $screen-sm-min) {
+  	height: 310px;
+  }
+  @media (max-width: $screen-sm-min) {
+  	height: 170px;
+  }
+}
+
+//Facet display view thumbnails
+.icon-button-controls, .list-header-view-accordion-body-button-sort{
+	background:transparent;
+	color:$sc-color-copy;
+	border:none;
+	width: 30px;
+	i{
+		color:$sc-color-copy;
+		width: 33px;
+		line-height: 50px;
+		font-size: 24px;
+	}
+}
+
+h1.facets-empty-title{font-family: $font-family-primary; font-size: 15px;  letter-spacing: normal;}
+
+
+
+// Item Cell Border
+.cells-border{
+	border:1px solid $theme-neutral-color;
+}
+
+// Item Name
+.cells-item-name {
+	color: $theme-primary-ft-color;
+	height: auto;
+	overflow: hidden;
+	font-size: $theme-normal-font-size;
+	letter-spacing:normal;
+	padding: $theme-base-size * 4 0 $theme-base-size * 2 0;
+	text-align: center;
+}
+
+//Item Price
+.cells-item-price {
+	font-weight: $theme-font-weight-semi-bold;
+	color: $theme-primary-color;
+	font-size:$theme-md-font-size;
+	.product-views-price .product-views-price-lead{
+		font-weight: $theme-font-weight-semi-bold;
+		font-size:$theme-md-font-size;
+		color: $theme-primary-color;
+	}
+}
+
+
+// Sku
+.item-details-sku-container{
+	margin: 0 0 $theme-base-size 0;
+	text-transform: uppercase;
+	text-align:left;
+	color: $theme-primary-ft-color;
+	font-size: $theme-sm-font-size;
+	span.item-details-sku { font-weight: $theme-font-weight-semi-bold; }
+}
+
+// Stock
+.cells-item-stock {
+	height: $theme-base-size * 8;
+	margin-bottom: 12px;
+	background-color: $theme-color-out;
+	color: $theme-tertiary-color;
+}
+
+// Stock
+.item-views-stock-msg-out {
+	color: $theme-tertiary-color;
+	background-color: $theme-color-out;
+	text-transform: uppercase;
+	border-radius: 0;
+}
+
+// Quick View btn.
+div[class$="quick-view-wrapper"] {
+	top: 50%;
+	margin-top: -16px;
+	padding: 0 $theme-base-size * 4;
+	> a {
+		display: inline-block;
+		background: $theme-secondary-color;
+		color: $theme-tertiary-color;
+		font-size: $theme-sm-font-size;
+		border-radius: 0;
+		text-transform: uppercase;
+		border: none;
+		&:hover {
+			background: $theme-secondary-color;
+			color: $theme-tertiary-color;
+		}
+	}
+}

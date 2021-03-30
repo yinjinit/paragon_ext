@@ -1,0 +1,39 @@
+.paragon-header-second-menu {
+  position: absolute;
+  top: 25px;
+  padding: $sc-padding-lv1 $sc-padding-lv3;
+  border: 2px solid $sc-color-theme-300;
+  background: white;
+  min-width: 300px;
+  z-index: 1000;
+
+  .paragon-header-second-menu-item {
+    font-size: 16px;
+    &:hover {
+      background-color: $sc-color-theme-300;
+      cursor: pointer;
+      a {
+        color: white;
+      }
+    }
+  }
+}
+.paragon-header-second-menu:before,
+.paragon-header-second-menu:after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 100%;
+  width: 0;
+  height: 0;
+}
+.paragon-header-second-menu:before {
+  left: 19px;
+  border: 12px solid transparent;
+  border-bottom-color: $sc-color-theme-300;
+}
+.paragon-header-second-menu:after {
+  left: 22px;
+  border: 9px solid transparent;
+  border-bottom-color: #fff;
+}

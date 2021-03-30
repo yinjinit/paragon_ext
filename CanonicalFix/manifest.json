@@ -1,0 +1,68 @@
+{
+    "name": "CanonicalFix",
+    "fantasyName": "CanonicalFix",
+    "vendor": "Tavano",
+    "version": "1.0.2",
+    "type": "extension",
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": ">=19.1.1",
+        "SCS": ">=19.1.1"
+    },
+    "description": "Canonical fix",
+    "skins": [],
+    "assets": {
+        "img": {
+            "files": []
+        },
+        "fonts": {
+            "files": []
+        },
+        "services": {
+            "files": [
+                "services/CanonicalFix.Service.ss"
+            ]
+        }
+    },
+    "configuration": {
+        "files": []
+    },
+    "sass": {
+        "entry_points": {
+            "shopping": "Modules/CanonicalFix/Sass/_canonicalfix-canonicalfix.scss"
+        },
+        "files": [
+            "Modules/CanonicalFix/Sass/_canonicalfix-canonicalfix.scss"
+        ]
+    },
+    "templates": {
+        "application": {
+            "shopping": {
+                "files": [
+                    "Modules/CanonicalFix/Templates/tavano_canonicalfix_canonicalfix.tpl"
+                ]
+            }
+        }
+    },
+    "javascript": {
+        "entry_points": {
+            "shopping": "Modules/CanonicalFix/JavaScript/Tavano.CanonicalFix.CanonicalFix.js"
+        },
+        "application": {
+            "shopping": {
+                "files": [
+                    "Modules/CanonicalFix/JavaScript/Tavano.CanonicalFix.CanonicalFix.js",
+                    "Modules/CanonicalFix/JavaScript/ProductDetails.CanonicalFix.js"
+                ]
+            }
+        }
+    },
+    "ssp-libraries": {
+        "entry_point": "Modules/CanonicalFix/SuiteScript/Tavano.CanonicalFix.CanonicalFix.js",
+        "files": [
+            "Modules/CanonicalFix/SuiteScript/Tavano.CanonicalFix.CanonicalFix.js",
+            "Modules/CanonicalFix/SuiteScript/CanonicalFix.ServiceController.js"
+        ]
+    },
+    "local_folder": "Workspace\\CanonicalFix"
+}

@@ -1,0 +1,160 @@
+
+#theme-contact {
+
+    * {
+      margin: 0;
+      padding: 0; 
+      @include box-sizing(border-box);
+    }
+    body {
+      padding: 20px;
+      text-align: left;
+      font-family: Lato;
+      color: #fff; 
+    }
+    h1 {
+      font-weight: normal;
+      font-size: 40px;
+      font-weight: normal;
+      text-transform: uppercase;
+      float: left;
+      margin: 20px 0 100px 10px; 
+      span { 
+        font-size: 13px;
+        display: block;
+        padding-left: 4px;
+      }
+    }
+    .tabs {
+      width: 100%;  
+      float: none;
+      list-style: none;
+      position: relative;
+      margin: 50px 0;
+      text-align: left;
+      padding-bottom: 420px;
+      li {
+        float: left;
+        display: block;
+      }
+      input[type="radio"] {
+        position: absolute;
+        top: 0;
+        left: -9999px;
+      }
+      label {
+        display: block;
+        padding: 14px 21px;
+        border-radius: 2px 2px 0 0;
+        font-size: $theme-md-sec-font-size;
+        font-weight: normal;
+        text-transform: uppercase;
+        background: $theme-color-nauset-light-gray;
+        color: $theme-web-color-paragon-blue;
+        cursor: pointer;
+        position: relative;
+        top: 4px; 
+        @include transition(all 0.2s ease-in-out);
+        &:hover {
+          background: darken($theme-color-nauset-light-gray, 10);
+        }
+      }
+      .tab-content{
+        z-index: 2;
+        display: none; 
+        overflow: hidden;
+        width: 100%;
+        font-size: 17px;
+        line-height: 25px;
+        padding: 25px;  
+        position: absolute;
+        top: 53px;
+        left: 0; 
+        background: darken($theme-color-nauset-light-gray, 5);
+      }
+      //The Magic
+      [id^="tab"]:checked + label { 
+        top: 0;
+        padding-top: 17px; 
+        background: darken($theme-color-nauset-light-gray, 5); 
+      }
+      [id^="tab"]:checked ~ [id^="tab-content"] {
+        display: block;
+      }
+      @media (max-width: $screen-md-min) {
+            float: left;
+            padding-bottom: 0;
+            margin-top: 0;
+            > li {
+                width: 100%;
+                > label,
+                > .tab-content {
+                    display: none;
+                    &#tab-content1 {
+                        display: block;
+                        position: relative;
+                        > div.contact-col {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    p.link {
+      clear: both;
+      margin: 380px 0 0 15px;
+      a {
+        text-transform: uppercase;
+        text-decoration: none;
+        display: inline-block;
+        color: #fff;
+        padding: 5px 10px;
+        margin: 0 5px;
+        background-color: darken($theme-color-nauset-light-gray, 5);
+        @include transition(all 0.2s ease-in);
+        &:hover {
+          background-color: darken($theme-color-nauset-light-gray, 20);
+        }
+      }
+    } 
+
+    //
+    .tab-content {
+        > span {
+            width: 100%;
+            float: left;
+            margin-bottom: 10px;
+            @extend %tt-main-text;
+        }
+    }
+    .contact-col {
+        width: 33.33%;
+        float: left;
+        h3 {
+            font-size: $theme-lg-font-size;
+            height: 35px;
+        }
+    }
+    div.locrw {
+        float: left;
+        width: 33.33%;
+        .locimg {
+            width: 215px;
+            float: left;
+            img {
+                width: 100%;
+            }
+        }
+        .loc-addys {
+            width: 100%;
+            float: left;
+            @extend %tt-main-text;
+            line-height: 26px;
+            padding-top: 20px;
+            span {
+                color: $theme-web-color-paragon-blue;
+            }
+        }
+    }
+}

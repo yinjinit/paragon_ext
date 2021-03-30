@@ -1,0 +1,54 @@
+// Header
+$theme-header-bck-color-gral: $theme-tertiary-color; // Header global background (client color)
+$theme-header-bck-color-top: $theme-secondary-color; // Header top bar background
+$theme-header-bck-color-top-dark: darken($theme-header-bck-color-top, 20%); // Header darker color
+$theme-header-border:#D7D8D7;
+
+$theme-header-ft-color-primary: $tt-theme-primary-color; // Main Header font color
+$theme-header-ft-color-primary-active: $tt-theme-primary-color; // Main nav hover background
+$theme-header-ft-color-secondary: $tt-theme-primary-color; // Header Top Bar font color
+$theme-header-ft-color-tertiary: $tt-theme-primary-color; // Header Main nav sub-links color
+
+$theme-header-ft-color-primary-dark: darken($theme-header-ft-color-primary, 55%);
+
+// Header variables
+$sc-header-background-color: $sc-neutral-shade-0;
+/* editable({"type": "color", "label": "Background"}) */
+$sc-header-shadow-color: $sc-color-secondary;
+$sc-header-border-color: $sc-neutral-shade-0;
+/* editable({"type": "color", "label": "Border"}) */
+$sc-header-border-width: 0;
+
+// Header links variables
+$sc-header-link-text-color: $sc-color-secondary;
+/* editable({"type": "color", "label": "Link"}) */
+$sc-header-link-hover-text-color: $sc-color-link-hover;
+/* editable({"type": "color", "label": "Link hover"}) */
+$sc-header-link-active-text-color: $sc-color-copy-dark;
+/* editable({"type": "color", "label": "Link active"}) */
+$sc-header-link-text-transform: none;
+
+// Header cart link variables
+$sc-header-cart-link-text-color: $theme-header-ft-color-secondary;
+/* editable({"type": "color", "label": "Cart link"}) */
+$sc-header-cart-link-text-color-hover: $sc-color-link-hover;
+/* editable({"type": "color", "label": "Cart link hover"}) */
+$sc-header-cart-link-text-color-active: desaturate(darken($sc-button-primary-background-color, 5), 10);
+/* editable({"type": "color", "label": "Cart link active"}) */
+
+
+// Mobile header icons
+
+//Mobile Menu
+$theme-header-bck-color-mobile: $theme-color-destination-blue; // Mobile menu background
+$theme-header-bck-color-mobile-active: lighten($theme-header-bck-color-mobile, 20%); // Mobile menu highlighted nav
+$theme-header-ft-color-mobile: $theme-secondary-color; // Mobile menu font color
+
+//$sc-mobile-header-icon-color: $sc-color-secondary;
+$sc-mobile-header-icon-color: $tt-theme-secondary-color;
+$sc-mobile-header-icon-active-color: $theme-header-ft-color-mobile;
+$sc-mobile-header-cart-icon-color: $theme-header-ft-color-mobile;
+$sc-mobile-header-cart-icon-active-color: $theme-header-ft-color-mobile;
+
+$sc-mobile-header-border-color: $sc-neutral-shade-0;
+$sc-mobile-header-border-width: 0;

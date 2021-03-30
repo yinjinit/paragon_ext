@@ -1,0 +1,35 @@
+//LANDING PAGE
+.theme-landing-page#theme-about-us {
+	div.leadership-section {
+		div.leadership-section-cont {
+			margin: 0 auto;
+			text-align: center;
+			> div {
+				width: 33.33%;
+				float: left;
+				> p {
+					font-size: $theme-xl-font-size;;
+					line-height: 27px;
+				}
+				> span {
+					@extend %tt-main-text;
+				}
+				@media (max-width: $screen-sm) {
+					width: 100%;
+					margin-bottom: 50px;
+					&:last-child {
+						margin-bottom: 0;
+					}
+				}
+			}
+		}
+	}
+	.tt-our-history {
+		h2 {
+			@extend %tt-tertiary-title;
+		}
+		p {
+			@extend %tt-main-text;
+		}
+	}
+}

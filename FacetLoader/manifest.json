@@ -1,0 +1,59 @@
+{
+    "name": "FacetLoader",
+    "fantasyName": "FacetLoader",
+    "vendor": "Tavano",
+    "version": "1.0.2",
+    "type": "extension",
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": ">=19.1.1",
+        "SCS": ">=19.1.1"
+    },
+    "description": "FacetLoader",
+    "skins": [],
+    "assets": {
+        "img": {
+            "files": []
+        },
+        "fonts": {
+            "files": []
+        },
+        "services": {
+            "files": []
+        }
+    },
+    "configuration": {
+        "files": []
+    },
+    "sass": {
+        "entry_points": {
+            "shopping": "Modules/FacetLoader/Sass/_facetloader-facetloader.scss"
+        },
+        "files": [
+            "Modules/FacetLoader/Sass/_facetloader-facetloader.scss"
+        ]
+    },
+    "templates": {
+        "application": {
+            "shopping": {
+                "files": [
+                    "Modules/FacetLoader/Templates/tavano_facetloader_facetloader.tpl"
+                ]
+            }
+        }
+    },
+    "javascript": {
+        "entry_points": {
+            "shopping": "Modules/FacetLoader/JavaScript/Tavano.FacetLoader.FacetLoader.js"
+        },
+        "application": {
+            "shopping": {
+                "files": [
+                    "Modules/FacetLoader/JavaScript/Tavano.FacetLoader.FacetLoader.js",
+                    "Modules/FacetLoader/JavaScript/FacetLoader.js"
+                ]
+            }
+        }
+    },
+    "local_folder": "Workspace\\FacetLoader"
+}

@@ -1,0 +1,48 @@
+// Category name title
+div.facets-category-browse-results {
+	header.facets-facet-browse-header {
+		h1.facets-category-browse-title {
+			font-size: $theme-md-font-size;
+			//font-weight: $sc-font-weight-normal !important;
+			//color: $sc-color-primary !important;
+			border-bottom: 1px solid $theme-neutral-color;
+			padding-bottom: $theme-base-size * 2;
+			margin-bottom: $theme-base-size * 6;
+		}
+		@media (max-width: $screen-md-min) {
+			border: none;
+		}
+	}
+	@media (max-width: $screen-md-min) {
+		margin-top: $theme-base-size * 6;
+	}
+}
+
+.facets-browse-category-heading-main-description{margin-left:0px; margin-right:0px;}
+.facets-browse-category-heading-main-description{
+	p{margin:$theme-base-size * 3 0;}
+}
+// Category cell
+div.facets-category-cell {
+	margin-bottom: $theme-base-size * 8; // Category thumbnail image
+	div.facets-category-cell-thumbnail {
+		margin-bottom: $theme-base-size;
+		a {
+			display: block;
+			img {
+				width:auto;
+				max-width: 100%;
+				max-height: 180px;
+			}
+		}
+	} // Category cell title
+	div.facets-category-cell-title {
+		a {
+			display: block;
+			text-align: center;
+			padding-top: $theme-base-size * 3;
+			border-top: 1px solid $theme-neutral-color;
+			font-size:$theme-normal-font-size;
+		}
+	}
+}

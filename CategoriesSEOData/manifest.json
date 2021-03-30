@@ -1,0 +1,29 @@
+{
+    "name": "CategoriesSEOData",
+    "fantasyName": "Categories SEO Data",
+    "vendor": "TT",
+    "version": "1.0.1",
+    "type": "extension",
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": ">=19.1.1",
+        "SCS": ">=19.1.1"
+    },
+    "description": "Add extra data on category page",
+    "skins": [],
+    "assets": {
+        "img": {
+            "files": []
+        },
+        "fonts": {
+            "files": []
+        }
+    },
+    "ssp-libraries": {
+        "entry_point": "Modules/CategoriesSEOData/SuiteScript/TT.CategoriesSEOData.CategoriesSEOData.js",
+        "files": [
+            "Modules/CategoriesSEOData/SuiteScript/TT.CategoriesSEOData.CategoriesSEOData.js"
+        ]
+    },
+    "local_folder": "Workspace\\CategoriesSEOData"
+}

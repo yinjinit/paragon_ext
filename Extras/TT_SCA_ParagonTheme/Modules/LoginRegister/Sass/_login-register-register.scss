@@ -1,0 +1,83 @@
+.login-register-register-form-description{
+	margin-top: $sc-margin-lv4;
+	margin-bottom: $sc-margin-lv4;
+}
+
+.login-register-register-form-controls-group{
+	margin-top: $sc-margin-lv4;
+}
+
+
+
+
+
+.login-register-register-form-required{
+	@extend .input-required;
+}
+
+.login-register-register-form-input{
+	@extend .input-large;
+}
+
+.login-register-register-form-submit{
+	@extend .button-large;
+	@extend .button-primary;
+}
+
+.login-register-register-form-messages{
+	margin-top: $sc-margin-lv4;
+
+	.global-views-message-error {
+		@extend .message-error;
+		margin-bottom: 0;
+	}
+
+	.global-views-message-button {
+		display: none;
+	}
+}
+
+#signup-btn {
+	padding: 20px 35px;
+    font-size: 1.067rem;
+    line-height: 1;
+    letter-spacing: 1px;
+    text-align: center;
+ 	background: #F58426;
+    color: #FFF;
+    font-weight: 400;
+    border: 1px solid #F58426;
+    border-radius: 0px;
+    text-transform: none;
+    display: inline-block;
+    border: 1px solid #F58426;
+    border-radius: 0px;
+    text-transform: none;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+#signup-btn:hover {
+    background: #fff;
+    color: #F58426;
+}
+
+.lead {
+	margin: 20px 0;
+}
+
+.footnote {
+	margin-bottom: 20px;
+}
+
+.required{
+	font-size: 0.93rem;
+    color: #F58426;
+}
+
+
+
+
+
+
+

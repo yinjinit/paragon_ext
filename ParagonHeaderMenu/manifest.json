@@ -1,0 +1,122 @@
+{
+    "name": "ParagonHeaderMenu",
+    "fantasyName": "ParagonHeaderMenu",
+    "vendor": "PM",
+    "version": "1.0.9",
+    "type": "extension",
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": ">=19.1.7",
+        "SCS": ">=19.1.7"
+    },
+    "description": "Paragon Header Menu",
+    "skins": [],
+    "assets": {
+        "img": {
+            "files": []
+        },
+        "fonts": {
+            "files": []
+        }
+    },
+    "configuration": {
+        "files": []
+    },
+    "sass": {
+        "entry_points": {
+            "myaccount": "Modules/ParagonHeaderMenu/Sass/_paragon_header_menu.scss",
+            "shopping": "Modules/ParagonHeaderMenu/Sass/_paragon_header_menu.scss",
+            "checkout": "Modules/ParagonHeaderMenu/Sass/_paragon_header_menu.scss"
+        },
+        "files": [
+            "Modules/ParagonHeaderMenu/Sass/_paragon_header_menu.scss",
+            "Modules/ParagonHeaderMenu/Sass/_paragon_header_menu_featured.scss",
+            "Modules/ParagonHeaderMenu/Sass/_paragon_header_second_menu.scss",
+            "Modules/ParagonHeaderMenu/Sass/_paragon_header_multi_menu.scss",
+            "Modules/ParagonHeaderMenu/Sass/_paragon_header_single_menu.scss"
+        ]
+    },
+    "templates": {
+        "application": {
+            "myaccount": {
+                "files": [
+                    "Modules/ParagonHeaderMenu/Templates/paragon_header_menu.tpl",
+                    "Modules/ParagonHeaderMenu/Templates/paragon_hardware_menu.tpl",
+                    "Modules/ParagonHeaderMenu/Templates/paragon_software_menu.tpl",
+                    "Modules/ParagonHeaderMenu/Templates/paragon_header_menu_featured_partners.tpl",
+                    "Modules/ParagonHeaderMenu/Templates/paragon_industries_web_serve_menu.tpl",
+                    "Modules/ParagonHeaderMenu/Templates/paragon_service_solutions_menu.tpl",
+                    "Modules/ParagonHeaderMenu/Templates/paragon_second_menu.tpl"
+                ]
+            },
+            "shopping": {
+                "files": [
+                    "Modules/ParagonHeaderMenu/Templates/paragon_header_menu.tpl",
+                    "Modules/ParagonHeaderMenu/Templates/paragon_hardware_menu.tpl",
+                    "Modules/ParagonHeaderMenu/Templates/paragon_software_menu.tpl",
+                    "Modules/ParagonHeaderMenu/Templates/paragon_header_menu_featured_partners.tpl",
+                    "Modules/ParagonHeaderMenu/Templates/paragon_industries_web_serve_menu.tpl",
+                    "Modules/ParagonHeaderMenu/Templates/paragon_service_solutions_menu.tpl",
+                    "Modules/ParagonHeaderMenu/Templates/paragon_second_menu.tpl"
+                ]
+            },
+            "checkout": {
+                "files": [
+                    "Modules/ParagonHeaderMenu/Templates/paragon_header_menu.tpl",
+                    "Modules/ParagonHeaderMenu/Templates/paragon_hardware_menu.tpl",
+                    "Modules/ParagonHeaderMenu/Templates/paragon_software_menu.tpl",
+                    "Modules/ParagonHeaderMenu/Templates/paragon_header_menu_featured_partners.tpl",
+                    "Modules/ParagonHeaderMenu/Templates/paragon_industries_web_serve_menu.tpl",
+                    "Modules/ParagonHeaderMenu/Templates/paragon_service_solutions_menu.tpl",
+                    "Modules/ParagonHeaderMenu/Templates/paragon_second_menu.tpl"
+                ]
+            }
+        }
+    },
+    "javascript": {
+        "entry_points": {
+            "myaccount": "Modules/ParagonHeaderMenu/JavaScript/PM.ParagonHeaderMenu.js",
+            "shopping": "Modules/ParagonHeaderMenu/JavaScript/PM.ParagonHeaderMenu.js",
+            "checkout": "Modules/ParagonHeaderMenu/JavaScript/PM.ParagonHeaderMenu.js"
+        },
+        "application": {
+            "myaccount": {
+                "files": [
+                    "Modules/ParagonHeaderMenu/JavaScript/PM.ParagonHeaderMenu.js",
+                    "Modules/ParagonHeaderMenu/JavaScript/PM.ParagonHeaderMenu.View.js",
+                    "Modules/ParagonHeaderMenu/JavaScript/PM.ParagonHardwareMenu.View.js",
+                    "Modules/ParagonHeaderMenu/JavaScript/PM.ParagonSoftwareMenu.View.js",
+                    "Modules/ParagonHeaderMenu/JavaScript/PM.ParagonHeaderFeaturedPartners.View.js",
+                    "Modules/ParagonHeaderMenu/JavaScript/PM.ParagonIndustriesWebServeMenu.View.js",
+                    "Modules/ParagonHeaderMenu/JavaScript/PM.ParagonServiceSolutionsMenu.View.js",
+                    "Modules/ParagonHeaderMenu/JavaScript/PM.ParagonSecondMenu.View.js"
+                ]
+            },
+            "shopping": {
+                "files": [
+                    "Modules/ParagonHeaderMenu/JavaScript/PM.ParagonHeaderMenu.js",
+                    "Modules/ParagonHeaderMenu/JavaScript/PM.ParagonHeaderMenu.View.js",
+                    "Modules/ParagonHeaderMenu/JavaScript/PM.ParagonHardwareMenu.View.js",
+                    "Modules/ParagonHeaderMenu/JavaScript/PM.ParagonSoftwareMenu.View.js",
+                    "Modules/ParagonHeaderMenu/JavaScript/PM.ParagonHeaderFeaturedPartners.View.js",
+                    "Modules/ParagonHeaderMenu/JavaScript/PM.ParagonIndustriesWebServeMenu.View.js",
+                    "Modules/ParagonHeaderMenu/JavaScript/PM.ParagonServiceSolutionsMenu.View.js",
+                    "Modules/ParagonHeaderMenu/JavaScript/PM.ParagonSecondMenu.View.js"
+                ]
+            },
+            "checkout": {
+                "files": [
+                    "Modules/ParagonHeaderMenu/JavaScript/PM.ParagonHeaderMenu.js",
+                    "Modules/ParagonHeaderMenu/JavaScript/PM.ParagonHeaderMenu.View.js",
+                    "Modules/ParagonHeaderMenu/JavaScript/PM.ParagonHardwareMenu.View.js",
+                    "Modules/ParagonHeaderMenu/JavaScript/PM.ParagonSoftwareMenu.View.js",
+                    "Modules/ParagonHeaderMenu/JavaScript/PM.ParagonHeaderFeaturedPartners.View.js",
+                    "Modules/ParagonHeaderMenu/JavaScript/PM.ParagonIndustriesWebServeMenu.View.js",
+                    "Modules/ParagonHeaderMenu/JavaScript/PM.ParagonServiceSolutionsMenu.View.js",
+                    "Modules/ParagonHeaderMenu/JavaScript/PM.ParagonSecondMenu.View.js"
+                ]
+            }
+        }
+    },
+    "local_folder": "Workspace\\ParagonHeaderMenu"
+}

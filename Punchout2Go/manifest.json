@@ -1,0 +1,87 @@
+{
+    "name": "Punchout2Go",
+    "fantasyName": "Punchout2Go",
+    "vendor": "BigBang",
+    "version": "1.0.7",
+    "type": "extension",
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": ">=19.1.1",
+        "SCS": ">=19.1.1"
+    },
+    "description": "Punchout2Go Connector",
+    "skins": [],
+    "assets": {
+        "img": {
+            "files": []
+        },
+        "fonts": {
+            "files": []
+        },
+        "services": {
+            "files": [
+                "services/PunchoutAccount.Service.ss",
+                "services/PunchoutServices.Service.ss"
+            ]
+        }
+    },
+    "templates": {
+        "application": {
+            "shopping": {
+                "files": [
+                    "Modules/PunchoutCart/Templates/bigbang_punchout2go_punchoutcart.tpl"
+                ]
+            },
+            "myaccount": {
+                "files": [
+                    "Modules/PunchoutCart/Templates/bigbang_punchout2go_punchoutcart.tpl"
+                ]
+            },
+            "checkout": {
+                "files": [
+                    "Modules/PunchoutCart/Templates/bigbang_punchout2go_punchoutcart.tpl"
+                ]
+            }
+        }
+    },
+    "javascript": {
+        "entry_points": {
+            "shopping": "Modules/PunchoutCart/JavaScript/BigBang.Punchout2Go.PunchoutCart.js",
+            "myaccount": "Modules/PunchoutCart/JavaScript/BigBang.Punchout2Go.PunchoutCart.js",
+            "checkout": "Modules/PunchoutCart/JavaScript/BigBang.Punchout2Go.PunchoutCart.js"
+        },
+        "application": {
+            "shopping": {
+                "files": [
+                    "Modules/PunchoutCart/JavaScript/BigBang.Punchout2Go.PunchoutCart.js",
+                    "Modules/PunchoutCart/JavaScript/PunchoutCart.View.js"
+                ]
+            },
+            "myaccount": {
+                "files": [
+                    "Modules/PunchoutCart/JavaScript/BigBang.Punchout2Go.PunchoutCart.js",
+                    "Modules/PunchoutCart/JavaScript/PunchoutCart.View.js"
+                ]
+            },
+            "checkout": {
+                "files": [
+                    "Modules/PunchoutCart/JavaScript/BigBang.Punchout2Go.PunchoutCart.js",
+                    "Modules/PunchoutCart/JavaScript/PunchoutCart.View.js"
+                ]
+            }
+        }
+    },
+    "ssp-libraries": {
+        "entry_point": "Modules/PunchoutAccount/SuiteScript/BigBang.Punchout2Go.PunchoutAccount.js",
+        "files": [
+            "Modules/PunchoutAccount/SuiteScript/BigBang.Punchout2Go.PunchoutAccount.js",
+            "Modules/PunchoutAccount/SuiteScript/PunchoutAccount.ServiceController.js",
+            "Modules/PunchoutAccount/SuiteScript/CryptoJS.js",
+            "Modules/PunchoutAccount/SuiteScript/PunchoutAccount.Model.js",
+            "Modules/PunchoutServices/SuiteScript/BigBang.Punchout2Go.PunchoutServices.js",
+            "Modules/PunchoutServices/SuiteScript/PunchoutServices.Model.js",
+            "Modules/PunchoutServices/SuiteScript/PunchoutServices.ServiceController.js"
+        ]
+    },
+    "local_folder": "Workspace\\Punchout2Go"
+}

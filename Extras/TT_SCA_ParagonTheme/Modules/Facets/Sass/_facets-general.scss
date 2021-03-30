@@ -1,0 +1,48 @@
+// General settings
+div.layout.sec_facets_facet_browse {
+	header#site-header {
+		margin-bottom: 0px;
+	}
+	@media (min-width: $screen-md-min) {
+		div#main-container {
+	    //padding-top: 145px;
+		}
+	}
+  // Content
+  section.facets-facet-browse { margin-bottom: $theme-base-size * 10; }
+}
+
+// Facet top banner by CMS
+div.facet-top-banner-image {
+  background-attachment: fixed !important;
+  background-position-x: center;
+  padding: $theme-base-size * 18 0;
+  width: 100%;
+  @include parallax-back (inherit);
+	background-size: cover;
+  @media (min-width: $screen-xlg-min) {
+    @include parallax-back (cover);
+	}
+  @media (min-width: $screen-sm-min) {
+  	height: 310px;
+  }
+  @media (max-width: $screen-sm-min) {
+  	height: 170px;
+  }
+}
+
+//Facet display view thumbnails
+.icon-button-controls, .list-header-view-accordion-body-button-sort{
+	background:transparent;
+	color:$sc-color-copy;
+	border:none;
+	width: 30px;
+	i{
+		color:$sc-color-copy;
+		width: 33px;
+		line-height: 50px;
+		font-size: 24px;
+	}
+}
+
+h1.facets-empty-title{font-family: $font-family-primary; font-size: 15px;  letter-spacing: normal;}

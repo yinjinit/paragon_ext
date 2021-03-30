@@ -1,0 +1,37 @@
+.header-simplified-header{
+	height: $sc-main-nav-height;
+	background-color: $sc-top-menu-background-color;
+	box-shadow: 3px 0px 6px $sc-header-shadow-color;
+}
+
+.header-simplified-header-logo{
+	text-align: center;
+
+	.header-logo-image{
+		width: auto;
+	}
+}
+
+//TT new styles
+header.checkout-layout-header {
+	nav.header-simplified-header {
+		background: $theme-header-bck-color-gral;
+		div.header-simplified-header-logo {
+			max-width: 1170px;
+			margin: 0 auto;
+			padding: 0 $theme-base-size * 3;
+			a.header-logo {
+				display: table;
+				line-height: 55px;
+				height: 55px;
+				img {
+					margin-right: 0;
+					max-height:27px;
+					@media (max-width: $screen-md-min) { max-width: 200px; margin: 13px 0 !important; }
+				}
+				@media (max-width: $screen-md-min) { margin: 0; }
+			}
+			@media (max-width: $screen-lg-min) { max-width: 970px; }
+		}
+	}
+}

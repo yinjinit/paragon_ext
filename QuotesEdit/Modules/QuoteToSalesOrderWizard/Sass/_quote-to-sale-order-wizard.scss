@@ -1,0 +1,100 @@
+.order-wizard-quote-to-sale-order-extra-fields{
+  @extend .box-column;
+}
+
+.quote-edit-save-quote-wizard{
+  display: none;
+  @extend .global-views-message-success;
+  @extend .global-views-message;
+  margin-bottom: 0;
+  margin-top: 10px;
+}
+
+.order-wizard-quote-to-sale-order-row{
+  @extend .clearfix;
+  @extend .row;
+  margin-bottom: $sc-margin-lv3;
+}
+.order-wizard-quote-to-sale-order-column{
+  @extend .col-sm-6;
+}
+.order-wizard-quote-to-sale-order-column-notes{
+  @extend .col-md-12
+}
+.order-wizard-quote-to-sale-order-title{
+  margin-bottom: $sc-margin-lv3;
+}
+.order-wizard-quote-to-sale-order-label{
+  @extend .sc-value;
+  display: block;
+  margin-bottom: $sc-margin-lv1;
+  font-size: $sc-font-size-m;
+  font-weight: $sc-font-weight-semibold;
+}
+
+.order-wizard-quote-to-sale-order-optional{
+  @extend .input-optional;
+  font-weight: $sc-font-weight-normal;
+}
+
+.order-wizard-quote-to-sale-order-ponumber-value{
+  @extend .input-large;
+}
+
+.order-wizard-save-module-button{
+  @extend .button-secondary;
+  @extend .button-large;
+  @extend .button-generic;
+}
+.quote-to-salesorder-wizard-step-content-wrapper {
+  .order-wizard-cartitems-module-ship-edit-cart-link-container{
+    display: none;
+  }
+  #wizard-step-content-right {
+    .order-wizard-showshipments-module-shipping-details-address-view {
+      display: none;
+    }
+
+    .order-wizard-showshipments-module-shipping-details-items,
+    .order-wizard-showshipments-module-shipping-details-address {
+      @extend .col-md-12;
+    }
+
+    .order-wizard-showshipments-module-shipping-title {
+      display: none;
+    }
+
+    .order-wizard-showshipments-module-shipping-details-method {
+      .order-wizard-showshipments-module-shipping-title {
+        display: block;
+      }
+    }
+  }
+}
+
+.quote-to-salesorder-wizard-layout-header{
+  .wizard-step-navigation-step-anchor{
+    pointer-events: none;
+  }
+  .wizard-step-navigation-step-3,
+  .wizard-step-navigation-divider-3{
+    display: none;
+  }
+}
+.quote-to-salesorder-wizard-step-content-wrapper,
+.requestquote-wizard-layout-content,
+.quote-details-row{
+  .address-details-container{
+    padding: 15px;
+  }
+}
+
+.requestquote-wizard-step-content-main,
+.quote-to-salesorder-wizard-step-content-main{
+  > article.module-rendered{
+    clear: both;
+    > section{
+      @extend .clearfix;
+    }
+  }
+}

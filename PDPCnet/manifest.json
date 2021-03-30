@@ -1,0 +1,90 @@
+{
+    "name": "PDPCnet",
+    "fantasyName": "PDPCnet",
+    "vendor": "Tavano",
+    "version": "1.0.8",
+    "type": "extension",
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": ">=19.1.7",
+        "SCS": ">=19.1.7"
+    },
+    "description": "Extension to manage the integration of CNET",
+    "skins": [],
+    "assets": {
+        "img": {
+            "files": []
+        },
+        "fonts": {
+            "files": []
+        },
+        "services": {
+            "files": [
+                "services/PDPCnet.Service.ss",
+                "services/NetsuiteUtils.Service.ss",
+                "services/CNetUtils.Service.ss"
+            ]
+        }
+    },
+    "configuration": {
+        "files": []
+    },
+    "sass": {
+        "entry_points": {
+            "shopping": "Modules/PDPCnet/Sass/_pdpcnet-pdpcnet.scss"
+        },
+        "files": [
+            "Modules/PDPCnet/Sass/_pdpcnet-pdpcnet.scss"
+        ]
+    },
+    "templates": {
+        "application": {
+            "shopping": {
+                "files": [
+                    "Modules/PDPCnet/Templates/tavano_pdpcnet_pdpcnet.tpl",
+                    "Modules/PDPCnet/Templates/pdp_cnet_image_gallery.tpl",
+                    "Modules/PDPCnet/Templates/pdp_cnet_product_information.tpl",
+                    "Modules/PDPCnet/Templates/pdp_cnet_product_name.tpl"
+                ]
+            }
+        }
+    },
+    "javascript": {
+        "entry_points": {
+            "shopping": "Modules/PDPCnet/JavaScript/Tavano.PDPCnet.PDPCnet.js"
+        },
+        "application": {
+            "shopping": {
+                "files": [
+                    "Modules/PDPCnet/JavaScript/Tavano.PDPCnet.PDPCnet.js",
+                    "Modules/CNetUtils/JavaScript/Tavano.PDPCnet.CNetUtils.js",
+                    "Modules/PDPCnet/JavaScript/PDPCnet.ProductDetails.Base.View.js",
+                    "Modules/NetsuiteUtils/JavaScript/Tavano.PDPCnet.NetsuiteUtils.js",
+                    "Modules/NetsuiteUtils/JavaScript/CNetItem.Model.js",
+                    "Modules/NetsuiteUtils/JavaScript/NetsuiteUtils.js",
+                    "Modules/CNetUtils/JavaScript/Tavano.PDPCnet.CNetUtils.js",
+                    "Modules/PDPCnet/JavaScript/PDPCnet.ImageGallery.View.js",
+                    "Modules/PDPCnet/JavaScript/PDPCnet.ProductInformation.View.js",
+                    "Modules/PDPCnet/JavaScript/PDPCnet.ProductName.View.js",
+                    "Modules/PDPCnet/JavaScript/PDPCnet.Cart.AddToCart.Button.View.js",
+                    "Modules/PDPCnet/JavaScript/PDP.Cnet.ProductList.ControlItem.View.js"
+                ]
+            }
+        }
+    },
+    "ssp-libraries": {
+        "entry_point": "Modules/PDPCnet/SuiteScript/Tavano.PDPCnet.PDPCnet.js",
+        "files": [
+            "Modules/PDPCnet/SuiteScript/Tavano.PDPCnet.PDPCnet.js",
+            "Modules/PDPCnet/SuiteScript/PDPCnet.ServiceController.js",
+            "Modules/CNetUtils/SuiteScript/Tavano.PDPCnet.CNetUtils.js",
+            "Modules/CNetUtils/SuiteScript/CNetUtils.ServiceController.js",
+            "Modules/NetsuiteUtils/SuiteScript/Tavano.PDPCnet.NetsuiteUtils.js",
+            "Modules/NetsuiteUtils/SuiteScript/NetsuiteUtils.ServiceController.js",
+            "Modules/CNetUtils/SuiteScript/CNetUtils.ServiceController.js",
+            "Modules/CNetUtils/SuiteScript/Tavano.PDPCnet.CNetUtils.js",
+            "Modules/NetsuiteUtils/SuiteScript/NetsuiteUtils.Model.js"
+        ]
+    },
+    "local_folder": "Workspace\\PDPCnet"
+}

@@ -1,0 +1,22 @@
+//LANDING PAGE
+.theme-landing-page#theme-support {
+    color: $theme-color-cornerstone-blue;
+    i {
+        @extend .fa;
+        font-size: $sc-font-size-xl;
+        line-height: 35px;
+        min-width: 20px;
+        color: $theme-web-color-paragon-blue;
+        &.email-icon:after {
+            content: "\f0e0";
+        }
+        &.phone-icon:after {
+            content: "\f095";
+        }
+    }
+    .cms-landing-page-row.support {
+        margin: $sc-margin-lv6 0 $sc-margin-lv5 * 2 0;
+        float: left;
+        width: 100%;
+    }
+}

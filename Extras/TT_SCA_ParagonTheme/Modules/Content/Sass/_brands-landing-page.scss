@@ -1,0 +1,181 @@
+//////////////////////////////////////////////////
+
+@mixin vendor-prefix ($name, $value) {
+  @each $vendor in ('-webkit-', '-moz-', '-ms-', '-o-', '') {
+    #{$vendor}#{$name}: #{$value};
+  }
+}
+
+//////////////////////////////////////////////////
+
+.brandsLandingPage { @extend .container; }
+
+//////////////////////////////////////////////////
+
+.brandsLogos {
+  display: inline-block;
+  width: 100%;
+  padding: $sc-padding-lv5 0 0 0;
+}
+
+.brandsLogosContainer {
+  width: 100%;
+
+  @media (min-width: $screen-sm-min) { display: flex; }
+
+}
+
+// LOGOS.
+.brandsLogoCol {
+  width: 25%;
+  float: left;
+  padding: $sc-padding-lv2 $sc-padding-lv3;
+
+  a {
+
+    img {
+      display: block;
+      width: auto;
+      height: 100%;
+      max-height: 30px;
+      margin: auto;
+
+      @media (min-width: $screen-sm-min) { max-height: 55px; }
+
+    }
+
+    @media (max-width: $screen-sm-min) { display: table-cell; }
+
+  }
+
+  @media (min-width: $screen-sm-min) {
+    width: calc(100% / 6);
+    float: none;
+    padding: 0 $sc-padding-lv3;
+  }
+
+}
+
+//////////////////////////////////////////////////
+
+// LETTER FILTERING.
+.brandsLetterFiltering {
+  text-align: center;
+  padding: $sc-padding-lv5 0 $sc-padding-lv10 0;
+
+  .brandsLetter {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+
+    // LETTER.
+    a {
+      display: block;
+      color: $theme-color-paragon-white;
+      outline: none;
+      background: $theme-color-vision-organge;
+
+      @include vendor-prefix('transition', 'all .25s ease-in-out');
+      @include vendor-prefix('border-radius', '5px');
+
+      &:active, &:focus, &:hover {
+        background: darken($theme-color-vision-organge, 15);
+        @include vendor-prefix('box-shadow', '2px 2px 10px 0px rgba(204,204,204,1)');
+      }
+
+    }
+
+    @media (max-width: $screen-md-min) { margin: 0 0 3px 0; }
+
+  }
+
+}
+
+//////////////////////////////////////////////////
+
+// BRANDS GROUP.
+.brandsBrandsGroup {
+  display: inline-block;
+  width: 100%;
+}
+
+.brandsEachBrand {
+  display: inline-block;
+  width: 100%;
+  margin: 0 0 $sc-margin-lv10 0;
+  padding: 0 0 $sc-padding-lv10 0;
+  outline: none;
+  border-bottom: 1px solid $theme-color-nauset-light-gray;
+
+  &:last-of-type {
+    border-bottom: none;
+    padding: 0;
+  }
+
+}
+
+.brandsEachBrandLetter {
+  background: $theme-color-vision-organge;
+  margin: 0 0 $sc-margin-lv4 0;
+
+  p {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: $theme-color-paragon-white;
+    text-align: center;
+
+    @media (min-width: $screen-sm-min) {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      @include vendor-prefix('transform', 'translate(-50%, -50%)');
+    }
+    @media (min-width: $screen-md-min) { font-size: 3.5rem; }
+
+  }
+
+  @media (min-width: $screen-sm-min) {
+    width: 12.5%;
+    float: left;
+    position: relative;
+    margin: 0;
+
+    &:after {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
+
+  }
+
+}
+
+// COLUMNS.
+.brandsEachBrandList {
+  padding: 0 $sc-padding-lv1;
+
+  @include vendor-prefix('column-count', '3');
+  @include vendor-prefix('column-gap', '25px');
+
+  // BRAND ANCHOR.
+  a {
+    display: block;
+    outline: none;
+
+    &:active, &:focus, &:hover { text-decoration: underline; }
+
+  }
+
+  @media (min-width: $screen-sm-min) {
+    width: 87.5%;
+    float: left;
+    padding: 0 0 0 $sc-padding-lv5;
+
+    @include vendor-prefix('column-count', '5');
+    @include vendor-prefix('column-gap', '50px');
+  }
+
+}

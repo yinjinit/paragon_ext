@@ -1,0 +1,78 @@
+.pm-info-card {
+	@extend .info-card;
+}
+
+.pm-info-card-content {
+	@extend .info-card-content;
+	color: $sc-color-secondary;
+	font-weight: bold;
+}
+
+.pm-info-card-header {
+	padding-bottom: $sc-padding-lv3;
+	border-bottom: 1px solid black;
+	h1 {
+		color: black;
+		font-size: 2.5rem;
+	}
+}
+
+.menu-tree-node-item-anchor{
+	@extend .medium-title-navigable;
+	display:block;
+	line-height:1em;
+	padding: $sc-padding-lv4;
+	background-color: $sc-color-theme-background;
+	border-bottom: 1px solid $sc-color-theme-border-light;
+	cursor: pointer;
+	text-transform: uppercase;
+	font-weight: normal;
+	> i.icon-left {
+		@extend .fa;
+		margin-right: 12px;
+		&.myteam:before {
+			content: "\f2c3";
+		}
+	}
+}
+
+.pm-salesrep-info-card {
+	width: 100%;
+	border-bottom: 1px solid black;
+
+	.card-container {
+		width: 100%;
+		margin: 0;
+		padding: $sc-padding-lv3 0;
+		.image-container {
+			max-width: 250px;
+			float: right;
+
+			img {
+				width: 100%;
+			}
+		}
+		.card-details {
+			display: inline-block;
+
+			.card-details-name {
+				font-size: 2.5rem;
+				font-weight: 500;
+			}
+
+			.card-details-name2 {
+				font-size: 1.85rem;
+				font-weight: 500;
+			}
+
+			.card-details-extra {
+				font-size: 1.75rem;
+				font-weight: 500;
+			}
+		}
+	}
+}
+
+.pm-salesrep-info-card:last-child {
+	border-bottom: none;
+}

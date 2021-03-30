@@ -1,0 +1,73 @@
+@import "../../AddToQuote/Sass/product-details-quote";
+@import "../../QuoteToSalesOrderWizard/Sass/quote-to-sale-order-wizard";
+@import "../../ShareQuote/Sass/share-quote";
+
+.quote-details-content-col{
+  .cart-lines-thumbnail{
+    @extend .table-flex-tdfirst;
+    @extend .column-type-image;
+    text-align: left;
+    position: relative;
+    img{
+      width:100%;
+    }
+  }
+  .cart-item-actions-item-list-actionable-edit-content-remove{
+    &:disabled,
+    &[disabled]{
+      pointer-events: none;
+      cursor: default;
+      text-decoration: none;
+      opacity: .3;
+    }
+  }
+}
+.quote-details-header-col-left{
+  #notes:disabled{
+    background: #F5F5F5;
+    border: none;
+  }
+}
+
+
+.quote-edit-removed-item{
+  @extend .global-views-message-warning;
+  @extend .global-views-message;
+  margin-bottom: 0;
+  margin-top: 10px;
+}
+
+.quote-edit-save-quote{
+  @extend .global-views-message-success;
+  @extend .global-views-message;
+  margin-bottom: 0;
+  margin-top: 10px;
+}
+
+.quote-edit-remove-limit-item{
+  @extend .global-views-message-error;
+  @extend .global-views-message;
+  margin-bottom: 0;
+  margin-top: 10px;
+  display: none;
+}
+
+[data-action="save-quote"]{
+  display: none;
+  @extend .button-primary;
+  @extend .button-medium;
+  @extend .button-generic;
+  margin-bottom: $sc-margin-lv2;
+}
+.quote-details-button-tertiary{
+  @extend .button-tertiary;
+  @extend .button-medium;
+  @extend .button-generic;
+  margin-bottom: $sc-margin-lv2;
+}
+
+.quote-list{
+  .list-header-view{
+    //display: none;
+  }
+}

@@ -1,0 +1,97 @@
+{
+    "name": "Jantas",
+    "fantasyName": "Jantas Theme Extensions",
+    "vendor": "TavanoTeam",
+    "version": "1.0.2",
+    "type": "extension",
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": ">=19.1.7",
+        "SCS": ">=19.1.7"
+    },
+    "description": "Jantas Extensions",
+    "skins": [],
+    "assets": {
+        "img": {
+            "files": []
+        },
+        "fonts": {
+            "files": []
+        },
+        "services": {
+            "files": [
+                "services/Jantas.Service.ss"
+            ]
+        }
+    },
+    "configuration": {
+        "files": []
+    },
+    "sass": {
+        "entry_points": {
+            "shopping": "Modules/Jantas/Sass/_jantas-jantas.scss",
+            "myaccount": "Modules/Jantas/Sass/_jantas-jantas.scss",
+            "checkout": "Modules/Jantas/Sass/_jantas-jantas.scss"
+        },
+        "files": [
+            "Modules/Jantas/Sass/_jantas-jantas.scss"
+        ]
+    },
+    "templates": {
+        "application": {
+            "shopping": {
+                "files": [
+                    "Modules/Jantas/Templates/tavanoteam_jantas_jantas.tpl"
+                ]
+            },
+            "myaccount": {
+                "files": [
+                    "Modules/Jantas/Templates/tavanoteam_jantas_jantas.tpl"
+                ]
+            },
+            "checkout": {
+                "files": [
+                    "Modules/Jantas/Templates/tavanoteam_jantas_jantas.tpl"
+                ]
+            }
+        }
+    },
+    "javascript": {
+        "entry_points": {
+            "shopping": "Modules/Jantas/JavaScript/TavanoTeam.Jantas.Jantas.js",
+            "myaccount": "Modules/Jantas/JavaScript/TavanoTeam.Jantas.Jantas.js",
+            "checkout": "Modules/Jantas/JavaScript/TavanoTeam.Jantas.Jantas.js"
+        },
+        "application": {
+            "shopping": {
+                "files": [
+                    "Modules/Jantas/JavaScript/TavanoTeam.Jantas.Jantas.js",
+                    "Modules/Footer/TavanoTeam.Jantas.Footer.js",
+                    "Modules/Layout/TavanoTeam.Jantas.Layout.js"
+                ]
+            },
+            "myaccount": {
+                "files": [
+                    "Modules/Jantas/JavaScript/TavanoTeam.Jantas.Jantas.js",
+                    "Modules/Footer/TavanoTeam.Jantas.Footer.js",
+                    "Modules/Layout/TavanoTeam.Jantas.Layout.js"
+                ]
+            },
+            "checkout": {
+                "files": [
+                    "Modules/Jantas/JavaScript/TavanoTeam.Jantas.Jantas.js",
+                    "Modules/Footer/TavanoTeam.Jantas.Footer.js",
+                    "Modules/Layout/TavanoTeam.Jantas.Layout.js"
+                ]
+            }
+        }
+    },
+    "ssp-libraries": {
+        "entry_point": "Modules/Jantas/SuiteScript/TavanoTeam.Jantas.Jantas.js",
+        "files": [
+            "Modules/Jantas/SuiteScript/TavanoTeam.Jantas.Jantas.js",
+            "Modules/Jantas/SuiteScript/Jantas.ServiceController.js"
+        ]
+    },
+    "local_folder": "Workspace\\Jantas"
+}

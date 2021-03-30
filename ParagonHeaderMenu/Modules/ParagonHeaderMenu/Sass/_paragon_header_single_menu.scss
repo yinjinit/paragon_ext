@@ -1,0 +1,22 @@
+.paragon-header-menu-single-lv2 {
+  width: 50%;
+  padding: $sc-padding-lv10;
+
+  font-size: 16px;
+  padding: $sc-padding-lv1 0;
+
+  ul {
+    list-style: none;
+    padding: $sc-padding-lv1 $sc-padding-lv2;
+
+    li a {
+      color: black;
+      font-size: 16px;
+      font-weight: normal;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

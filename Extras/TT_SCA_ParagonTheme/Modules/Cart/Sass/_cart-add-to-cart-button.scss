@@ -1,0 +1,14 @@
+.cart-add-to-cart-button-button{
+	@extend .button-primary;
+	@extend .button-large;
+	width: 100%;
+ 	margin-top: $sc-margin-lv3;
+}
+
+.cart-add-to-cart-button {
+	position: static;
+}
+
+.cart-add-to-cart-button-container {
+	@extend .col-sm-6;
+}

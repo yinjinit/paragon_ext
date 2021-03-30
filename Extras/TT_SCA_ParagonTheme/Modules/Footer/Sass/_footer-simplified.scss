@@ -1,0 +1,43 @@
+//TT new styles
+div.footer-simplified-content {
+
+    // Payment Methods
+    div.footer-content-payments {
+        float: right;
+    }
+
+    // Copyright
+    div.footer-content-copyright {
+        float: left;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
+// Creditcards
+div.footer-content-payment-img {
+    img {
+        float: right;
+        text-align: right;
+        max-width: 54px;
+        margin: 10px 7px 10px 0;
+
+        @media (max-width: $screen-sm-min) {
+            float: none;
+            text-align: center;
+        }
+
+        @media (max-width: $screen-xs-min) {
+            width: 35px;
+
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+    }
+
+    @media (max-width: $screen-sm-min) {
+        text-align: center;
+    }
+}

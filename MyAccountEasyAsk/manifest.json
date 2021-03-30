@@ -1,0 +1,51 @@
+{
+    "name": "MyAccountEasyAsk",
+    "fantasyName": "MyAccountEasyAsk",
+    "vendor": "Tavano",
+    "version": "1.0.4",
+    "type": "extension",
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": ">=19.1.1",
+        "SCS": ">=19.1.1"
+    },
+    "description": "My Account Easy Ask Extension",
+    "skins": [],
+    "assets": {
+        "img": {
+            "files": []
+        },
+        "fonts": {
+            "files": []
+        },
+        "services": {
+            "files": [
+                "services/GlobalSearch.Service.ss"
+            ]
+        }
+    },
+    "javascript": {
+        "entry_points": {
+            "myaccount": "Modules/GlobalSearch/JavaScript/Tavano.MyAccountEasyAsk.GlobalSearch.js"
+        },
+        "application": {
+            "myaccount": {
+                "files": [
+                    "Modules/GlobalSearch/JavaScript/Tavano.MyAccountEasyAsk.GlobalSearch.js",
+                    "Modules/GlobalSearch/JavaScript/MyAccount.EasyAsk.ItemSearcher.View.js",
+                    "Modules/GlobalSearch/JavaScript/MyAccount.EasyAsk.Facets.Helper.js",
+                    "Modules/GlobalSearch/JavaScript/EasyAskSearch.Model.js"
+                ]
+            }
+        }
+    },
+    "ssp-libraries": {
+        "entry_point": "Modules/GlobalSearch/SuiteScript/Tavano.MyAccountEasyAsk.GlobalSearch.js",
+        "files": [
+            "Modules/GlobalSearch/SuiteScript/Tavano.MyAccountEasyAsk.GlobalSearch.js",
+            "Modules/GlobalSearch/SuiteScript/GlobalSearch.ServiceController.js",
+            "Modules/GlobalSearch/SuiteScript/EasyAskSearch.Model.js"
+        ]
+    },
+    "local_folder": "Workspace\\MyAccountEasyAsk"
+}

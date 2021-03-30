@@ -1,0 +1,27 @@
+
+.transaction-line-views-selected-option-label {
+    margin-bottom: $sc-margin-lv2;
+    @extend .sc-label;
+}
+.transaction-line-views-selected-option-value {
+    margin-bottom: $sc-margin-lv2;
+    @extend .sc-value;
+}
+
+// REMOVE SPECIFIC OPTIONS.
+.myaccount-layout-main {
+  .transaction-line-views-selected-option {
+    &[name="Pick Up"],
+    &[name="Item"],
+    &[name="Line"],
+    &[name="IncomeAccount"],
+    &[name="Check Price"],
+    &[name="TaxCode Mapping"], 
+    &[name="Renewal Tracking Created"],    
+    &[name="Weight"],
+    &[name="Track Renewals?"],
+    &[name="Check Price"],
+    &[name="Contract"],
+    &[name="Lock Cost?"] { display: none; }
+  }
+}

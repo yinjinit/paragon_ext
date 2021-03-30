@@ -1,0 +1,112 @@
+.paragon-header-menu-hardware-details {
+  width: 100%;
+  display: none;
+}
+
+.paragon-header-menu-hardware-details.active {
+  display: block;
+}
+
+.paragon-header-menu-hardware-contents {
+  width: 100%;
+  display: flex;
+}
+
+.paragon-header-menu-hardware-details-heading {
+  h3 {
+    color: black;
+    text-transform: unset;
+    font-size: 20px;
+  }
+
+  .paragon-header-menu-details-close-icon {
+    @extend .fa;
+    @extend %fa-times;
+
+    position: absolute;
+    right: $sc-padding-lv1;
+    top: $sc-padding-lv1;
+
+    font-size: 20px;
+  }
+}
+
+.paragon-header-menu-hardware-details-contents {
+  display: flex;
+  width: 100%;
+  padding: $sc-padding-lv2 0;
+}
+
+.paragon-header-menu-details-left {
+  .paragon_header_menu_lv2_left {
+    list-style: none;
+
+    a.paragon-header-menu-level2-anchor {
+      padding: 0 $sc-padding-lv2;
+    }
+
+    li.paragon-header-menu-level2-li {
+      padding: $sc-padding-lv1 $sc-padding-lv2;
+      font-size: 16px;
+      &:hover {
+        background-color: $sc-color-theme-300;
+        cursor: pointer;
+        a.paragon-header-menu-level2-anchor {
+          color: white;
+        }
+      }
+    }
+
+    li.paragon-header-menu-level2-li.active {
+      border-left: 5px solid $sc-color-theme-300;
+      background-color: #efefef;
+      a.paragon-header-menu-level2-anchor {
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.paragon-header-menu-details-right {
+  flex: 1;
+  padding-left: $sc-padding-lv4;
+}
+
+.paragon-header-menu-hardware-details-level2 {
+  width: 50%;
+  padding: $sc-padding-lv2 0;
+}
+
+.paragon-header-menu-hardware-details-level3 {
+  font-size: 16px;
+  padding: $sc-padding-lv1 0;
+  h6 {
+    color: black;
+    font-size: 16px;
+    font-weight: normal;
+
+    a {
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  ul {
+    list-style: none;
+    padding: $sc-padding-lv1 $sc-padding-lv2;
+
+    li a {
+      text-decoration: underline;
+    }
+  }
+}
+
+.paragon-header-menu-education-details {
+  width: 100%;
+  display: none;
+}
+
+.paragon-header-menu-education-details.active {
+  display: block;
+}

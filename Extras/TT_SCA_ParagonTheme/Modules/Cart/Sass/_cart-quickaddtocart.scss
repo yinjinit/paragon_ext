@@ -1,0 +1,88 @@
+
+
+.cart-quickaddtocart-quantity {
+	height: $sc-target-size-mobile;
+ 	padding:$sc-margin-lv2 $sc-padding-lv3 $sc-margin-lv2 $sc-padding-lv3;
+ 	width: 90px;
+ 	text-align: right;
+	background-color: #ebf1f4;
+	border: 0;
+	-webkit-border-radius: 0 0 0 0;
+	border-radius: 0 0 0 0;
+	font-weight:$sc-font-weight-normal;
+	margin-bottom:$sc-margin-lv2;
+}
+
+.cart-quickaddtocart-button {
+	@extend .button-primary;
+	@extend .button-medium;
+}
+
+
+
+
+
+//TT new styles
+/*
+	© 2017 NetSuite Inc.
+	User may not copy, modify, distribute, or re-bundle or otherwise make available this code;
+	provided, however, if you are an authorized user with a NetSuite account or log-in, you
+	may use this code subject to the terms that govern your access and use.
+*/
+
+form.cart-quickaddtocart{
+	div[data-view="AddToCart"]{
+		display: inline-block;
+		margin: 0px;
+		vertical-align: top;
+	}
+	.cart-quickaddtocart-quantity {
+		display:inline-block;
+		vertical-align: top;
+		margin:0px;
+		border: 1px solid $theme-input-color;
+		color:$theme-primary-ft-color;
+		text-align: center;
+		background: $theme-tertiary-color;
+		max-width: 60px;
+		padding:$theme-base-size*2;
+	}
+	.cart-add-to-cart-button-container{
+		width:auto;
+		.cart-add-to-cart-button-button{
+			display: inline-block;
+			margin: 0px;
+			padding:12.5px $theme-base-size*2;
+		}
+	}
+}
+
+.facets-item-cell-table .cart-quickaddtocart {
+    text-align: left;
+}
+
+@media (max-width: $screen-lg-min) {
+	.facets-item-cell-grid{
+		form.cart-quickaddtocart{	
+			.cart-quickaddtocart-quantity{max-width:100%;width:100%;}
+			div[data-view="AddToCart"], .cart-add-to-cart-button-container, .cart-add-to-cart-button-button{width:100%;}
+		}
+	}
+}
+@media (max-width: $screen-sm-min) {
+	.facets-item-cell-grid{
+		form.cart-quickaddtocart{	
+			.cart-quickaddtocart-quantity{max-width:60px;width:60px;}
+			div[data-view="AddToCart"], .cart-add-to-cart-button-container, .cart-add-to-cart-button-button{width:auto;}
+		}
+	}
+}
+@media (max-width: $screen-xs-min) {
+	.facets-item-cell-grid, .facets-item-cell-table{
+		form.cart-quickaddtocart{	
+			.cart-quickaddtocart-quantity{max-width:100%;width:100%;}
+			div[data-view="AddToCart"], .cart-add-to-cart-button-container, .cart-add-to-cart-button-button{width:100%;}
+		}
+	}
+}
+

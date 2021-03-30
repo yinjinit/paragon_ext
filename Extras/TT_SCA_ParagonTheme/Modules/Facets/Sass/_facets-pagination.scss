@@ -1,0 +1,27 @@
+div.facets-facet-browse-pagination {
+	margin-top: $theme-base-size * 3;
+	// Pagination
+	ul.global-views-pagination-links {
+		// Pages
+		li.global-views-pagination-links-number {
+			a {
+				color: $theme-primary-ft-color;
+				line-height: 44px;
+				background: #E4E4E4;
+				// Active page
+				&.global-views-pagination-active { color: $theme-accent-color; background: $theme-primary-color; }
+			}
+		}
+		// Arrows
+		li.global-views-pagination-next,
+		li.global-views-pagination-prev {
+			a {
+				background: #CCC;
+				line-height: 44px;
+				i { color: $theme-primary-ft-color; font-size: $theme-lg-font-size; }
+			}
+		}
+	}
+	// Page count
+	p.global-views-pagination-count { padding: 11px $theme-base-size * 4; float: left; }
+}

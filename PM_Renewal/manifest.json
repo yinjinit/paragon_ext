@@ -1,0 +1,77 @@
+{
+    "name": "PM_Renewal",
+    "fantasyName": "PM_Renewal",
+    "vendor": "ParagonMicro",
+    "version": "1.0.7",
+    "type": "extension",
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": ">=19.1.1",
+        "SCS": ">=19.1.1"
+    },
+    "description": "PM_Renewal extension provides a contact the ability to  create, update and destroy Renewal Tracking Reminders that send an email notification on",
+    "skins": [],
+    "assets": {
+        "img": {
+            "files": []
+        },
+        "fonts": {
+            "files": []
+        },
+        "services": {
+            "files": [
+                "services/PMRenewal.Service.ss"
+            ]
+        }
+    },
+    "configuration": {
+        "files": []
+    },
+    "sass": {
+        "entry_points": {
+            "myaccount": "Modules/PMRenewal/Sass/_pm_renewal-pmrenewal.scss"
+        },
+        "files": [
+            "Modules/PMRenewal/Sass/_pm_renewal-pmrenewal.scss"
+        ]
+    },
+    "templates": {
+        "application": {
+            "myaccount": {
+                "files": [
+                    "Modules/PMRenewal/Templates/renewal_details.tpl",
+                    "Modules/PMRenewal/Templates/renewal_edit.tpl",
+                    "Modules/PMRenewal/Templates/renewal_list.tpl",
+                    "Modules/PMRenewal/Templates/renewal_new.tpl"
+                ]
+            }
+        }
+    },
+    "javascript": {
+        "entry_points": {
+            "myaccount": "Modules/PMRenewal/JavaScript/ParagonMicro.PM_Renewal.PMRenewal.js"
+        },
+        "application": {
+            "myaccount": {
+                "files": [
+                    "Modules/PMRenewal/JavaScript/ParagonMicro.PM_Renewal.PMRenewal.js",
+                    "Modules/PMRenewal/JavaScript/PMRenewal.List.View.js",
+                    "Modules/PMRenewal/JavaScript/PMRenewal.Collection.js",
+                    "Modules/PMRenewal/JavaScript/PMRenewal.Model.js",
+                    "Modules/PMRenewal/JavaScript/PMRenewal.Details.View.js",
+                    "Modules/PMRenewal/JavaScript/PMRenewal.Add.View.js",
+                    "Modules/PMRenewal/JavaScript/PMRenewal.Edit.View.js"
+                ]
+            }
+        }
+    },
+    "ssp-libraries": {
+        "entry_point": "Modules/PMRenewal/SuiteScript/ParagonMicro.PM_Renewal.PMRenewal.js",
+        "files": [
+            "Modules/PMRenewal/SuiteScript/ParagonMicro.PM_Renewal.PMRenewal.js",
+            "Modules/PMRenewal/SuiteScript/PMRenewal.ServiceController.js",
+            "Modules/PMRenewal/SuiteScript/PMRenewal.Model.js"
+        ]
+    },
+    "local_folder": "Workspace\\PM_Renewal"
+}

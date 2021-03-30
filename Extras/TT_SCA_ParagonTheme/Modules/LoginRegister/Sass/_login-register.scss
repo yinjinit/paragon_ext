@@ -1,0 +1,68 @@
+.login-register-header{
+	@extend .row;
+	margin-bottom: $sc-margin-lv4;
+}
+
+.login-register-title{
+	@extend .col-xs-12;
+}
+
+.login-register-body{
+	@extend .row;
+}
+
+.login-register-body-colored{
+	@extend .login-register-body;
+	background-color: $sc-color-theme-background;
+
+	padding: $sc-padding-lv8 $sc-padding-lv1;
+
+	@media (min-width: $screen-md-min){
+		padding: $sc-padding-lv8 $sc-padding-lv5;
+	}
+}
+
+.login-register-wrapper-column-login,
+.login-register-wrapper-column-register{
+	@extend .col-xs-12;
+	@extend .col-sm-6;
+	p.register-form-legend {
+		@extend %tt-main-text;
+		margin-top: 20px;
+		line-height: 26px;
+		a {
+			color: $theme-web-color-paragon-blue;
+			@extend %tt-transitions;
+			&:hover {
+				color: $theme-secondary-color;
+				@extend %tt-transitions;
+			}
+		}
+	}
+}
+
+
+div.login-register-body {
+	@media (max-width: $screen-sm-min) {
+		margin: 0;
+	}
+	@media (min-width: $screen-sm-min) {
+		display: flex;
+		justify-content: space-around;
+		> div {
+			display: flex;
+			flex-direction: column;
+			> div {
+				height: 100%;
+			}
+		}
+	}
+}
+
+
+.login-register-wrapper-login,
+.login-register-wrapper-register{
+	@extend .box-column;
+}
+
+

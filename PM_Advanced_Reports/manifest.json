@@ -1,0 +1,73 @@
+{
+    "name": "PM_Advanced_Reports",
+    "fantasyName": "PM_Advanced_Reports",
+    "vendor": "PM",
+    "version": "1.0.7",
+    "type": "extension",
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": ">=19.1.1",
+        "SCS": ">=19.1.1"
+    },
+    "description": "Advanced Reports",
+    "skins": [],
+    "assets": {
+        "img": {
+            "files": []
+        },
+        "fonts": {
+            "files": []
+        },
+        "services": {
+            "files": [
+                "services/PMAdvancedReports.Service.ss"
+            ]
+        }
+    },
+    "configuration": {
+        "files": []
+    },
+    "sass": {
+        "entry_points": {
+            "myaccount": "Modules/PMAdvancedReports/Sass/_pm_advanced_reports-pmadvancedreports.scss"
+        },
+        "files": [
+            "Modules/PMAdvancedReports/Sass/_pm_advanced_reports-pmadvancedreports.scss"
+        ]
+    },
+    "templates": {
+        "application": {
+            "myaccount": {
+                "files": [
+                    "Modules/PMAdvancedReports/Templates/reports_details.tpl",
+                    "Modules/PMAdvancedReports/Templates/reports_list.tpl"
+                ]
+            }
+        }
+    },
+    "javascript": {
+        "entry_points": {
+            "myaccount": "Modules/PMAdvancedReports/JavaScript/PM.PM_Advanced_Reports.PMAdvancedReports.js"
+        },
+        "application": {
+            "myaccount": {
+                "files": [
+                    "Modules/PMAdvancedReports/JavaScript/PM.PM_Advanced_Reports.PMAdvancedReports.js",
+                    "Modules/PMAdvancedReports/JavaScript/PMAdvancedReports.Collection.js",
+                    "Modules/PMAdvancedReports/JavaScript/PMAdvancedReports.Details.View.js",
+                    "Modules/PMAdvancedReports/JavaScript/PMAdvancedReports.Model.js",
+                    "Modules/PMAdvancedReports/JavaScript/PMAdvancedReports.View.js"
+                ]
+            }
+        }
+    },
+    "ssp-libraries": {
+        "entry_point": "Modules/PMAdvancedReports/SuiteScript/PM.PM_Advanced_Reports.PMAdvancedReports.js",
+        "files": [
+            "Modules/PMAdvancedReports/SuiteScript/PM.PM_Advanced_Reports.PMAdvancedReports.js",
+            "Modules/PMAdvancedReports/SuiteScript/PMAdvancedReports.Model.js",
+            "Modules/PMAdvancedReports/SuiteScript/PMAdvancedReports.ServiceController.js"
+        ]
+    },
+    "local_folder": "Workspace\\PM_Advanced_Reports"
+}

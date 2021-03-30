@@ -1,0 +1,140 @@
+//Placeholders
+
+//marings
+%tt-general-margin-sections {
+	padding-top: 50px;
+	padding-bottom: 60px;
+	float: left;
+	width: 100%;
+}
+
+%tt-general-margin-bottom {
+	margin-bottom: 80px;
+	@media (max-width: $screen-md) {
+		margin-bottom: 45px;
+	}
+}
+
+%tt-general-margin-bottom-xs {
+	margin-bottom: 50px;
+	@media (max-width: $screen-md) {
+		margin-bottom: 35px;
+	}
+}
+
+%tt-general-margin-bottom-xl {
+	margin-bottom: 120px;
+	@media (max-width: $screen-md) {
+		margin-bottom: 80px;
+	}
+}
+
+%tt-general-margin-bottom-top {
+	margin-top: 35px;
+	@media (max-width: $screen-md) {
+		margin-top: 35px;
+	}
+}
+
+
+//titles
+%tt-general-titles-1 {
+    font-size: $home-merch-title-ft-size;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 0 0 $theme-base-size * 10 0;
+    @media (max-width: $screen-xs-min) {
+        font-size: 20px;
+    }
+}
+
+%tt-main-title {
+	width: 100%;
+	text-align: center;
+	font-size: $theme-xxl-font-size;
+	color: $theme-secondary-color;
+	margin-top: 30px;
+	letter-spacing: 1px;
+	@extend %tt-general-margin-bottom-xs;
+	@media (max-width: $screen-md) {
+		font-size: $theme-xl-font-size;
+	}
+}
+
+%tt-secondary-title {
+	width: 100%;
+	text-align: left;
+	font-size: $theme-xl-font-size;
+	color: $theme-secondary-color;
+	@extend %tt-general-margin-bottom;
+}
+
+%tt-tertiary-title {
+	font-size: $theme-xl-font-size;
+	margin-bottom: 10px;
+	color: $theme-web-color-paragon-blue;
+	line-height: 35px;
+	@media (max-width: $screen-md) {
+		font-size: $theme-lg-font-size;
+	}
+}
+
+
+//text
+%tt-main-text {
+	font-size: $theme-md-font-size;
+	line-height: 34px;
+	color: $tt-theme-primary-color;
+}
+
+%tt-item-title {
+	color: $item-general-color;
+	text-transform: none;
+}
+
+//buttons
+%tt-btn-orange {
+	@extend .button-primary;
+    @extend .button-medium;
+}
+
+%tt-btn-orange-xl {
+	@extend .button-primary;
+	@extend .button-large;
+	text-transform: uppercase;
+}
+
+%tt-btn-white {
+	@extend .button-tertiary;
+    @extend .button-medium;
+}
+
+%tt-btn-white-xl {
+	@extend .button-tertiary;
+	@extend .button-large;
+	text-transform: uppercase;
+}
+
+%tt-btn-blue {
+	@extend .button-secondary;
+    @extend .button-medium;
+}
+
+%tt-btn-blue-xl {
+	@extend .button-secondary;
+	@extend .button-large;
+	text-transform: uppercase;
+}
+
+%tt-btn-transparent {
+	@extend .button-tertiary;
+	@extend .button-medium;
+	background: transparent;
+}
+
+%tt-btn-transparent-xl {
+	@extend .button-tertiary;
+	@extend .button-large;
+	text-transform: uppercase;
+	background: transparent;
+}

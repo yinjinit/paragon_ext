@@ -1,0 +1,44 @@
+.customer-ratings {
+    .custbox {
+        width: 100%;
+        float: left;
+        margin-bottom: 50px;
+        .custrating {
+            width: 200px;
+            float: left;
+            .custrating-cont {
+                .global-views-star-rating-area-filled {
+                    margin-top: 18px;
+                    i.global-views-star-rating-filled {
+                        &:last-child {
+                            opacity: 0.25;
+                        }
+                    }
+                }
+            }
+            @media (max-width: $screen-md-min) {
+                width: 100%;
+                .custrating-cont {
+                    .global-views-star-rating-area-filled {
+                        text-align: center;
+                        margin-bottom: 14px;
+                    }
+                }
+            }
+        }
+        .custcomments {
+            width: calc(100% - 200px);
+            float: left;
+            @media (max-width: $screen-md-min) {
+                width: 100%;
+            }
+            span {
+                font-style: italic;
+                opacity: 0.6;
+            }
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}

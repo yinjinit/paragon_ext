@@ -1,0 +1,134 @@
+//LANDING PAGE
+.theme-landing-page#theme-our-customers {
+    @extend .container;
+    @extend %tt-general-margin-bottom-xl;
+    .tablewrap {
+        margin-left: -15px;
+        margin-right: -15px;
+        > li {
+            width: 16.66%;
+            float: left;
+            padding: 0 15px;
+            div.custbox {
+                position: relative;
+                span {
+                    position: absolute;
+                    top: 12px;
+                    z-index: 9;
+                    color: $tt-theme-secondary-color;
+                    margin-left: 15px;
+                    font-size: $theme-md-sec-font-size;
+                    line-height: 20px;
+                    @extend %tt-transitions;
+                }
+                > div {
+                    overflow: hidden;
+                    display: flex;
+                    img {
+                        @extend %tt-transitions;
+                        width: 100%;
+                    }
+                }
+                &:hover {
+                    span {
+                        opacity: 0.9;
+                        @extend %tt-transitions;
+                    }
+                    > div > img {
+                        transform: scale(1.05);
+                        -webkit-transform: scale(1.05);
+                        -moz-transform: scale(1.05);
+                        -ms-transform: scale(1.05);
+                        -o-transform: scale(1.05);
+                        @extend %tt-transitions;
+                    }
+                }
+            }
+            @media (max-width: $screen-md-max) {
+                width: 33.33%;
+            }
+            @media (max-width: $screen-xs-max) {
+                width: 50%;
+            }
+        }
+    }
+    //Internal Landing Pages
+    .theme-our-customers-internal {
+        .theme-our-customers-internal-content-text {
+            @extend %tt-general-margin-bottom-xs;
+            > h5 {
+                font-size: $theme-xl-font-size;
+                margin-bottom: 10px;
+            }
+            > p {
+                margin-bottom: 20px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        .landing-page-contact-us-btn {
+            @extend %tt-btn-white-xl;
+            margin: 20px auto 0;
+            display: table;
+        }
+        .theme-our-customers-internal-content-bottom-images {
+            > div {
+                margin-left: -15px;
+                margin-left: -15px;
+                > div {
+                    padding: 0 15px;
+                    width: 20%;
+                    float: left;
+                    max-height: 80px;
+                    text-align: center;
+                    img {
+                        height: 80px;
+                        max-width: none;
+                        width: unset;
+                    }
+                    @media (max-width: $screen-md-max) {
+                        width: 50%;
+                        margin-bottom: 50px;
+                        &:last-child {
+                            width: 100%;
+                            margin-bottom: 0;
+                        }
+                    }
+                    @media (max-width: $screen-xs-max) {
+                        width: 100%;
+                    }
+                }
+                &.postion-middle {
+                    margin-left: 0;
+                    margin-left: 0;
+                    text-align: center;
+                }
+            }
+            span {
+                display: inline-block;
+                font-size: $theme-md-font-size;
+                padding-bottom: 20px;
+                color: $theme-web-color-paragon-blue;
+                width: 100%;
+            }
+        }
+        a.mail-btn {
+            margin: 10px 0;
+            &:before {
+                @extend .fa;
+                @extend %fa-envelope;
+                font-size: $theme-lg-font-size;
+                line-height: 50px;
+                margin-right: 10px;
+            }
+        }
+        &.theme-our-customers-internal-right {
+            .erow-txtwrap {
+                @media (min-width: $screen-md-min) {
+                    float: right;
+                }
+            }
+        }
+    }
+}

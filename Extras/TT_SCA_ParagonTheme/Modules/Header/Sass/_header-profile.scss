@@ -1,0 +1,151 @@
+.header-profile-welcome-link,
+.header-profile-login-link,
+.header-profile-register-link,
+.header-profile-location-link,
+.header-profile-careers-link,
+.header-profile-loading-link {
+  @extend %header-link;
+  padding: 0 $sc-padding-lv4;
+}
+.header-profile-login-link,
+.header-profile-register-link,
+.header-profile-location-link,
+.header-profile-careers-link {
+  span {
+    color: #f8f7f2;
+    font-size: 16px;
+  }
+
+  &:hover {
+    span {
+      color: #ade4f1;
+    }
+  }
+}
+.header-profile-location-link-icon {
+  height: 16px;
+  vertical-align: middle;
+}
+
+.header-profile-careers-link-icon {
+  height: 15px;
+  vertical-align: middle;
+}
+
+.header-profile-login-link-icon {
+  height: 16px;
+  vertical-align: middle;
+}
+
+.header-profile-register-link-icon {
+  height: 18px;
+  vertical-align: middle;
+}
+
+
+
+.header-profile-login-link {
+  padding-left: 0;
+}
+
+.header-profile-welcome-link {
+  color: $sc-color-secondary;
+}
+
+.header-profile-welcome-link-name {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  vertical-align: middle;
+  @media (min-width: $screen-md-min) {
+	display: inline;
+	font-size: 13px;
+	text-align: center;
+  }
+}
+
+
+.header-profile-welcome-user-icon {
+  @extend .fa;
+  @extend %fa-user;
+  font-size: $sc-font-size-l;
+  padding: 2px 0;
+  margin-right: $sc-margin-lv3;
+
+  @media (min-width: $screen-md-min) {
+    display: none;
+  }
+}
+
+.header-profile-welcome-carret-icon {
+  @extend .fa;
+  @extend %fa-angle-down;
+  display: none;
+  margin-left: $sc-margin-lv1;
+
+  @media (min-width: $screen-md-min) {
+    display: inline;
+  }
+}
+
+//////////////////////////////////////////////////////////
+//login register
+
+.header-profile-menu-login{
+	color: $sc-color-theme-700;
+}
+
+.header-profile-menu-login li{
+	display:inline-block;
+}
+
+.header-profile-login-icon{
+	@extend .fa;
+	@extend %fa-user;
+	font-size: $sc-font-size-xl;
+	margin-right: $sc-margin-lv2;
+}
+
+//////////////////////////////////////////////////////////
+//my account menu
+.header-profile-menu-myaccount-container {
+	@extend .header-menu-level-container;
+	padding: $sc-padding-lv3 0 $sc-padding-lv7;
+	z-index: 1002;
+}
+
+.open .header-profile-welcome-link:before {
+	position: absolute;
+	top: 50px;
+	left: 50%;
+	margin-left: -7.5px;
+	border-right: 7px solid transparent;
+	border-bottom: 7px solid $sc-neutral-shade-0;
+	border-left: 7px solid transparent;
+	border-bottom-color: transparentize($sc-neutral-shade-500, 1-0.2);
+	content: '';
+	display: none;
+
+	@media (min-width: $screen-lg-min) {
+		display: block;
+	}
+}
+
+.open .header-profile-welcome-link:after {
+	position: absolute;
+	top: 51px;
+	left: 50%;
+	margin-left: -6.5px;
+	border-right: 6px solid transparent;
+	border-bottom: 6px solid $sc-neutral-shade-0;
+	border-left: 6px solid transparent;
+	content: '';
+	z-index: 9999;
+	display: none;
+
+	@media (min-width: $screen-lg-min) {
+		display: block;
+	}
+}
+
+

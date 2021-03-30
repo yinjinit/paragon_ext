@@ -1,0 +1,103 @@
+.product-details-quantity-options-title {
+	text-transform: uppercase;
+	margin-bottom: $sc-margin-lv2;
+	display: block;
+}
+.product-details-quantity-options {
+	margin-top:20px;
+	clear:both;
+
+	[data-validation-error="block"] {
+		margin-top: $sc-margin-lv2;
+	}
+}
+
+.product-details-quantity-options-title {
+	font-weight:$sc-font-weight-bold;
+}
+
+.product-details-quantity-options-title-help {
+	clear: both;
+	display: block;
+	font-weight:$sc-font-weight-light;
+	margin: $sc-margin-lv2 0;
+}
+
+.product-details-quantity-add {
+	@extend .quantity-input-button-add;
+}
+
+.product-details-quantity-remove {
+	@extend .quantity-input-button-remove;
+}
+
+.product-details-quantity-value {
+	@extend .quantity-input;
+	float: left!important;
+}
+
+.product-details-quantity-container {
+	@extend .quantity-input-container;
+	@media(max-width: $screen-md-max) {
+		width: 150px;
+		margin: auto;
+	}
+}
+
+
+//TT new styles
+
+.product-details-quantity-options-title {
+	text-transform: capitalize;
+  	font-weight: normal;
+	margin-bottom: $sc-margin-base * 2;
+	display: block;
+}
+.product-details-quantity-options {
+	margin-top:0;
+	clear:both;
+	width: 100%;
+	float: left;
+	[data-validation-error="block"] {
+		margin-top: $sc-margin-base * 2;
+	}
+	@media(max-width: $screen-sm-max) {
+		width:100%;
+	}
+}
+
+.product-details-quantity-options-title-help {
+	clear: both;
+	display: block;
+	//font-weight:$sc-font-weight-light;
+	margin: $sc-margin-base * 2 0;
+}
+
+.product-details-quantity-add,
+.product-details-quantity-remove {
+	@extend .button-secondary;
+	background-color:$theme-web-color-paragon-blue;
+	border:$theme-web-color-paragon-blue;
+	width: $sc-target-size-mobile;
+	height: $sc-target-size-mobile;
+	&:hover {
+		background: $theme-secondary-color;
+		color: #fff; 
+	}
+	@media(min-width: $screen-sm-min) {
+		display: block;
+	}
+	&:active,
+	&:focus {
+		@extend .product-details-quantity-add;
+	}
+}
+.item-qty-box {
+	border: 1px solid $theme-input-color;
+	text-align: center;
+	background: transparent;
+	max-width: 70px;
+}
+.product-details-quantity-value {
+	@extend .item-qty-box;
+}

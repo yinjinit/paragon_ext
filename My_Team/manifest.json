@@ -1,0 +1,70 @@
+{
+    "name": "My_Team",
+    "fantasyName": "My_Team",
+    "vendor": "PM",
+    "version": "1.0.3",
+    "type": "extension",
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": ">=19.1.1",
+        "SCS": ">=19.1.1"
+    },
+    "description": "My team page for list of sales reps",
+    "skins": [],
+    "assets": {
+        "img": {
+            "files": []
+        },
+        "fonts": {
+            "files": []
+        },
+        "services": {
+            "files": [
+                "services/PM.Service.ss"
+            ]
+        }
+    },
+    "configuration": {
+        "files": []
+    },
+    "sass": {
+        "entry_points": {
+            "myaccount": "Modules/PM/Sass/_my_team-pm.scss"
+        },
+        "files": [
+            "Modules/PM/Sass/_my_team-pm.scss"
+        ]
+    },
+    "templates": {
+        "application": {
+            "myaccount": {
+                "files": [
+                    "Modules/PM/Templates/pm_my_team_pm.tpl"
+                ]
+            }
+        }
+    },
+    "javascript": {
+        "entry_points": {
+            "myaccount": "Modules/PM/JavaScript/PM.My_Team.PM.js"
+        },
+        "application": {
+            "myaccount": {
+                "files": [
+                    "Modules/PM/JavaScript/PM.My_Team.PM.js",
+                    "Modules/PM/JavaScript/PM.View.js",
+                    "Modules/PM/JavaScript/PM.My_Team.Model.js",
+                    "Modules/PM/JavaScript/PM.My_Team.Collection.js"
+                ]
+            }
+        }
+    },
+    "ssp-libraries": {
+        "entry_point": "Modules/PM/SuiteScript/PM.My_Team.ServiceController.js",
+        "files": [
+            "Modules/PM/SuiteScript/PM.My_Team.ServiceController.js",
+            "Modules/PM/SuiteScript/PM.My_Team.Model.js"
+        ]
+    },
+    "local_folder": "Workspace\\My_Team"
+}

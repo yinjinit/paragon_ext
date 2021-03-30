@@ -1,0 +1,37 @@
+{
+    "type": "object",
+    "properties": {
+        "shareQuote.employeeInternalId": {
+            "group": "myAccountApp",
+            "subtab": "quote",
+            "type": "string",
+            "title": "Default Share Quote Employee ID",
+            "description": "Default Share Quote Employee ID",
+            "default": "1480963"
+        },
+        "shareQuote.templatelPdfId": {
+            "group": "myAccountApp",
+            "subtab": "quote",
+            "type": "string",
+            "title": "PDF Template  ID",
+            "description": "PDF Template ID",
+            "default": "461"
+        },
+        "shareQuote.templatelId": {
+            "group": "myAccountApp",
+            "subtab": "quote",
+            "type": "string",
+            "title": "Default Template ID",
+            "description": "Default Template ID",
+            "default": "459"
+        },
+        "shareQuote.text": {
+            "group": "myAccountApp",
+            "subtab": "quote",
+            "type": "string",
+            "title": "Share Quote modal text",
+            "description": "Default Template ID",
+            "default": "Share this quote by:"
+        }
+    }
+}

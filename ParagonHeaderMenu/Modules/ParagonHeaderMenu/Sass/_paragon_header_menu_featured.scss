@@ -1,0 +1,39 @@
+.paragon-header-menu-featured-partners {
+  width: 100%;
+}
+
+.paragon-header-menu-shop-by-brands-btn {
+  @extend .btn-primary;
+
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+
+  padding: $sc-padding-lv2 $sc-padding-lv4;
+  font-size: 16px;
+}
+
+.paragon-header-menu-featured-brands {
+  font-size: 16px;
+  ul {
+    list-style: none;
+    display: inline-block;
+
+    li {
+      float: left;
+      padding: $sc-padding-lv2;
+
+      img {
+        height: 25px;
+      }
+    }
+  }
+
+  .paragon-header-menu-featured-brands-title {
+    h3 {
+      color: black;
+      text-transform: unset;
+      font-size: 16px;
+    }
+  }
+}

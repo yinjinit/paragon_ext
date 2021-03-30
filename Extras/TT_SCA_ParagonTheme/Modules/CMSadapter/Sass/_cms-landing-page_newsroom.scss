@@ -1,0 +1,26 @@
+//LANDING PAGE
+.theme-landing-page#theme-newsroom {
+    @extend .container;
+    .blogimg {
+        width: 100%;
+        height: auto;
+        img {
+             width: 100%;
+        }
+    }
+    .newsroom-content-block {
+        @extend %tt-general-margin-bottom-xl;
+        div.blogimg {
+            margin-bottom: 20px;
+        }
+        button.btn {
+            margin-top: 20px;
+            @extend %tt-btn-orange;
+        }
+        span.titletextbold {
+            font-weight: 500;
+            color: $theme-web-color-paragon-blue;
+            text-transform: uppercase;
+        }
+    }
+}

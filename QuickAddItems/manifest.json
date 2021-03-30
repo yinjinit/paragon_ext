@@ -1,0 +1,77 @@
+{
+    "name": "QuickAddItems",
+    "fantasyName": "QuickAddItems",
+    "vendor": "TavanoTeam",
+    "version": "1.0.0",
+    "type": "extension",
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": "19.2.0",
+        "SCS": "19.2.0"
+    },
+    "description": "Allow customers search by sales description and display name on quick add native feature",
+    "skins": [],
+    "assets": {
+        "img": {
+            "files": []
+        },
+        "fonts": {
+            "files": []
+        },
+        "services": {
+            "files": [
+                "services/Search.Service.ss"
+            ]
+        }
+    },
+    "configuration": {
+        "files": []
+    },
+    "sass": {
+        "entry_points": {
+            "myaccount": "Modules/Search/Sass/_quickadditems-search.scss"
+        },
+        "files": [
+            "Modules/Search/Sass/_quickadditems-search.scss"
+        ]
+    },
+    "templates": {
+        "application": {
+            "myaccount": {
+                "files": [
+                    "Modules/Search/Templates/tavanoteam_quickadditems_search.tpl"
+                ]
+            }
+        }
+    },
+    "javascript": {
+        "entry_points": {
+            "myaccount": "Modules/Search/JavaScript/TavanoTeam.QuickAddItems.Search.js",
+            "shopping": "Modules/Search/JavaScript/TavanoTeam.QuickAddItems.Search.js"
+        },
+        "application": {
+            "myaccount": {
+                "files": [
+                    "Modules/Search/JavaScript/TavanoTeam.QuickAddItems.Search.js",
+                    "Modules/Search/JavaScript/QuickAdd.ItemsSearcher.Plugins.Extension.js",
+                    "Modules/Search/JavaScript/ItemsSearcher.View.Extension.js"
+                ]
+            },
+            "shopping": {
+                "files": [
+                    "Modules/Search/JavaScript/TavanoTeam.QuickAddItems.Search.js",
+                    "Modules/Search/JavaScript/QuickAdd.ItemsSearcher.Plugins.Extension.js",
+                    "Modules/Search/JavaScript/ItemsSearcher.View.Extension.js"
+                ]
+            }
+        }
+    },
+    "ssp-libraries": {
+        "entry_point": "Modules/Search/SuiteScript/TavanoTeam.QuickAddItems.Search.js",
+        "files": [
+            "Modules/Search/SuiteScript/TavanoTeam.QuickAddItems.Search.js",
+            "Modules/Search/SuiteScript/Search.ServiceController.js"
+        ]
+    },
+    "local_folder": "Workspace\\QuickAddItems"
+}
