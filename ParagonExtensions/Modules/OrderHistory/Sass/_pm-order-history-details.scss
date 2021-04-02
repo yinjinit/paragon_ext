@@ -1,0 +1,23 @@
+.order-history-summary-extra-fields {
+  margin-bottom: $sc-margin-lv4;
+  border: 1px solid $sc-color-theme-border-light;
+  background: $sc-color-theme-border-light;
+  padding: $sc-padding-lv3;
+
+  .order-history-summary-extra-field {
+    margin-bottom: 1em;
+
+    &-name {
+      display: block;
+      font-weight: bold;
+      line-height: 1;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    &-content {
+      line-height: 1.3;
+    }
+  }
+}
+

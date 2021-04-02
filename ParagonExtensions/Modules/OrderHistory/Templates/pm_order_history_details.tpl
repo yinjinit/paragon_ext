@@ -1,8 +1,10 @@
-<a href="/purchases" class="order-history-details-back-btn">{{translate '&lt; Back to Purchases'}}</a>
+<a href="/purchases" class="order-history-details-back-btn">{{translate
+	'&lt; Back to Purchases'}}</a>
 <section>
 	<header>
 		<h2 class="order-history-details-order-title" data-origin='{{originName}}'>
-			<span class="order-history-details-order-title">{{title}} </span><b> <span class="order-history-details-order-number">{{model.tranid}}</span></b>
+			<span class="order-history-details-order-title">{{title}} </span><b> <span
+			class="order-history-details-order-number">{{model.tranid}}</span></b>
 			<span class="order-history-details-total-formatted">
 				{{model.summary.total_formatted}}
 			</span>
@@ -12,14 +14,18 @@
 	<div data-type="alert-placeholder"></div>
 
 	{{#if showReturnAuthorizations}}
-		<div class="order-history-details-message-warning" data-action="go-to-returns">
-			{{translate 'You have returns associated with this order. <a href="#">View Details</a>'}}
+		<div class="order-history-details-message-warning"
+			data-action="go-to-returns">
+			{{translate
+				'You have returns associated with this order. <a href="#">View Details</a>'}}
 		</div>
 	{{/if}}
 
 	{{#if showPaymentEventFail}}
 		<div class="order-history-details-message-warning">
-			{{translate 'The checkout process of this purchase was not completed. To place order, please <a data-navigation="ignore-click" href="$(0)" >finalize your payment.</a>' model.paymentevent.redirecturl}}
+			{{translate
+				'The checkout process of this purchase was not completed. To place order, please <a data-navigation="ignore-click" href="$(0)" >finalize your payment.</a>'
+				model.paymentevent.redirecturl}}
 		</div>
 	{{/if}}
 
@@ -28,30 +34,32 @@
 		<div class="order-history-details-header-row">
 			<div class="order-history-details-header-col-left">
 				<p class="order-history-details-header-date-info">
-					{{translate '<span class="order-history-details-header-date-info-date-label">Date: </span> <span class="order-history-details-header-date">$(0)</span>' model.trandate}}
+					{{translate
+						'<span class="order-history-details-header-date-info-date-label">Date: </span> <span class="order-history-details-header-date">$(0)</span>'
+						model.trandate}}
 				</p>
-				{{#if showPurchaseOrderNumber}}
-					<p class="order-history-details-header-purchase-order-number-info">
-						{{translate '<span class="order-history-details-header-purchase-order-info-purchase-order-number-label">Purchase Order Number: </span> <span class="order-history-details-header-purchase-order-number">$(0)</span>' model.purchasenumber}}
-					</p>
-				{{/if}}
 				{{#if showQuoteDetail}}
 					<p class="order-history-details-header-quote-info">
-						{{translate '<span class="order-history-details-header-quote-info-quote-label">Created from: </span> <a href="$(0)" class="order-history-details-header-date">$(1)</a>'quoteURL quoteName}}
+						{{translate
+							'<span class="order-history-details-header-quote-info-quote-label">Created from: </span> <a href="$(0)" class="order-history-details-header-date">$(1)</a>'
+							quoteURL quoteName}}
 					</p>
 				{{/if}}
 			</div>
 			<div class="order-history-details-header-col-right">
 				<p class="order-history-details-header-status-info">
-					{{translate '<strong>Status: </strong> <span class="order-history-details-header-status">$(0)</span>' model.status.name}}
+					{{translate
+						'<strong>Status: </strong> <span class="order-history-details-header-status">$(0)</span>'
+						model.status.name}}
 				</p>
 			</div>
 			<div class="order-history-details-header-amount">
 				<p class="order-history-details-header-amount-info">
-					{{translate '<span class="order-history-details-header-amount-info-amount-label">Amount: </span> <span class="order-history-details-header-amount-number">$(0)</span>' model.summary.total_formatted}}
+					{{translate
+						'<span class="order-history-details-header-amount-info-amount-label">Amount: </span> <span class="order-history-details-header-amount-number">$(0)</span>'
+						model.summary.total_formatted}}
 				</p>
 			</div>
-
 		</div>
 	</div>
 
@@ -64,17 +72,26 @@
 
 				<div class="order-history-details-accordion-divider">
 					<div class="order-history-details-accordion-head">
-						<a class="order-history-details-accordion-head-toggle-secondary collapsed" data-toggle="collapse" data-target="#products-not-shipp" aria-expanded="true" aria-controls="products-not-shipp">
+						<a
+							class="order-history-details-accordion-head-toggle-secondary collapsed"
+							data-toggle="collapse" data-target="#products-not-shipp"
+							aria-expanded="true" aria-controls="products-not-shipp">
 							{{#if nonShippableItemsLengthGreaterThan1}}
-								{{translate 'Products that don\'t require shipping ($(0))' nonShippableLines.length}}
+								{{translate 'Products that don\'t require shipping ($(0))'
+								            nonShippableLines.length}}
 							{{else}}
-								{{translate 'Product that doesn\'t require shipping ($(0))' nonShippableLines.length}}
+								{{translate 'Product that doesn\'t require shipping ($(0))'
+								            nonShippableLines.length}}
 							{{/if}}
-							<i class="order-history-details-accordion-toggle-icon-secondary"></i>
+							<i
+								class="order-history-details-accordion-toggle-icon-secondary"></i>
 						</a>
 					</div>
-					<div class="order-history-details-accordion-body collapse" id="products-not-shipp" role="tabpanel" data-target="#products-not-shipp">
-						<div class="order-history-details-accordion-container" data-content="order-items-body">
+					<div class="order-history-details-accordion-body collapse"
+						id="products-not-shipp" role="tabpanel"
+						data-target="#products-not-shipp">
+						<div class="order-history-details-accordion-container"
+							data-content="order-items-body">
 							<table class="order-history-details-non-shippable-table">
 								<tbody data-view="NonShippableLines"></tbody>
 							</table>
@@ -87,12 +104,20 @@
 			<!-- PAYMENT INFORMATION -->
 			<div class="order-history-details-accordion-divider">
 				<div class="order-history-details-accordion-head">
-					<a class="order-history-details-accordion-head-toggle-secondary collapsed" data-toggle="collapse" data-target="#order-payment-info" aria-expanded="true" aria-controls="order-payment-info">{{translate 'Payment Information'}}
-						<i class="order-history-details-accordion-toggle-icon-secondary"></i>
+					<a
+						class="order-history-details-accordion-head-toggle-secondary collapsed"
+						data-toggle="collapse" data-target="#order-payment-info"
+						aria-expanded="true" aria-controls="order-payment-info">{{translate
+						'Payment Information'}}
+						<i
+							class="order-history-details-accordion-toggle-icon-secondary"></i>
 					</a>
 				</div>
-				<div class="order-history-details-accordion-body collapse" id="order-payment-info" role="tabpanel" data-target="#order-payment-info">
-					<div class="order-history-details-accordion-container" data-content="order-items-body">
+				<div class="order-history-details-accordion-body collapse"
+					id="order-payment-info" role="tabpanel"
+					data-target="#order-payment-info">
+					<div class="order-history-details-accordion-container"
+						data-content="order-items-body">
 
 						{{#if showPaymentMethod}}
 							<div class="order-history-details-payment-info-cards">
@@ -118,9 +143,11 @@
 						{{/if}}
 
 
-						<div class="order-history-details-payment" data-view="Payments"></div>
+						<div class="order-history-details-payment"
+							data-view="Payments"></div>
 
-						<div class="order-history-details-payment-others" data-view="OtherPayments"></div>
+						<div class="order-history-details-payment-others"
+							data-view="OtherPayments"></div>
 
 					</div>
 				</div>
@@ -132,13 +159,20 @@
 				<!-- RETURNS AUTHORIZATIONS -->
 				<div class="order-history-details-accordion-divider">
 					<div class="order-history-details-accordion-head collapsed">
-						<a class="order-history-details-accordion-head-toggle-secondary" data-toggle="collapse" data-target="#returns-authorizations" aria-expanded="true" aria-controls="returns-authorizations">
-							{{translate '<span>Returns ($(0))</span>' returnAuthorizations.totalLines}}
-							<i class="order-history-details-accordion-toggle-icon-secondary"></i>
+						<a class="order-history-details-accordion-head-toggle-secondary"
+							data-toggle="collapse" data-target="#returns-authorizations"
+							aria-expanded="true" aria-controls="returns-authorizations">
+							{{translate '<span>Returns ($(0))</span>'
+							            returnAuthorizations.totalLines}}
+							<i
+								class="order-history-details-accordion-toggle-icon-secondary"></i>
 						</a>
 					</div>
-					<div class="order-history-details-accordion-body collapse" id="returns-authorizations" role="tabpanel" data-target="#returns-authorizations">
-						<div class="order-history-details-accordion-container" data-content="order-items-body">
+					<div class="order-history-details-accordion-body collapse"
+						id="returns-authorizations" role="tabpanel"
+						data-target="#returns-authorizations">
+						<div class="order-history-details-accordion-container"
+							data-content="order-items-body">
 							<div data-view="ReturnAutorization"></div>
 						</div>
 					</div>

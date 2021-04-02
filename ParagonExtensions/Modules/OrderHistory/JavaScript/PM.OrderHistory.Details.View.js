@@ -12,18 +12,9 @@ define('PM.OrderHistory.Details.View', [
 
   return {
     loadModule: function loadModule() {
-      console.log('order history details view came in');
       _.extend(OrderHistoryDetailsView.prototype, {
         //@property {Function} template
         template: pm_order_history_details_tpl,
-        //@method getContext
-        //@returns {PM.OrderHistory.Details.View.Context}
-        getContext: _.wrap(OrderHistoryDetailsView.prototype.getContext,
-          function(fn) {
-            var context = fn.apply(this, _.toArray(arguments).slice(1));
-
-            return context;
-          })
       });
     }
   };
