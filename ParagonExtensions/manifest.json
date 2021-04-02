@@ -1,15 +1,15 @@
 {
     "name": "ParagonExtensions",
-    "fantasyName": "Paragon Micro Inc Extensions",
+    "fantasyName": "Paragon Micro Extensions",
     "vendor": "Paragon",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "type": "extension",
     "target": "SCA,SCS",
     "target_version": {
-        "SCA": ">=19.1.7",
-        "SCS": ">=19.1.7"
+        "SCA": ">=19.1.1",
+        "SCS": ">=19.1.1"
     },
-    "description": "Paragon Micro Inc Extensions",
+    "description": "Extensions to customize and enhance Paragon website.",
     "skins": [],
     "sass": {
         "entry_points": {
@@ -27,13 +27,15 @@
         "application": {
             "checkout": {
                 "files": [
-                    "Modules/OrderWizard.Module.PaymentMethod/Templates/pm_order_wizard_paymentmethod_poquote_module.tpl"
+                    "Modules/OrderWizard.Module.PaymentMethod/Templates/pm_order_wizard_paymentmethod_poquote_module.tpl",
+                    "Modules/Templates/pm_address_edit.tpl"
                 ]
             },
             "myaccount": {
                 "files": [
                     "Modules/OrderHistory/Templates/pm_order_history_details.tpl",
-                    "Modules/OrderHistory/Templates/pm_order_history_summary.tpl"
+                    "Modules/OrderHistory/Templates/pm_order_history_summary.tpl",
+                    "Modules/Templates/pm_address_edit.tpl"
                 ]
             }
         }
@@ -54,7 +56,8 @@
                 "files": [
                     "Modules/Main/JavaScript/PM.MyAccount.js",
                     "Modules/OrderHistory/JavaScript/PM.OrderHistory.Details.View.js",
-                    "Modules/OrderHistory/JavaScript/PM.OrderHistory.Summary.View.js"
+                    "Modules/OrderHistory/JavaScript/PM.OrderHistory.Summary.View.js",
+                    "Modules/Address/JavaScript/PM.Address.Edit.View.js"
                 ]
             }
         }

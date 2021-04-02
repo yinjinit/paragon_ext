@@ -5,7 +5,6 @@ define('PMRestrictCheckoutAddress.MyAccount', [
   'backbone_collection_view_row.tpl',
   'Address.Details.View',
   'Address.List.View',
-  'Address.Edit.View',
   'OrderWizard.Module.Address',
   'request_address_details_custom.tpl',
   'address_list_custom.tpl',
@@ -14,12 +13,7 @@ define('PMRestrictCheckoutAddress.MyAccount', [
   'QuoteToSalesOrderWizard.Step',
   'request_order_wizard_step.tpl',
   'quote_to_salesorder_wizard_step.tpl',
-  'request_address_module.tpl',
-  'Profile.Model',
-  'Address.Model',
-  'Backbone.FormView',
-  'Utils',
-  'SC.Configuration'
+  'request_address_module.tpl'
 ], function(
   Backbone,
   BackboneCollectionView,
@@ -27,7 +21,6 @@ define('PMRestrictCheckoutAddress.MyAccount', [
   backbone_collection_view_row_tpl,
   AddressDetailsView,
   AddressListView,
-  AddressEditView,
   OrderWizardModuleAddress,
   request_address_details_custom_tpl,
   address_list_custom_tpl,
@@ -36,12 +29,7 @@ define('PMRestrictCheckoutAddress.MyAccount', [
   QuoteToSalesOrderWizardStep,
   request_order_wizard_step_tpl,
   quote_to_salesorder_wizard_step_tpl,
-  request_address_module_tpl,
-  ProfileModel,
-  AddressModel,
-  BackboneFormView,
-  Utils,
-  Configuration
+  request_address_module_tpl
 ) {
   // 'use strict';
 
@@ -465,144 +453,6 @@ define('PMRestrictCheckoutAddress.MyAccount', [
 
             return context;
           })
-      });
-
-      _.extend(AddressEditView.prototype, {
-        events: {
-          'submit form': 'saveForm',
-          'click [data-action="update_select"]': 'updateSelect'
-        },
-        initialize: function(options) {
-          this.profileModel = ProfileModel.getInstance();
-          this.collection =
-            options.collection || this.profileModel.get('addresses');
-          this.manage = options.manage;
-          this.application = options.application;
-
-          const id =
-            (
-              options.routerArguments &&
-              options.routerArguments.length &&
-              options.routerArguments[0]
-            ) ||
-            '';
-
-          if (id && id !== 'new') {
-            this.model = this.collection.get(id);
-
-            this.model.on(
-              'reset destroy change add',
-              function() {
-                if (this.inModal && this.$containerModal) {
-                  this.$containerModal
-                    .removeClass('fade')
-                    .modal('hide')
-                    .data('bs.modal', null);
-                  this.destroy();
-                } else {
-                  Backbone.history.navigate('#addressbook', {trigger: true});
-                }
-              },
-              this
-            );
-          } else if (options.model) {
-            this.model = options.model;
-          } else {
-            this.model = new AddressModel();
-
-            this.model.on(
-              'change',
-              function(model) {
-                this.collection.add(model);
-
-                if (this.inModal && this.$containerModal) {
-                  this.$containerModal
-                    .removeClass('fade')
-                    .modal('hide')
-                    .data('bs.modal', null);
-                  this.destroy();
-                } else {
-                  Backbone.history.navigate('#addressbook', {trigger: true});
-                }
-              },
-              this
-            );
-          }
-
-          const addNewAddresLabel = Utils.translate('Add New Address');
-          const editAddressLabel = Utils.translate('Edit Address');
-          this.title = this.model.isNew()
-            ? addNewAddresLabel
-            : editAddressLabel;
-          this.page_header = this.title;
-          this.countries = Configuration.get('siteSettings.countries');
-          this.phone = this.model.get('phone') || '999-999-9999';
-          this.selectedCountry =
-            this.model.get('country') ||
-            Configuration.get('siteSettings.defaultshipcountry');
-
-          if (!this.selectedCountry && _.size(this.countries) === 1) {
-            this.selectedCountry = _.first(_.keys(this.countries));
-          }
-
-          if (this.selectedCountry) {
-            this.model.set({country: this.selectedCountry}, {silent: true});
-          }
-
-          BackboneFormView.add(this);
-
-          this.saveForm = function saveForm() {
-            // const loggers = Loggers.getLogger();
-            // const actionId = loggers.start('Save Address');
-
-            const promise = BackboneFormView.saveForm.apply(this, arguments);
-
-            if (promise) {
-              promise.done(() => {
-                /*  loggers.end(actionId, {
-                            operationIds: this.model.getOperationIds(),
-                            status: 'success'
-                        }); */
-              });
-            }
-
-            return promise;
-          };
-
-          this.updateSelect = function() {
-            // const loggers = Loggers.getLogger();
-            //  const actionId = loggers.start('Save Address');
-            //.log("update select");
-            const promise = BackboneFormView.saveForm.apply(this, arguments);
-
-            if (promise) {
-              promise.done(() => {
-                /* loggers.end(actionId, {
-                          operationIds: this.model.getOperationIds(),
-                          status: 'success'
-                      });*/
-                var addressId = this.model.id;
-                // console.log('address', addressId);
-
-                jQuery(
-                  '.address-details-action-custom[data-action="change-selected-address"]'
-                ).trigger('click');
-                jQuery(
-                  '.address-details-action[data-id="' +
-                  addressId +
-                  '"][data-action="select"]'
-                ).trigger('click');
-                //this.render();
-                jQuery(
-                  '.address-details-selected-label[data-id="' +
-                  addressId +
-                  '"][data-action="selected"]'
-                ).trigger('click');
-              });
-            }
-            return promise;
-          };
-        }
       });
 
       _.extend(AddressListView.prototype, {
