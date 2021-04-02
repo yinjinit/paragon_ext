@@ -145,15 +145,15 @@
                 };
                 //611 on production
                 jQuery.getJSON("/app/site/hosting/scriptlet.nl?script=611&deploy=1", data, function (response) {
-                    console.log('response');
-                    console.log(response);
+                    //console.log('response');
+                    //console.log(response);
                     var primaryContact = response;
                     primaryContactId = primaryContact[0].id;
                     var createdByContactId = '{{createdById}}';
                     if(primaryContactId !== createdByContactId){ 
                         jQuery('[data-action="remove-renewal"]').remove();
                         jQuery('[data-action="edit-renewal"]').remove();
-                        console.log('users dont match - true'); 
+                        //console.log('users dont match - true'); 
                     }
                 });
 

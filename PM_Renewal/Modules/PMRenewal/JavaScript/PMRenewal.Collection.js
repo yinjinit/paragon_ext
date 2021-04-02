@@ -10,7 +10,6 @@ define(
 	]
 ,	function (
 		PMRenewalModel
-
 	,	_
 	,	Backbone
 	)

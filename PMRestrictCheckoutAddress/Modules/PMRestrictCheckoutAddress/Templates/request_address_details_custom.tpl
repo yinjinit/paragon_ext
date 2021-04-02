@@ -1,3 +1,23 @@
+{{#if showSearchBar }}
+  <div id="addressSearchDropdown" class="dropdown-content">
+    <input type="text"
+      placeholder="Search By Names, Address, City, State, Zip, Country"
+      id="addrSearchInput">
+    {{#each addressList}}
+      <div class="addressItem">
+        <div class="addressItemContent">
+          <span>{{address}}</span>
+          <a class="btn btn-primary selectAddress" data-action="select"
+            data-id="{{internalid}}" id="{{internalid}}"
+            addrId="{{internalid}}">Select</a>
+          <button class="btn btn-primary updateAddress"
+            addrId="{{internalid}}">Edit
+          </button>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+{{/if}}
 {{#if model.showAllAddress}}
   {{#if isNewAddress}}
     <a class="address-details-new-address" href="/addressbook/new"
@@ -263,7 +283,7 @@
               {{translate 'Edit Address'}}
             </a>
 
-            {{#if addRemoveButton}}
+            {{#if showRemoveButton}}
               <a class="address-details-action-custom" data-action="remove"
                 data-id="{{internalid}}"
                   {{#if isInvalidAddressToRemove}}disabled{{/if}}>
@@ -272,9 +292,10 @@
             {{/if}}
 
             {{#if isFirstStep}}
-              {{#if showRemoveButton}}
+              {{#if showChangeButton}}
                 <a class="address-details-action-custom"
-                  data-action="change-selected-address">
+                  data-action="change-selected-address"
+                  data-temp="request_address_details_custom">
                   {{translate 'Change Address'}}
                 </a>
               {{/if}}

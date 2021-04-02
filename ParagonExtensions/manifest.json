@@ -1,0 +1,44 @@
+{
+    "name": "ParagonExtensions",
+    "fantasyName": "Paragon Micro Inc Extensions",
+    "vendor": "Paragon",
+    "version": "1.0.1",
+    "type": "extension",
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": ">=19.1.7",
+        "SCS": ">=19.1.7"
+    },
+    "description": "Paragon Micro Inc Extensions",
+    "skins": [],
+    "sass": {
+        "entry_points": {
+            "checkout": "Modules/OrderWizard.Module.PaymentMethod/Sass/_pm-order-wizard-paymentmethod-poquote-module.scss"
+        },
+        "files": [
+            "Modules/OrderWizard.Module.PaymentMethod/Sass/_pm-order-wizard-paymentmethod-poquote-module.scss"
+        ]
+    },
+    "templates": {
+        "application": {
+            "checkout": {
+                "files": [
+                    "Modules/OrderWizard.Module.PaymentMethod/Templates/pm_order_wizard_paymentmethod_poquote_module.tpl"
+                ]
+            }
+        }
+    },
+    "javascript": {
+        "entry_points": {
+            "checkout": "Modules/OrderWizard.Module.PaymentMethod/JavaScript/PM.OrderWizard.Module.PaymentMethod.POQuote.js"
+        },
+        "application": {
+            "checkout": {
+                "files": [
+                    "Modules/OrderWizard.Module.PaymentMethod/JavaScript/PM.OrderWizard.Module.PaymentMethod.POQuote.js"
+                ]
+            }
+        }
+    },
+    "local_folder": "Workspace\\ParagonExtensions"
+}

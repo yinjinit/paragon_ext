@@ -50,16 +50,34 @@
 .dropdown-content .addressItem span {
   color: black;
   text-decoration: none;
-  padding-left: 30px;
-  width: 80%;
-  display: inline-block;
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+  -ms-flex-positive: 1;
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+  max-width: 100%;
+}
+
+.dropdown-content .addressItem .btn {
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  width: auto;
+  max-width: 100%;
+  margin-left: 5px;
 }
 
 .addressItem {
   display: none;
   padding: 12px 16px;
-  // clear: both;
-  // margin-bottom: 20px;
+
+  .addressItemContent {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
 }
 
 /* Change color of dropdown links on hover */

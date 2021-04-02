@@ -87,15 +87,15 @@ define('ParagonMicro.PM_Renewal.PMRenewal.Add.View'
 			this.user = profile_model.get('internalid');
 			var primary_contact_email = profile_model.get('email');
 			this.primary_contact_email = profile_model.get('email');
-			console.log('profile_model');
-			console.log(profile_model);
+			//console.log('profile_model');
+			//console.log(profile_model);
 			
 			var primaryContactId = "";
 
 			var primaryContactId = this.getPrimaryContactId();
 
-			console.log('primaryContactId');
-			console.log(primaryContactId);
+			//console.log('primaryContactId');
+			//console.log(primaryContactId);
 			
 			this.model.on('all', jQuery.proxy(this, 'correctDates'));
 			this.model.on('sync', jQuery.proxy(this, 'showSuccess'));	

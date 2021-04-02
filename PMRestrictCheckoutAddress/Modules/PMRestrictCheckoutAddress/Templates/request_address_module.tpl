@@ -1,54 +1,67 @@
 {{#if isFirstStep}}
-{{#if showAddress}}
-<div id="addressSearchDropdown" class="dropdown-content">
-  <input type="text" placeholder="Search By Name, Address, City, State, Zip, Country" id="addrSearchInput">
-  {{#each addressList}}
-  <div class="addressItem">
-    <span href="#">{{address}}</span>
-   <a data-action="select" data-id="{{internalid}}" id="{{internalid}}"> <button style="float: right; margin-left: 5px;" class="btn btn-primary selectAddress"
-      addrId="{{internalid}}">Select</button></a>
-    <button style="float: right;" class="btn btn-primary updateAddress" addrId="{{internalid}}">Edit</button>
-  </div>
-  {{/each}}
-</div>
-{{/if}}
+  {{#if showAddress}}
+    <div id="addressSearchDropdown" class="dropdown-content">
+      <input type="text"
+        placeholder="Search By Names, Address, City, State, Zip, Country"
+        id="addrSearchInput">
+      {{#each addressList}}
+        <div class="addressItem">
+          <div class="addressItemContent">
+            <span>{{address}}</span>
+            <a class="btn btn-primary selectAddress" data-action="select"
+              data-id="{{internalid}}" id="{{internalid}}"
+              addrId="{{internalid}}">Select</a>
+            <button class="btn btn-primary updateAddress"
+              addrId="{{internalid}}">Edit
+            </button>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  {{/if}}
 {{/if}}
 <div class="order-wizard-address-module">
   <div class="order-wizard-address-module-show-addresses-container">
     {{#if showTitle}}
-    <h3 class="order-wizard-address-module-title">
-      {{title}}
-    </h3>
+      <h3 class="order-wizard-address-module-title">
+        {{title}}
+      </h3>
     {{/if}}
     {{#if isSameAsEnabled}}
-    <label class="order-wizard-address-module-checkbox">
-      <input {{#if isSameAsCheckBoxDisable}}disabled="disabled" {{/if}} type="checkbox" name="same-as-address" id="sameAsShipping"
-        data-action="same-as" value="1" {{#if isSameAsSelected}}checked {{/if}}>
-      {{sameAsMessage}}
-    </label>
+      <label class="order-wizard-address-module-checkbox">
+        <input {{#if isSameAsCheckBoxDisable}}disabled="disabled" {{/if}}
+          type="checkbox" name="same-as-address" id="sameAsShipping"
+          data-action="same-as" value="1" {{#if
+          isSameAsSelected}}checked {{/if}}>
+        {{sameAsMessage}}
+      </label>
     {{/if}}
 
     {{#if showAddressList}}
-    <div id="order-wizard-address-module-placeholder" {{#if showManageValue}}data-manage="{{manageValue}}" {{/if}}
-      class="order-wizard-address-module-list-placeholder">
+      <div id="order-wizard-address-module-placeholder" {{#if
+        showManageValue}}data-manage="{{manageValue}}" {{/if}}
+        class="order-wizard-address-module-list-placeholder">
 
-      <div class="order-wizard-address-module-address-container">
-        <div data-view="Address.List"></div>
+        <div class="order-wizard-address-module-address-container">
+          <div data-view="Address.List"></div>
+        </div>
       </div>
-    </div>
     {{else}}
-    <div id="address-module-form-placeholder" {{#if showManageValue}}data-manage="{{manageValue}}" {{/if}}
-      class="order-wizard-address-module-form-placeholder">
-      <div data-view="New.Address.Form"></div>
+      <div id="address-module-form-placeholder" {{#if
+        showManageValue}}data-manage="{{manageValue}}" {{/if}}
+        class="order-wizard-address-module-form-placeholder">
+        <div data-view="New.Address.Form"></div>
 
-      {{#if showSaveButton}}
-      <div class="order-wizard-address-module-form-actions">
-        <button type="submit" class="order-wizard-address-module-save-button" data-action="submit">
-          {{translate 'Save Address'}}
-        </button>
+        {{#if showSaveButton}}
+          <div class="order-wizard-address-module-form-actions">
+            <button type="submit"
+              class="order-wizard-address-module-save-button"
+              data-action="submit">
+              {{translate 'Save Address'}}
+            </button>
+          </div>
+        {{/if}}
       </div>
-      {{/if}}
-    </div>
     {{/if}}
   </div>
 </div>

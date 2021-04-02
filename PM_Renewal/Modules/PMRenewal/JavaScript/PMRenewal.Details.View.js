@@ -64,8 +64,8 @@ define(
 				internalid: options.routerArguments[0]
 			});
 
-			console.log('this.model initialize');
-            console.log(this.model);
+			//console.log('this.model initialize');
+            //console.log(this.model);
 
 			this.application = options.application;
 			var profile_model = ProfileModel.getInstance();
@@ -170,7 +170,7 @@ define(
 
 			'Items.Collection': function ()
 			{
-				console.log('Child View');
+				//console.log('Child View');
 				return new BackboneCollectionView({
 					collection: this.model.get('lines')
 				,	childView: TransactionLineViewsCellNavigableView
@@ -194,7 +194,7 @@ define(
 		//@method getContext @return ParagonMicro.PM_Renewal.PMRenewal.View.Context
 	,	getContext: function getContext()
 		{
-			console.log('getContext');
+			//console.log('getContext');
 			//@class ParagonMicro.PM_Renewal.PMRenewal.View.Context
 			var renewedParsed = this.model.get('custrecord_ng_rt_renewed');
 			if(renewedParsed == 'F'){
@@ -213,7 +213,7 @@ define(
 
             //Delete Check
 		    var addedByCustomerCheck = this.model.get('custrecord_ng_rt_added_by_customer');
-		    console.log('addedByCustomerCheck: ' + addedByCustomerCheck);
+		    //console.log('addedByCustomerCheck: ' + addedByCustomerCheck);
 		    //var deleteInternalid = this.model.get('internalid');
 		    var deleteButton = '';
 

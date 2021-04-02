@@ -114,22 +114,34 @@ define(
 	        return this.searchHelper(_.values(this.filters), columns, list_header_data.page, selected_filter, selected_companyfilter);
 	    }
 
+	,   sortAlphaNum: function(a, b) {
+		  var aA = a.replace(reA, "");
+		  var bA = b.replace(reA, "");
+		  if (aA === bA) {
+		    var aN = parseInt(a.replace(reN, ""), 10);
+		    var bN = parseInt(b.replace(reN, ""), 10);
+		    return aN === bN ? 0 : aN > bN ? 1 : -1;
+		  } else {
+		    return aA > bA ? 1 : -1;
+		  }
+		}
+
 	,   setSortOrder: function(sort, order, columns) {
 		    switch (sort) {
 		        case 'custrecord_ng_rt_renewal_date':
-		            columns[4].setSort(order > 0);
+		            //columns[3].setSort(order > 0);
 		            break;
                 
 		        case 'custrecord_ng_rt_start_date':
-		            columns[3].setSort(order > 0);
+		            //columns[2].setSort(order > 0);
 		            break;
 
 		        case 'custrecord_ng_rt_item':
-		            columns[1].setSort(order > 0);
+		            //columns[0].setSort(order > 0);
 		            break;
 
 		        default:
-		            columns[4].setSort(order > 0);
+		            //columns[3].setSort(order > 0);
 		    }
 		}
 

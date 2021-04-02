@@ -68,7 +68,11 @@ define('Quotes.Edit.View', [
       'keypress #name': 'showSaveButton',
       'keypress [data-type="cart-item-quantity-input"]': 'debouncedUpdateItemQuantity',
       'click [data-action="remove"]': 'removeAddress',
-      'click .address-details-selector[data-action="select"]': 'selectAddress'
+      'click .address-details-selector[data-action="select"]': 'selectAddress',
+      'keyup #addrSearchInput': 'filterAddress',
+      'click .selectAddress': 'selectAddressFromSearch',
+      'click .updateAddress': 'updateAddress',
+      'click [data-action="change-selected-address"]': 'changeSelectedAddress'
     },
 
     initialize: function initialize(options) {
@@ -332,13 +336,18 @@ define('Quotes.Edit.View', [
       },
       'Shipping.Address': function ShippingAddress() {
         // Todo
-        return new BackboneCollectionView({
-          collection: this.model.get('addresses').get(this.model.get('shipaddress')),
-          viewsPerRow: 1,
-          rowTemplate: backbone_collection_view_row_tpl,
-          cellTemplate: backbone_collection_view_cell_tpl,
-          childView: AddressDetailsView,
-          childViewOptions: this.getAddressListOptions()
+        var addrModel = this.model.get('addresses').get(this.model.get('shipaddress'));
+
+        if (!addrModel) {
+          addrModel = this.addresses.get(this.model.get('shipaddress'));
+        }
+
+        return new AddressDetailsView({
+          model: addrModel,
+          hideDefaults: true,
+          hideActions: false,
+          isShippingDetails: true,
+          showSearchBar: !!this.model.get('showSearchBar')
         });
       }
     }),
@@ -391,25 +400,69 @@ define('Quotes.Edit.View', [
       this.render();
       this.showSaveButton();
     },
+    filterAddress: function() {
+      var filter = jQuery('#addrSearchInput').val().toUpperCase();
+      if (filter.length < 3) {
+        jQuery('#addressSearchDropdown .addressItem').each(function() {
+          jQuery(this).hide();
+        });
+      } else {
+        jQuery('#addressSearchDropdown .addressItem').each(function() {
+          if (
+            jQuery(this).find('span').text().toUpperCase().indexOf(filter) >
+            -1
+          ) {
+            jQuery(this).show();
+          } else {
+            jQuery(this).hide();
+          }
+        });
+      }
+    },
+    selectAddressFromSearch: function(e) {
+      var id = jQuery(e.target).attr('addrid');
+      this.model.set('shipaddress', id.toString());
+      this.model.unset('showSearchBar');
+      this.render();
+      this.showSaveButton();
+    },
+    updateAddress: function(e) {
+      var id = jQuery(e.target).attr('addrid');
+      jQuery(
+        '.address-details-action-custom[data-action="change-selected-address"]'
+      ).trigger('click');
+      // console.log(id, jQuery('.address-details-action-custom[data-id="'+id+'"][data-action="edit-address"]').length );
+      jQuery(
+        '.address-details-action-custom[data-id="' +
+        id +
+        '"][data-action="edit-address"]'
+      ).trigger('click');
+    },
+    changeSelectedAddress: function() {
+      this.model.set('showSearchBar', true);
+      this.render();
+    },
     getContext: _.wrap(QuoteDetailsView.prototype.getContext,
       function wrapGetContext(fn) {
-        var originalContext = fn.apply(this, _.toArray(arguments).slice(1));
+        var context = fn.apply(this, _.toArray(arguments).slice(1));
 
         if (this.removedItem) {
-          originalContext.removedItem =
+          context.removedItem =
             this.removedItem.get('item').get('_name');
         }
+
         if (this.quoteSaved) {
-          originalContext.quoteSaved = true;
+          context.quoteSaved = true;
           this.quoteSaved = false;
           jQuery('html, body').animate({scrollTop: '0px'});
           _.delay(function hideMessage() {
             self.$('.quote-edit-save-quote').fadeOut();
           }, 3000);
         }
+
         console.log('Quotes.Edit.View.js originalContext');
-        console.log(originalContext);
-        return originalContext;
+        console.log(context);
+        return context;
       })
   });
 });

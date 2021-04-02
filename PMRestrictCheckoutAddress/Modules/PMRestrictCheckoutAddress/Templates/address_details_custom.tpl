@@ -2,20 +2,19 @@
   {{#if model.showAddress}}
     <div id="addressSearchDropdown" class="dropdown-content">
       <input type="text"
-        placeholder="Search By Name, Address, City, State, Zip, Country"
+        placeholder="Search By Names, Address, City, State, Zip, Country"
         id="addrSearchInput">
       {{#each addressList}}
         <div class="addressItem">
-          <span href="#">{{address}}</span>
-          <a data-action="select" data-id="{{internalid}}" id="{{internalid}}">
-            <button style="float: right; margin-left: 5px;"
-              class="btn btn-primary selectAddress"
-              addrId="{{internalid}}">Select
+          <div class="addressItemContent">
+            <span>{{address}}</span>
+            <a class="btn btn-primary selectAddress" data-action="select"
+              data-id="{{internalid}}" id="{{internalid}}"
+              addrId="{{internalid}}">Select</a>
+            <button class="btn btn-primary updateAddress"
+              addrId="{{internalid}}">Edit
             </button>
-          </a>
-          <button style="float: right;" class="btn btn-primary updateAddress"
-            addrId="{{internalid}}">Edit
-          </button>
+          </div>
         </div>
       {{/each}}
     </div>
@@ -259,7 +258,7 @@
               data-id="{{internalid}}" data-toggle="show-in-modal">
               {{translate 'Edit Address'}}
             </a>
-            {{#if showRemoveButton}}
+            {{#if showChangeButton}}
               <a class="address-details-action-custom"
                 data-action="change-selected-address">
                 {{translate 'Change Address'}}

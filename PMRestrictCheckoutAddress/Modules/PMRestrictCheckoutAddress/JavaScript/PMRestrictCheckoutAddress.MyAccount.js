@@ -1,4 +1,5 @@
 define('PMRestrictCheckoutAddress.MyAccount', [
+  'Backbone',
   'Backbone.CollectionView',
   'backbone_collection_view_cell.tpl',
   'backbone_collection_view_row.tpl',
@@ -20,6 +21,7 @@ define('PMRestrictCheckoutAddress.MyAccount', [
   'Utils',
   'SC.Configuration'
 ], function(
+  Backbone,
   BackboneCollectionView,
   backbone_collection_view_cell_tpl,
   backbone_collection_view_row_tpl,
@@ -112,87 +114,6 @@ define('PMRestrictCheckoutAddress.MyAccount', [
           return context;
         }
       );
-
-      _.extend(AddressListView.prototype, {
-        template: address_list_custom_tpl,
-        events: _.extend(AddressListView.prototype.events, {
-          'keyup #addrSearchInput': 'filterAddress',
-          'click .selectAddress': 'selectAddress',
-          'click .updateAddress': 'updateAddress'
-        }),
-        filterAddress: function() {
-          var filter = jQuery('#addrSearchInput').val().toUpperCase();
-          if (filter.length < 3) {
-            jQuery('#addressSearchDropdown .addressItem').each(function() {
-              jQuery(this).hide();
-            });
-          } else {
-            jQuery('#addressSearchDropdown .addressItem').each(function() {
-              if (
-                jQuery(this).find('span').text().toUpperCase().indexOf(filter) >
-                -1
-              ) {
-                jQuery(this).show();
-              } else {
-                jQuery(this).hide();
-              }
-            });
-          }
-        },
-        selectAddress: function(e) {
-          var id = jQuery(e.target).attr('addrid');
-          jQuery(
-            '.address-details-action-custom[data-action="change-selected-address"]'
-          ).trigger('click');
-          jQuery(
-            '.address-details-action[data-id="' +
-            id +
-            '"][data-action="select"]'
-          ).trigger('click');
-        },
-        updateAddress: function(e) {
-          var id = jQuery(e.target).attr('addrid');
-          jQuery(
-            '.address-details-action-custom[data-action="change-selected-address"]'
-          ).trigger('click');
-          // console.log(id, jQuery('.address-details-action-custom[data-id="'+id+'"][data-action="edit-address"]').length );
-          jQuery(
-            '.address-details-action-custom[data-id="' +
-            id +
-            '"][data-action="edit-address"]'
-          ).trigger('click');
-        },
-        getContext: _.wrap(
-          AddressListView.prototype.getContext,
-          function wrappedInitialize(fn, options) {
-            var context = fn.apply(this, _.toArray(arguments).slice(1));
-
-            var addressArray = this.collection.models;
-            var addressList = [];
-            addressArray.forEach(function(model) {
-              var addressLine = model.get('addr1')
-                ? model.get('addr1') + ' '
-                : ' ' + model.get('addr2')
-                  ? model.get('addr2') + ' '
-                  : '' + model.get('addr3')
-                    ? model.get('addr3') + ' '
-                    : '';
-              addressList.push({
-                address: model.get('fullname') + ', ' + addressLine + ', ' +
-                  model.get('city') + ' ' + model.get('state') + ' ' +
-                  model.get('zip') + ', ' + model.get('country'),
-                internalid: model.get('internalid')
-              });
-
-              return true;
-            });
-
-            context.addressList = addressList;
-
-            return context;
-          }
-        )
-      });
 
       _.extend(OrderWizardModuleAddress.prototype, {
         template: request_address_module_tpl,
@@ -468,11 +389,8 @@ define('PMRestrictCheckoutAddress.MyAccount', [
             });
 
             if (this.parentView.parentView) {
-
               if (this.parentView.parentView.step) {
-
                 if (
-                  this.parentView.parentView &&
                   this.parentView.parentView.step.step_url &&
                   (
                     this.parentView.parentView.step.step_url ===
@@ -496,51 +414,58 @@ define('PMRestrictCheckoutAddress.MyAccount', [
                   if (this.parentView.parentView.cid =
                     'view2820' && lineCount === 0) {
                     context.addSearchBar = true;
-                    context.addRemoveButton = true;
 
                     this.model.set('showAddress', true);
                     lineCount++;
                   }
-
                 }
-
-              } else {
-                context.addRemoveButton = true;
               }
-
             }
 
             if (selectedId && context.internalid === selectedId) {
               context.isSelected = true;
             }
 
+            if (Backbone.history.getFragment() === 'addressbook') {
+              context.showRemoveButton = true;
+              context.showChangeButton = false;
+            } else {
+              context.showRemoveButton = false;
+              context.showChangeButton = true;
+            }
+
             if (this.options && this.options.isShippingDetails) {
               context.isSelected = true;
               context.isFirstStep = true;
-              context.showRemoveButton = true;
 
-              if (this.parentView) {
-                var addressArray = this.parentView.addresses;
-                var addressList = [];
-                addressArray.forEach(function(model) {
-                  var addressLine = model.get('addr1')
-                    ? model.get('addr1') + ' '
-                    : ' ' + model.get('addr2')
-                      ? model.get('addr2') + ' '
-                      : '' + model.get('addr3')
-                        ? model.get('addr3') + ' '
-                        : '';
-                  addressList.push({
-                    address: model.get('fullname') + ', ' + addressLine + ', ' +
-                      model.get('city') + ' ' + model.get('state') + ' ' +
-                      model.get('zip') + ', ' + model.get('country'),
-                    internalid: model.get('internalid')
+              if (this.options.showSearchBar) {
+                context.showSearchBar = this.options.showSearchBar;
+                context.showChangeButton = true;
+
+                if (this.parentView) {
+                  var addressArray = this.parentView.addresses;
+                  var addressList = [];
+                  addressArray.forEach(function(model) {
+                    var addressLine = model.get('addr1')
+                      ? model.get('addr1') + ' '
+                      : ' ' + model.get('addr2')
+                        ? model.get('addr2') + ' '
+                        : '' + model.get('addr3')
+                          ? model.get('addr3') + ' '
+                          : '';
+                    addressList.push({
+                      address: model.get('fullname') + ', ' + addressLine +
+                        ', ' +
+                        model.get('city') + ' ' + model.get('state') + ' ' +
+                        model.get('zip') + ', ' + model.get('country'),
+                      internalid: model.get('internalid')
+                    });
+
+                    return true;
                   });
 
-                  return true;
-                });
-
-                context.addressList = addressList;
+                  context.addressList = addressList;
+                }
               }
             }
 
@@ -686,6 +611,87 @@ define('PMRestrictCheckoutAddress.MyAccount', [
         }
       });
 
+      _.extend(AddressListView.prototype, {
+        template: address_list_custom_tpl,
+        events: _.extend(AddressListView.prototype.events, {
+          'keyup #addrSearchInput': 'filterAddress',
+          'click .selectAddress': 'selectAddress',
+          'click .updateAddress': 'updateAddress'
+        }),
+        filterAddress: function() {
+          var filter = jQuery('#addrSearchInput').val().toUpperCase();
+          if (filter.length < 3) {
+            jQuery('#addressSearchDropdown .addressItem').each(function() {
+              jQuery(this).hide();
+            });
+          } else {
+            jQuery('#addressSearchDropdown .addressItem').each(function() {
+              if (
+                jQuery(this).find('span').text().toUpperCase().indexOf(filter) >
+                -1
+              ) {
+                jQuery(this).show();
+              } else {
+                jQuery(this).hide();
+              }
+            });
+          }
+        },
+        selectAddress: function(e) {
+          var id = jQuery(e.target).attr('addrid');
+          jQuery(
+            '.address-details-action-custom[data-action="change-selected-address"]'
+          ).trigger('click');
+          jQuery(
+            '.address-details-action[data-id="' +
+            id +
+            '"][data-action="select"]'
+          ).trigger('click');
+        },
+        updateAddress: function(e) {
+          var id = jQuery(e.target).attr('addrid');
+          jQuery(
+            '.address-details-action-custom[data-action="change-selected-address"]'
+          ).trigger('click');
+          // console.log(id, jQuery('.address-details-action-custom[data-id="'+id+'"][data-action="edit-address"]').length );
+          jQuery(
+            '.address-details-action-custom[data-id="' +
+            id +
+            '"][data-action="edit-address"]'
+          ).trigger('click');
+        },
+        getContext: _.wrap(
+          AddressListView.prototype.getContext,
+          function wrappedInitialize(fn, options) {
+            var context = fn.apply(this, _.toArray(arguments).slice(1));
+
+            var addressArray = this.collection.models;
+            var addressList = [];
+            addressArray.forEach(function(model) {
+              var addressLine = model.get('addr1')
+                ? model.get('addr1') + ' '
+                : ' ' + model.get('addr2')
+                  ? model.get('addr2') + ' '
+                  : '' + model.get('addr3')
+                    ? model.get('addr3') + ' '
+                    : '';
+              addressList.push({
+                address: model.get('fullname') + ', ' + addressLine + ', ' +
+                  model.get('city') + ' ' + model.get('state') + ' ' +
+                  model.get('zip') + ', ' + model.get('country'),
+                internalid: model.get('internalid')
+              });
+
+              return true;
+            });
+
+            context.addressList = addressList;
+
+            return context;
+          }
+        )
+      });
+
       _.extend(RequestQuoteWizardStep.prototype, {
         template: request_order_wizard_step_tpl,
         events: {
@@ -736,6 +742,7 @@ define('PMRestrictCheckoutAddress.MyAccount', [
           ).trigger('click');
         }
       });
+
       _.extend(QuoteToSalesOrderWizardStep.prototype, {
         template: quote_to_salesorder_wizard_step_tpl,
         events: {

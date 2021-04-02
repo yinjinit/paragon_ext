@@ -269,7 +269,7 @@ define('ParagonMicro.PM_Renewal.PMRenewal.Edit.View'
 		{
 			//var startValue = jQuery('#custrecord_ng_rt_start_date_hidden').val().split('-'); 
 			var renewalPeriodCheck = jQuery('[name="custrecord_ng_rt_renewal_period"]').val();
-            console.log('renewalPeriodCheck: ' + renewalPeriodCheck);
+            //console.log('renewalPeriodCheck: ' + renewalPeriodCheck);
 
 			if (jQuery('[name ="custrecord_ng_rt_renewal_date"]').is(":visible") == true) { 
 
@@ -297,22 +297,22 @@ define('ParagonMicro.PM_Renewal.PMRenewal.Edit.View'
 			if(renewalText != 'Custom'){
 				var renewalArr = renewalText.split(" ");
 				var months = renewalArr[0];
-					console.log(months);
+					//console.log(months);
 				var	start_date = jQuery('[name="custrecord_ng_rt_start_date_hidden"]').val();
-					console.log(start_date);
+					//console.log(start_date);
 				var date = new Date(start_date);
-				console.log(date);
+				//console.log(date);
 
 
 				var months = months*(1);
 				date.setMonth(date.getMonth() + months);
-				console.log('after set month');
-				console.log(date);
+				//console.log('after set month');
+				//console.log(date);
 
 				var date = new Date(date);
 				console.log(date);
 				var resultRenewal = date.getFullYear() + '-' + (date.getMonth()+1) + '-' + date.getDate();
-				console.log(resultRenewal);
+				//console.log(resultRenewal);
 				jQuery('#custrecord_ng_rt_renewal_date').val(this.formatDisplayDate(resultRenewal)); 
 				jQuery('#custrecord_ng_rt_renewal_date_hidden').val(resultRenewal);
 
