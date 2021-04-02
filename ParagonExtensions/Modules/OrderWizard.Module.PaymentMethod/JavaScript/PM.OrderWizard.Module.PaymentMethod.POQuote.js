@@ -11,7 +11,7 @@ define('PM.OrderWizard.Module.PaymentMethod.POQuote', [
   'use strict';
 
   return {
-    mountToApp: function() {
+    loadModule: function loadModule() {
       _.extend(OrderWizardModule.prototype, {
         //@property {Function} template
         template: pm_order_wizard_paymentmethod_poquote_module_tpl,

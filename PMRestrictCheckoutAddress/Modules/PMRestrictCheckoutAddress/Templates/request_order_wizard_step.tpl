@@ -1,6 +1,7 @@
 <div>
 	<header>
-		<h1 class="requestquote-wizard-step-header-title">{{currentStepGroupName}}</h1>
+		<h1
+			class="requestquote-wizard-step-header-title">{{currentStepGroupName}}</h1>
 	</header>
 </div>
 
@@ -8,18 +9,21 @@
 
 <div class="requestquote-wizard-step-content-wrapper">
 
-	<div id="wizard-step-content" class="requestquote-wizard-step-content-main"></div>
+	<div id="wizard-step-content"
+		class="requestquote-wizard-step-content-main"></div>
 
 	{{#if showNavButtons}}
 		<div class="requestquote-wizard-step-actions">
 			<div class="requestquote-wizard-step-button-container">
 				{{#if showContinueButton}}
-					<button class="requestquote-wizard-step-button-continue" data-action="submit-step">
+					<button class="requestquote-wizard-step-button-continue"
+						data-action="submit-step">
 						{{translate continueButtonLabel}}
 					</button>
 				{{/if}}
 				{{#if showBackButton}}
-					<button class="requestquote-wizard-step-button-back" data-action="previous-step">
+					<button class="requestquote-wizard-step-button-back"
+						data-action="previous-step">
 						{{translate 'Back'}}
 					</button>
 				{{/if}}
@@ -35,8 +39,6 @@
 		</div>
 	{{/if}}
 </div>
-
-
 
 {{!----
 Use the following context variables when customizing this template: 

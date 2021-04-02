@@ -29,7 +29,8 @@
                     "Modules/PMRestrictCheckoutAddress/Templates/order_wizard.tpl",
                     "Modules/PMRestrictCheckoutAddress/Templates/address_module.tpl",
                     "Modules/PMRestrictCheckoutAddress/Templates/quote_to_salesorder_wizard_step.tpl",
-                    "Modules/PMRestrictCheckoutAddress/Templates/address_list_custom.tpl"
+                    "Modules/PMRestrictCheckoutAddress/Templates/address_list_custom.tpl",
+                    "Modules/PMRestrictCheckoutAddress/Templates/request_order_wizard_step.tpl"
                 ]
             },
             "myaccount": {

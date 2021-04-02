@@ -49,79 +49,13 @@ define('PMRestrictCheckoutAddress.MyAccount', [
     mountToApp: function mountToApp() {
       var selectedId;
       var lineCount = 0;
-      OrderWizardModuleAddress.prototype.getContext = _.wrap(
-        OrderWizardModuleAddress.prototype.getContext,
-        function(fn) {
-          var context = fn.apply(this, _.toArray(arguments).slice(1));
-
-          var selectedAddressId = context.selectedAddressId;
-          if (!selectedAddressId) {
-            if (this.addresses.models.length > 0) {
-              selectedAddressId = this.addresses.models[0].get('internalid');
-              selectedId = selectedAddressId;
-            }
-            context.selectedAddressId = selectedAddressId;
-          } else {
-            selectedId = null;
-          }
-
-          context.showAddress = this.model.get('showAddress');
-
-          var addressArray = this.addresses;
-          // console.log(addressArray);
-          var addressList = [];
-          addressArray.models.forEach(function(model) {
-            var addressLine = model.get('addr1')
-              ? model.get('addr1') + ' '
-              : '' + ' ' + model.get('addr2')
-                ? model.get('addr2') + ' '
-                : '' + model.get('addr3')
-                  ? model.get('addr3') + ' '
-                  : '';
-            addressList.push({
-              address:
-                model.get('fullname') +
-                ', ' +
-                addressLine +
-                ', ' +
-                model.get('city') +
-                ' ' +
-                model.get('state') +
-                ' ' +
-                model.get('zip') +
-                ', ' +
-                model.get('country'),
-              internalid: model.get('internalid')
-            });
-
-            return true;
-          });
-
-          context.isFirstStep = this.wizard.currentStep === 'request-a-quote' ||
-            this.wizard.currentStep === 'quotetosalesorder-review' ||
-            this.wizard.currentStep === 'quotetosalesorder-review-billing';
-          context.addressList = addressList;
-
-          if (this.isSameAsSelected) {
-            context.isSameAsSelected = true;
-          }
-          // console.log(context);
-          // _.each(this.addresses.models, function (addrModel) {
-          //   addrModel.set("showCustomized", true);
-          //   addrModel.set("showAllAddress", false);
-          //   return true;
-          // });
-          return context;
-        }
-      );
 
       _.extend(OrderWizardModuleAddress.prototype, {
         template: request_address_module_tpl,
         events: {
           'click [data-action="select"]': 'selectAddress',
           'click [data-action="selected"]': 'selectedAddress',
-          'click [data-action="change-selected-address"]':
-            'changeSelectedAddress',
+          'click [data-action="change-selected-address"]': 'changeSelectedAddress',
           'click [data-action="edit-address"]': 'editAddress',
           'click [data-action="submit"]': 'submit',
           'click [data-action="change-address"]': 'changeAddressHandler',
@@ -168,7 +102,7 @@ define('PMRestrictCheckoutAddress.MyAccount', [
               // Make sure that the new address now take part of the profile addresses
               // This is important if a temporal address is edited more than once
               this.wizard.options.profile.get('addresses').add(model);
-            };
+            }.bind(this);
             var reset_current_address_1 = function(model) {
               // After saving the temp address, we set it as the one selected
               this.setAddress(model.id);
@@ -292,62 +226,123 @@ define('PMRestrictCheckoutAddress.MyAccount', [
             jQuery(this).hide();
           });
           jQuery('#addressSearchDropdown').hide();
-        }
-      });
+        },
+        render: function(not_trigger_ready) {
+          // Is Active is overridden by child modules, like Shipping to hide this module in Multi Ship To
+          if (!this.isActive()) {
+            return this.$el.empty();
+          }
+          this.addresses = this.getAddressCollection();
+          this.isGuest = this.getIsCurrentUserGuest();
+          this.isSameAsEnabled = _.isFunction(this.options.enable_same_as)
+            ? this.options.enable_same_as()
+            : this.options.enable_same_as;
+          this.addressId = this.model.get(this.manage);
+          this.evaluateDisablingSameAsCheckBox();
+          // if the selected manage address is the fake one
+          if (this.addressId && ~this.addressId.indexOf('null')) {
+            // we silently remove it
+            this.setAddress(null, {
+              silent: true
+            });
+          }
+          this.sameAs = false;
+          this.address = this.getSelectedAddress();
+          // Add event listeners to allow special flows
+          this.eventHandlersOn();
 
-      OrderWizardModuleAddress.prototype.render = function(not_trigger_ready) {
-        // Is Active is overridden by child modules, like Shipping to hide this module in Multi Ship To
-        if (!this.isActive()) {
-          return this.$el.empty();
-        }
-        this.addresses = this.getAddressCollection();
-        this.isGuest = this.getIsCurrentUserGuest();
-        this.isSameAsEnabled = _.isFunction(this.options.enable_same_as)
-          ? this.options.enable_same_as()
-          : this.options.enable_same_as;
-        this.addressId = this.model.get(this.manage);
-        this.evaluateDisablingSameAsCheckBox();
-        // if the selected manage address is the fake one
-        if (this.addressId && ~this.addressId.indexOf('null')) {
-          // we silently remove it
-          this.setAddress(null, {
-            silent: true
-          });
-        }
-        this.sameAs = false;
-        this.address = this.getSelectedAddress();
-        // Add event listeners to allow special flows
-        this.eventHandlersOn();
-
-        // Calls the render function
-        this._render();
-        const is_address_new = this.address.isNew();
-        if (
-          !(
+          // Calls the render function
+          this._render();
+          const is_address_new = this.address.isNew();
+          if (!(
             (
               this.isSameAsEnabled && this.sameAs
-            ) ||
-            (
-              this.addressId && !is_address_new
+            ) || (
+            this.addressId && !is_address_new
             )
-          ) &&
-          this.isGuest &&
-          !is_address_new
-        ) {
-          this.setAddress(this.address.id, {
-            silent: true
-          });
-        }
-        // the module is ready when a valid address is selected.
-        if (
-          !not_trigger_ready &&
-          this.address &&
-          this.addressId &&
-          this.address.get('isvalid') === 'T'
-        ) {
-          this.trigger('ready', true);
-        }
-      };
+          ) && this.isGuest && !is_address_new) {
+            this.setAddress(this.address.id, {
+              silent: true
+            });
+          }
+
+          // The module is ready when a valid address is selected.
+          if (
+            !not_trigger_ready &&
+            this.address &&
+            this.addressId &&
+            this.address.get('isvalid') === 'T'
+          ) {
+            this.trigger('ready', true);
+          }
+        },
+        getContext: _.wrap(
+          OrderWizardModuleAddress.prototype.getContext,
+          function(fn) {
+            var context = fn.apply(this, _.toArray(arguments).slice(1));
+
+            var selectedAddressId = context.selectedAddressId;
+            if (!selectedAddressId) {
+              if (this.addresses.models.length > 0) {
+                selectedAddressId = this.addresses.models[0].get('internalid');
+                selectedId = selectedAddressId;
+              }
+              context.selectedAddressId = selectedAddressId;
+            } else {
+              selectedId = null;
+            }
+
+            context.showAddress = this.model.get('showAddress');
+
+            var addressArray = this.addresses;
+            // console.log(addressArray);
+            var addressList = [];
+            addressArray.models.forEach(function(model) {
+              var addressLine = model.get('addr1')
+                ? model.get('addr1') + ' '
+                : '' + ' ' + model.get('addr2')
+                  ? model.get('addr2') + ' '
+                  : '' + model.get('addr3')
+                    ? model.get('addr3') + ' '
+                    : '';
+              addressList.push({
+                address:
+                  model.get('fullname') +
+                  ', ' +
+                  addressLine +
+                  ', ' +
+                  model.get('city') +
+                  ' ' +
+                  model.get('state') +
+                  ' ' +
+                  model.get('zip') +
+                  ', ' +
+                  model.get('country'),
+                internalid: model.get('internalid')
+              });
+
+              return true;
+            });
+
+            context.isFirstStep =
+              this.wizard.currentStep === 'request-a-quote' ||
+              this.wizard.currentStep === 'quotetosalesorder-review' ||
+              this.wizard.currentStep === 'quotetosalesorder-review-billing';
+            context.addressList = addressList;
+
+            if (this.isSameAsSelected) {
+              context.isSameAsSelected = true;
+            }
+            // console.log(context);
+            // _.each(this.addresses.models, function (addrModel) {
+            //   addrModel.set("showCustomized", true);
+            //   addrModel.set("showAllAddress", false);
+            //   return true;
+            // });
+            return context;
+          }
+        )
+      });
 
       _.extend(AddressDetailsView.prototype, {
         template: request_address_details_custom_tpl,
@@ -411,8 +406,7 @@ define('PMRestrictCheckoutAddress.MyAccount', [
                   'quotetosalesorder-review'
                 )
                 ) {
-                  if (this.parentView.parentView.cid =
-                    'view2820' && lineCount === 0) {
+                  if (lineCount === 0) {
                     context.addSearchBar = true;
 
                     this.model.set('showAddress', true);
