@@ -2,7 +2,6 @@
     "name": "PMRestrictCheckoutAddress",
     "fantasyName": "PMRestrictCheckoutAddress",
     "vendor": "PM",
-    "version": "1.0.31",
     "type": "extension",
     "target": "SCA,SCS,SCIS",
     "target_version": {
@@ -10,17 +9,8 @@
         "SCS": ">=19.1.7",
         "SCIS": "20.2.1"
     },
+    "version": "1.0.31",
     "description": "Restrict Addresses on Checkout",
-    "skins": [],
-    "sass": {
-        "entry_points": {
-            "checkout": "Modules/PMRestrictCheckoutAddress/Sass/_order_wizard.scss",
-            "myaccount": "Modules/PMRestrictCheckoutAddress/Sass/_order_wizard.scss"
-        },
-        "files": [
-            "Modules/PMRestrictCheckoutAddress/Sass/_order_wizard.scss"
-        ]
-    },
     "templates": {
         "application": {
             "checkout": {
@@ -44,6 +34,15 @@
             }
         }
     },
+    "sass": {
+        "entry_points": {
+            "checkout": "Modules/PMRestrictCheckoutAddress/Sass/_order_wizard.scss",
+            "myaccount": "Modules/PMRestrictCheckoutAddress/Sass/_order_wizard.scss"
+        },
+        "files": [
+            "Modules/PMRestrictCheckoutAddress/Sass/_order_wizard.scss"
+        ]
+    },
     "javascript": {
         "entry_points": {
             "checkout": "Modules/PMRestrictCheckoutAddress/JavaScript/PMRestrictCheckoutAddress.js",
@@ -61,6 +60,5 @@
                 ]
             }
         }
-    },
-    "local_folder": "Workspace\\PMRestrictCheckoutAddress"
+    }
 }
