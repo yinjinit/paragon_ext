@@ -89,7 +89,8 @@
                     "Modules/ParagonHeaderMenu/JavaScript/PM.ParagonHeaderFeaturedPartners.View.js",
                     "Modules/ParagonHeaderMenu/JavaScript/PM.ParagonIndustriesWebServeMenu.View.js",
                     "Modules/ParagonHeaderMenu/JavaScript/PM.ParagonServiceSolutionsMenu.View.js",
-                    "Modules/ParagonHeaderMenu/JavaScript/PM.ParagonSecondMenu.View.js"
+                    "Modules/ParagonHeaderMenu/JavaScript/PM.ParagonSecondMenu.View.js",
+                    "Modules/ParagonHeaderMenu/JavaScript/PM.ParagonHeader.Model.js"
                 ]
             },
             "shopping": {
@@ -101,7 +102,8 @@
                     "Modules/ParagonHeaderMenu/JavaScript/PM.ParagonHeaderFeaturedPartners.View.js",
                     "Modules/ParagonHeaderMenu/JavaScript/PM.ParagonIndustriesWebServeMenu.View.js",
                     "Modules/ParagonHeaderMenu/JavaScript/PM.ParagonServiceSolutionsMenu.View.js",
-                    "Modules/ParagonHeaderMenu/JavaScript/PM.ParagonSecondMenu.View.js"
+                    "Modules/ParagonHeaderMenu/JavaScript/PM.ParagonSecondMenu.View.js",
+                    "Modules/ParagonHeaderMenu/JavaScript/PM.ParagonHeader.Model.js"
                 ]
             },
             "checkout": {
@@ -113,7 +115,8 @@
                     "Modules/ParagonHeaderMenu/JavaScript/PM.ParagonHeaderFeaturedPartners.View.js",
                     "Modules/ParagonHeaderMenu/JavaScript/PM.ParagonIndustriesWebServeMenu.View.js",
                     "Modules/ParagonHeaderMenu/JavaScript/PM.ParagonServiceSolutionsMenu.View.js",
-                    "Modules/ParagonHeaderMenu/JavaScript/PM.ParagonSecondMenu.View.js"
+                    "Modules/ParagonHeaderMenu/JavaScript/PM.ParagonSecondMenu.View.js",
+                    "Modules/ParagonHeaderMenu/JavaScript/PM.ParagonHeader.Model.js"
                 ]
             }
         }

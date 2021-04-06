@@ -1,14 +1,22 @@
-define('PM.ParagonSoftwareMenu.View', ['paragon_software_menu.tpl', 'Backbone', 'jQuery'], function (
+define('PM.ParagonSoftwareMenu.View', ['paragon_software_menu.tpl', 'Backbone', 'jQuery',   'HeaderMenu.Model'], function (
   paragon_software_menu_tpl,
   Backbone,
-  jQuery
+  jQuery,
+  HeaderMenuModel
 ) {
   'use strict';
 
   return Backbone.View.extend({
     template: paragon_software_menu_tpl,
 
-    initialize: function (options) {},
+    initialize: function (options) {
+      var configuration = options.Configuration; 
+      var url = configuration.siteSettings.touchpoints.home;
+      this.model = new HeaderMenuModel({
+        url: url
+      });
+
+    },
 
     events: {
       'click .paragon-header-menu-level2-li': 'showLevel3Menu',
@@ -29,6 +37,7 @@ define('PM.ParagonSoftwareMenu.View', ['paragon_software_menu.tpl', 'Backbone', 
     },
 
     getContext: function getContext() {
+      var url = this.model.get('url');
       var softwareCategories = [
         {
           active: true,
@@ -58,6 +67,7 @@ define('PM.ParagonSoftwareMenu.View', ['paragon_software_menu.tpl', 'Backbone', 
       ];
       return {
         softwares: softwareCategories,
+        url: url
       };
     },
   });

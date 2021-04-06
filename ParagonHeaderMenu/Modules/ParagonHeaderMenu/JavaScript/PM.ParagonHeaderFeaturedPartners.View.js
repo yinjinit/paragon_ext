@@ -2,13 +2,22 @@ define('PM.ParagonHeaderFeaturedPartners.View', [
   'paragon_header_menu_featured_partners.tpl',
   'Backbone',
   'jQuery',
-], function (paragon_header_menu_featured_partners_tpl, Backbone, jQuery) {
+  'HeaderMenu.Model'
+], function (paragon_header_menu_featured_partners_tpl, Backbone, jQuery, HeaderMenuModel) {
   'use strict';
 
   return Backbone.View.extend({
     template: paragon_header_menu_featured_partners_tpl,
 
-    initialize: function (options) {},
+    initialize: function (options) {
+
+      var configuration = options.Configuration; 
+      var url = configuration.siteSettings.touchpoints.home;
+      this.model = new HeaderMenuModel({
+        url: url
+      });
+
+    },
 
     events: {},
 
@@ -17,7 +26,11 @@ define('PM.ParagonHeaderFeaturedPartners.View', [
     childViews: {},
 
     getContext: function getContext() {
-      return {};
+
+      var url = this.model.get('url');
+      return {
+        url: url
+      };
     },
   });
 });

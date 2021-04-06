@@ -1,7 +1,9 @@
-define('PM.ParagonHardwareMenu.View', ['paragon_hardware_menu.tpl', 'Backbone', 'jQuery'], function (
+define('PM.ParagonHardwareMenu.View', ['paragon_hardware_menu.tpl', 'Backbone', 'jQuery', 'HeaderMenu.Model',  'Backbone.FormView',], function (
   paragon_hardware_menu_tpl,
   Backbone,
-  jQuery
+  jQuery,
+  HeaderMenuModel,
+  BackboneFormView
 ) {
   'use strict';
 
@@ -9,7 +11,14 @@ define('PM.ParagonHardwareMenu.View', ['paragon_hardware_menu.tpl', 'Backbone', 
     template: paragon_hardware_menu_tpl,
 
     initialize: function (options) {
-      console.log('Hardware Menu View');
+     // console.log('Hardware Menu View');
+      var configuration = options.Configuration; 
+      var url = configuration.siteSettings.touchpoints.home;
+      this.model = new HeaderMenuModel({
+        url: url
+      });
+      BackboneFormView.add(this);
+      
     },
 
     events: {
@@ -31,6 +40,9 @@ define('PM.ParagonHardwareMenu.View', ['paragon_hardware_menu.tpl', 'Backbone', 
     },
 
     getContext: function getContext() {
+
+     
+      var url = this.model.get('url');
       var hardwareCategories = [
         {
           active: true,
@@ -92,10 +104,13 @@ define('PM.ParagonHardwareMenu.View', ['paragon_hardware_menu.tpl', 'Backbone', 
         {
           title: 'Software',
           dataTarget: '#paragon-header-menu-hardware-software',
-        },
+        }
       ];
+
+
       return {
         hardwares: hardwareCategories,
+        url: url
       };
     },
   });

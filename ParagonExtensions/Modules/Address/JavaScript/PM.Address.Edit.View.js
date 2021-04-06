@@ -5,6 +5,7 @@ define('PM.Address.Edit.View', [
   'underscore',
   'Profile.Model',
   'Address.Model',
+  'Backbone',
   'Backbone.FormView',
   'Utils',
   'SC.Configuration'
@@ -14,6 +15,7 @@ define('PM.Address.Edit.View', [
   _,
   ProfileModel,
   AddressModel,
+  Backbone,
   BackboneFormView,
   Utils,
   Configuration
@@ -108,24 +110,6 @@ define('PM.Address.Edit.View', [
 
           this.model.unset('showAddress');
           BackboneFormView.add(this);
-
-          this.saveForm = function saveForm() {
-            // const loggers = Loggers.getLogger();
-            // const actionId = loggers.start('Save Address');
-
-            const promise = BackboneFormView.saveForm.apply(this, arguments);
-
-            if (promise) {
-              promise.done(() => {
-                /*  loggers.end(actionId, {
-                            operationIds: this.model.getOperationIds(),
-                            status: 'success'
-                        }); */
-              });
-            }
-
-            return promise;
-          };
 
           this.updateSelect = function() {
             // const loggers = Loggers.getLogger();

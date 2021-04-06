@@ -42,7 +42,8 @@
                     "Modules/PMRenewal/Templates/renewal_details.tpl",
                     "Modules/PMRenewal/Templates/renewal_edit.tpl",
                     "Modules/PMRenewal/Templates/renewal_list.tpl",
-                    "Modules/PMRenewal/Templates/renewal_new.tpl"
+                    "Modules/PMRenewal/Templates/renewal_new.tpl",
+                    "Modules/PMRenewal/Templates/renewal_details_archive.tpl"
                 ]
             }
         }

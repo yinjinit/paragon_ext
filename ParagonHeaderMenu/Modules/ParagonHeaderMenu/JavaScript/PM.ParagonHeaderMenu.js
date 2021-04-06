@@ -22,6 +22,8 @@ define('PM.ParagonHeaderMenu', [
   return {
     mountToApp: function mountToApp(container) {
       var layout = container.getComponent('Layout');
+      var configuration = container.Configuration; 
+      var url = configuration.siteSettings.touchpoints.home;
       if (layout) {
         layout.addChildView('Global.ParagonHeaderMenu', function () {
           return new PMParagonHeaderMenuView(container);
@@ -40,47 +42,47 @@ define('PM.ParagonHeaderMenu', [
             {
               title: 'Solution & Service',
               icon: '',
-              link: 'https://www.paragonmicro.com/solution-service',
+              link: url + '/solution-service',
             },
             {
               title: 'Cloud Solutions',
               icon: '',
-              link: 'https://www.paragonmicro.com/cloud',
+              link: url + '/cloud',
             },
             {
               title: 'Collaboration',
               icon: '',
-              link: 'https://www.paragonmicro.com/collaboration',
+              link: url + '/collaboration',
             },
             {
               title: 'Cybersecurity Solutions',
               icon: '',
-              link: 'https://www.paragonmicro.com/cyber-security',
+              link: url + '/cyber-security',
             },
             {
               title: 'Data Center',
               icon: '',
-              link: 'https://www.paragonmicro.com/data-center',
+              link: url + '/data-center',
             },
             {
               title: 'Microsoft',
               icon: '',
-              link: 'https://www.paragonmicro.com/microsoft',
+              link: url + '/microsoft',
             },
             {
               title: 'Networking',
               icon: '',
-              link: 'https://www.paragonmicro.com/networking',
+              link: url + '/networking',
             },
             {
               title: 'Services',
               icon: '',
-              link: 'https://www.paragonmicro.com/services',
+              link: url + '/services',
             },
             {
               title: 'Virtualization',
               icon: '',
-              link: 'https://www.paragonmicro.com/virtualization',
+              link: url + '/virtualization',
             },
           ];
           return new secondMenu({ container: container, menuItems: menuItems });
@@ -92,32 +94,32 @@ define('PM.ParagonHeaderMenu', [
             {
               title: 'Industries We Serve',
               icon: '',
-              link: 'https://www.paragonmicro.com/industries-we-serve',
+              link: url + '/industries-we-serve',
             },
             {
               title: 'Education',
               icon: '',
-              link: 'https://www.paragonmicro.com/education',
+              link: url + '/education',
             },
             {
               title: 'Business',
               icon: '',
-              link: 'https://www.paragonmicro.com/business',
+              link: url + '/business',
             },
             {
               title: 'Federal Government',
               icon: '',
-              link: 'https://www.paragonmicro.com/federal-gov',
+              link: url + '/federal-gov',
             },
             {
               title: 'Health Care',
               icon: '',
-              link: 'https://www.paragonmicro.com/healthcare',
+              link: url + '/healthcare',
             },
             {
               title: 'State & Local',
               icon: '',
-              link: 'https://www.paragonmicro.com/state-local',
+              link: url + '/state-local',
             },
           ];
           return new secondMenu({ container: container, menuItems: menuItems });
@@ -141,23 +143,23 @@ define('PM.ParagonHeaderMenu', [
             {
               title: 'About Us',
               icon: '',
-              link: 'https://www.paragonmicro.com/aboutus',
+              link: url + '/aboutus',
             },
             {
               title: 'Why Partner With Us',
               icon: '',
-              link: 'https://www.paragonmicro.com/why-partner-with-us',
+              link: url + '/why-partner-with-us',
             },
             {
               title: 'Global Procurement',
               icon: '',
-              link: 'https://www.paragonmicro.com/global-procurement',
+              link: url + '/global-procurement',
             },
 
             {
               title: 'Careers',
               icon: '',
-              link: 'https://www.paragonmicro.com/careers',
+              link: url + '/careers',
             },
             /*  {
                title: 'Awards',
@@ -208,12 +210,12 @@ define('PM.ParagonHeaderMenu', [
             {
               title: 'Newsroom',
               icon: '',
-              link: 'https://www.paragonmicro.com/newsroom',
+              link: url + '/newsroom',
             },
             {
               title: 'Support',
               icon: '',
-              link: 'https://www.paragonmicro.com/support',
+              link: url + '/support',
             },
             /*             {
                           title: 'Success Stories',
