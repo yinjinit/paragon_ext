@@ -3,7 +3,7 @@
     <div class="order-wizard-quote-to-sale-order-row">
         <div class="order-wizard-quote-to-sale-order-column">
             <label for="purchase-order-number" class="order-wizard-quote-to-sale-order-label">
-                {{translate 'PO Number'}}
+                {{translate 'PO Number'}} <span class="order-wizard-quote-to-sale-order-optional"> {{translate '(Optional)' }} </span>
             </label>
             {{#if isReview}}
                 {{purchaseNumber}}

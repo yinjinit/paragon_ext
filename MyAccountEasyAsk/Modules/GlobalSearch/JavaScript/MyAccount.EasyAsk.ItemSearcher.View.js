@@ -49,7 +49,7 @@ define(
                     self.$searchElement.data('ttTypeahead').dropdown.moveCursorDown();
                 }
 
-                if(self.options.componentId && self.options.componentId == 'quickaddSearch'){ 
+                if(self.options.componentId && self.options.componentId === 'quickaddSearch'){
                 // when it comes from the quickAdd use the native behaviour from NetSuite
                     // silent = true makes it invisible to any listener that is waiting for the data to load
                     // We can use jQuery's .done, as the fetch method returns a promise
@@ -123,7 +123,7 @@ define(
 
                             function stockMessage(stock_availability){
 
-                                if(stock_availability == 0){
+                                if(stock_availability === 0){
 
                                     return 'Out of Stock';
                                     

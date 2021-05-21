@@ -69,7 +69,6 @@ define('Quotes.Edit.View', [
       'keypress [data-type="cart-item-quantity-input"]': 'debouncedUpdateItemQuantity',
       'click [data-action="remove"]': 'removeAddress',
       'click .address-details-selector[data-action="select"]': 'selectAddress',
-      'keyup #addrSearchInput': 'filterAddress',
       'click .selectAddress': 'selectAddressFromSearch',
       'click .updateAddress': 'updateAddress',
       'click [data-action="change-selected-address"]': 'changeSelectedAddress'
@@ -399,25 +398,6 @@ define('Quotes.Edit.View', [
       this.model.set('shipaddress', $el.data('id').toString());
       this.render();
       this.showSaveButton();
-    },
-    filterAddress: function() {
-      var filter = jQuery('#addrSearchInput').val().toUpperCase();
-      if (filter.length < 3) {
-        jQuery('#addressSearchDropdown .addressItem').each(function() {
-          jQuery(this).hide();
-        });
-      } else {
-        jQuery('#addressSearchDropdown .addressItem').each(function() {
-          if (
-            jQuery(this).find('span').text().toUpperCase().indexOf(filter) >
-            -1
-          ) {
-            jQuery(this).show();
-          } else {
-            jQuery(this).hide();
-          }
-        });
-      }
     },
     selectAddressFromSearch: function(e) {
       var id = jQuery(e.target).attr('addrid');

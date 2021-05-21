@@ -1,0 +1,83 @@
+{
+    "name": "Paragon",
+    "fantasyName": "Paragon Micro Extension",
+    "vendor": "Paragon",
+    "version": "1.0.13",
+    "type": "extension",
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": ">=19.1.1",
+        "SCS": ">=19.1.1"
+    },
+    "description": "Enhances Address, OrderHistory, OrderWizard.Module.PaymentMethod, OrderWizard.Module.Address modules.",
+    "skins": [],
+    "sass": {
+        "entry_points": {
+            "checkout": "Modules/Main/Sass/_pm-checkout.scss",
+            "myaccount": "Modules/Main/Sass/_pm-myaccount.scss"
+        },
+        "files": [
+            "Modules/Main/Sass/_pm-checkout.scss",
+            "Modules/Main/Sass/_pm-myaccount.scss",
+            "Modules/OrderWizard.Module.PaymentMethod/Sass/_pm-order-wizard-paymentmethod-poquote-module.scss",
+            "Modules/OrderHistory/Sass/_pm-order-history-details.scss",
+            "Modules/Address/Sass/_pm-address.scss",
+            "Modules/OrderWizard.Module.Address/Sass/_pm-oreder-wizard-address.scss"
+        ]
+    },
+    "templates": {
+        "application": {
+            "checkout": {
+                "files": [
+                    "Modules/OrderWizard.Module.PaymentMethod/Templates/pm_order_wizard_paymentmethod_poquote_module.tpl",
+                    "Modules/Address/Templates/pm_address_details.tpl",
+                    "Modules/Address/Templates/pm_address_list.tpl",
+                    "Modules/OrderWizard.Module.Address/Templates/pm_order_wizard_address_module.tpl",
+                    "Modules/Address/Templates/pm_address_search.tpl"
+                ]
+            },
+            "myaccount": {
+                "files": [
+                    "Modules/OrderHistory/Templates/pm_order_history_details.tpl",
+                    "Modules/OrderHistory/Templates/pm_order_history_summary.tpl",
+                    "Modules/Address/Templates/pm_address_edit.tpl",
+                    "Modules/Address/Templates/pm_address_details.tpl",
+                    "Modules/Address/Templates/pm_address_list.tpl",
+                    "Modules/OrderWizard.Module.Address/Templates/pm_order_wizard_address_module.tpl",
+                    "Modules/Address/Templates/pm_address_search.tpl"
+                ]
+            }
+        }
+    },
+    "javascript": {
+        "entry_points": {
+            "checkout": "Modules/Main/JavaScript/PM.Checkout.js",
+            "myaccount": "Modules/Main/JavaScript/PM.MyAccount.js"
+        },
+        "application": {
+            "checkout": {
+                "files": [
+                    "Modules/Main/JavaScript/PM.Checkout.js",
+                    "Modules/OrderWizard.Module.PaymentMethod/JavaScript/PM.OrderWizard.Module.PaymentMethod.POQuote.js",
+                    "Modules/Address/JavaScript/PM.Address.Details.View.js",
+                    "Modules/OrderWizard.Module.Address/JavaScript/PM.OrderWizard.Module.Address.js",
+                    "Modules/Address/JavaScript/PM.Address.List.View.js",
+                    "Modules/Address/JavaScript/PM.Address.Search.View.js"
+                ]
+            },
+            "myaccount": {
+                "files": [
+                    "Modules/Main/JavaScript/PM.MyAccount.js",
+                    "Modules/OrderHistory/JavaScript/PM.OrderHistory.Details.View.js",
+                    "Modules/OrderHistory/JavaScript/PM.OrderHistory.Summary.View.js",
+                    "Modules/Address/JavaScript/PM.Address.Edit.View.js",
+                    "Modules/Address/JavaScript/PM.Address.Details.View.js",
+                    "Modules/OrderWizard.Module.Address/JavaScript/PM.OrderWizard.Module.Address.js",
+                    "Modules/Address/JavaScript/PM.Address.List.View.js",
+                    "Modules/Address/JavaScript/PM.Address.Search.View.js"
+                ]
+            }
+        }
+    },
+    "local_folder": "Workspace\\Paragon"
+}

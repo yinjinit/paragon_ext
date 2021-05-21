@@ -29,22 +29,22 @@ define('PM.ParagonHeaderMenu.View', ['paragon_header_menu.tpl', 'Backbone', 'jQu
     showLevel2Menu: function (e) {
       console.log('show level 2 menu');
       var selector = $(e.currentTarget).data('selector');
-      if (selector == 'hardware') {
+      if (selector === 'hardware') {
         $('.paragon-header-menu-level2-container').removeClass('active');
         $('#paragon-header-hardware-menu-view').addClass('active');
-      } else if (selector == 'software') {
+      } else if (selector === 'software') {
         $('.paragon-header-menu-level2-container').removeClass('active');
         $('#paragon-header-software-menu-view').addClass('active');
-      } else if (selector == 'solutions-services') {
+      } else if (selector === 'solutions-services') {
         $('.paragon-header-menu-level2-container').removeClass('active');
         $('#paragon-header-solutions-services-menu-view').addClass('active');
-      } else if (selector == 'industries-web-service') {
+      } else if (selector === 'industries-web-service') {
         $('.paragon-header-menu-level2-container').removeClass('active');
         $('#paragon-header-industries-web-serve-menu-view').addClass('active');
-      } else if (selector == 'about-us') {
+      } else if (selector === 'about-us') {
         $('.paragon-header-menu-level2-container').removeClass('active');
         $('#paragon-header-about-us-menu-view').addClass('active');
-      } else if (selector == 'resources') {
+      } else if (selector === 'resources') {
         $('.paragon-header-menu-level2-container').removeClass('active');
         $('#paragon-header-resource-menu-view').addClass('active');
       } else {

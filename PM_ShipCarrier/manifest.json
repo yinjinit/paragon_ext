@@ -1,0 +1,59 @@
+{
+    "name": "PM_ShipCarrier",
+    "fantasyName": "PM_ShipCarrier",
+    "vendor": "Paragon",
+    "version": "1.0.0",
+    "type": "extension",
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": ">=19.1.1",
+        "SCS": ">=19.1.1"
+    },
+    "description": "Adds ShipCarrier page to My Account.",
+    "skins": [],
+    "assets": {
+        "img": {
+            "files": []
+        },
+        "fonts": {
+            "files": []
+        },
+        "services": {
+            "files": [
+                "services/PM.ShipCarrier.Service.ss"
+            ]
+        }
+    },
+    "templates": {
+        "application": {
+            "myaccount": {
+                "files": [
+                    "Modules/Templates/pm_shipcarrier.tpl"
+                ]
+            }
+        }
+    },
+    "javascript": {
+        "entry_points": {
+            "myaccount": "Modules/JavaScript/PM.ShipCarrier.js"
+        },
+        "application": {
+            "myaccount": {
+                "files": [
+                    "Modules/JavaScript/PM.ShipCarrier.js",
+                    "Modules/JavaScript/PM.ShipCarrier.View.js",
+                    "Modules/JavaScript/PM.ShipCarrier.Model.js"
+                ]
+            }
+        }
+    },
+    "ssp-libraries": {
+        "entry_point": "Modules/SuiteScript/PM.ShipCarrier.js",
+        "files": [
+            "Modules/SuiteScript/PM.ShipCarrier.ServiceController.js",
+            "Modules/SuiteScript/PM.ShipCarrier.Model.js",
+            "Modules/SuiteScript/PM.ShipCarrier.js"
+        ]
+    },
+    "local_folder": "Workspace\\PM_ShipCarrier"
+}

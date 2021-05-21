@@ -59,14 +59,14 @@ define(
 	
 				nlapiLogExecution('debug', 'contentType', contentType);
 	
-				if (contentType == 'application/x-www-form-urlencoded') {
+				if (contentType === 'application/x-www-form-urlencoded') {
 					var parameters = request.getAllParameters();
 					for ( var param in parameters) {
 						this.data[param] = parameters[param];
 						nlapiLogExecution('debug', param, parameters[param]);
 					}
 				}
-				else if (contentType == 'application/json') {
+				else if (contentType === 'application/json') {
 					this.data = JSON.parse(this.request.getBody());
 				}
 	

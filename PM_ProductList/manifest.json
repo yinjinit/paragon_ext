@@ -1,0 +1,29 @@
+{
+    "name": "PM_ProductList",
+    "fantasyName": "PM_ProductList",
+    "vendor": "Paragon",
+    "version": "1.0.0",
+    "type": "extension",
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": ">=19.1.1",
+        "SCS": ">=19.1.1"
+    },
+    "description": "Customizes Product List.",
+    "skins": [],
+    "javascript": {
+        "entry_points": {
+            "myaccount": "Modules/JavaScript/PM.ProductList.js"
+        },
+        "application": {
+            "myaccount": {
+                "files": [
+                    "Modules/JavaScript/PM.ProductList.DisplayFull.View.js",
+                    "Modules/JavaScript/PM.ProductList.js",
+                    "Modules/JavaScript/PM.ProductList.Lists.View.js"
+                ]
+            }
+        }
+    },
+    "local_folder": "Workspace\\PM_ProductList"
+}

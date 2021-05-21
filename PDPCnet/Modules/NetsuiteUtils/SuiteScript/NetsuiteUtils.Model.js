@@ -95,9 +95,9 @@ define('NetsuiteUtils.Model', [
 
                 var easyAskDataObj = JSON.parse(easyAskData);
 
-                if(easyAskDataObj && easyAskDataObj.returnCode == 0 && easyAskDataObj.source) {
+                if(easyAskDataObj && easyAskDataObj.returnCode === 0 && easyAskDataObj.source) {
                     for( var i = 0; i < easyAskDataObj.source.products.items.length; i++ ){
-                        if( easyAskDataObj.source.products.items[i]['Mpn'] == this.itemData.mpn ) {
+                        if( easyAskDataObj.source.products.items[i]['Mpn'] === this.itemData.mpn ) {
                             // remove $ sign
                             var price = easyAskDataObj.source.products.items[i]['Online_Price'].slice(1)
                             this.itemData.price = parseFloat(price.replace(/,/g, ''));

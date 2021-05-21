@@ -1,0 +1,68 @@
+{
+    "name": "PM_SearchTransaction",
+    "fantasyName": "PM_SearchTransaction",
+    "vendor": "Paragon",
+    "version": "1.0.0",
+    "type": "extension",
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": ">=19.1.1",
+        "SCS": ">=19.1.1"
+    },
+    "description": "Adds Search functionality to Transaction History.",
+    "skins": [],
+    "assets": {
+        "img": {
+            "files": []
+        },
+        "fonts": {
+            "files": []
+        },
+        "services": {
+            "files": [
+                "services/PM.Search.Transaction.Service.ss"
+            ]
+        }
+    },
+    "sass": {
+        "entry_points": {
+            "myaccount": "Modules/Sass/_pm-search-transaction.scss"
+        },
+        "files": [
+            "Modules/Sass/_pm-search-transaction.scss"
+        ]
+    },
+    "templates": {
+        "application": {
+            "myaccount": {
+                "files": [
+                    "Modules/Templates/pm_search_transaction_list.tpl"
+                ]
+            }
+        }
+    },
+    "javascript": {
+        "entry_points": {
+            "myaccount": "Modules/JavaScript/PM.Search.Transaction.js"
+        },
+        "application": {
+            "myaccount": {
+                "files": [
+                    "Modules/JavaScript/PM.Search.Transaction.Collection.js",
+                    "Modules/JavaScript/PM.Search.Transaction.js",
+                    "Modules/JavaScript/PM.Search.Transaction.List.View.js",
+                    "Modules/JavaScript/PM.Search.Transaction.Model.js"
+                ]
+            }
+        }
+    },
+    "ssp-libraries": {
+        "entry_point": "Modules/SuiteScript/PM.Search.Transaction.js",
+        "files": [
+            "Modules/SuiteScript/PM.Search.Transaction.ServiceController.js",
+            "Modules/SuiteScript/PM.Search.Transaction.Model.js",
+            "Modules/SuiteScript/PM.Search.Transaction.js"
+        ]
+    },
+    "local_folder": "Workspace\\PM_SearchTransaction"
+}

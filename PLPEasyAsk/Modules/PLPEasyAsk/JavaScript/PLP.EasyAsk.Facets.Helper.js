@@ -40,7 +40,7 @@ define('PLP.EasyAsk.Facets.Helper'
                 * Check if the cateogry is in this level
                 */
                var category = _.find(categories, function (el) {
-                  return el.fullurl == translator.getCategoryUrl();
+                  return el.fullurl === translator.getCategoryUrl();
                });
 
                /**
@@ -155,9 +155,9 @@ define('PLP.EasyAsk.Facets.Helper'
             //console.log(brandCheck);
 
             //https://www.paragonmicro.com/products?Brand=Citrix
-            if(brandCheck != -1 && brandsCheck == -1){
+            if(brandCheck !== -1 && brandsCheck === -1){
 
-                if(hashCheck != -1){
+                if(hashCheck !== -1){
                   var url_vars = urlCheck.split('#');
                 } else {
                   var url_vars = urlCheck.split('.com');
@@ -168,15 +168,15 @@ define('PLP.EasyAsk.Facets.Helper'
 
                 var brand = category_brand[1];
                     //currentPage > 1
-                    //if(currentPage > 1 || ampersandCheck != -1){
-                    if(ampersandCheck != -1){
+                    //if(currentPage > 1 || ampersandCheck !== -1){
+                    if(ampersandCheck !== -1){
                       brand = brand.split('&');
                       brand = brand[1];
                     }
                     brand =  brand.replace('=', '":"');
                     brand = '{"'+ brand +'"}';
 
-                    if(filtersCheck == undefined){
+                    if(filtersCheck === undefined){
                       data.selected_filters = brand;
                     }
 
@@ -250,7 +250,7 @@ define('PLP.EasyAsk.Facets.Helper'
                   itemInNS = true;
                }
 
-               if(onlinePrice || (profile.get("isLoggedIn") == "T")){
+               if(onlinePrice || (profile.get("isLoggedIn") === "T")){
                   displayAddToCartButton = true;
                }               
 
@@ -366,7 +366,7 @@ define('PLP.EasyAsk.Facets.Helper'
               // console.log('total_quantity :' + total_quantity);
                
                //console.log('online price' + onlinePrice);
-               if(onlinePrice || (profile.get("isLoggedIn") == "T")){
+               if(onlinePrice || (profile.get("isLoggedIn") === "T")){
                   displayAddToCartButton = true;
                }    
 

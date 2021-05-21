@@ -45,7 +45,7 @@ define(
 	
 				nlapiLogExecution('debug', 'po2goSession', po2goSession)
 	
-				if (po2goSession != null && po2goSession != '') {
+				if (po2goSession !== null && po2goSession !== '') {
 					var profile = ModelsInit.customer.getFieldValues();
 					var profileSearch = nlapiSearchRecord('contact', null, [['email', 'is', profile.email]], null);
 					var contactInternalid = profileSearch[0].getId();

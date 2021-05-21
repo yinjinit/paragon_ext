@@ -48,7 +48,7 @@ define(
                   .then(function (data) {
 
                      
-                  if (profile.get("isLoggedIn") == "F"){
+                  if (profile.get("isLoggedIn") === "F"){
                      self.showNonLoggedInRules(self.model.get("item"));
                   }
    
@@ -121,7 +121,7 @@ define(
 
             var profile = ProfileModel.getInstance();
 
-            if (profile.get("isLoggedIn") == "T") {
+            if (profile.get("isLoggedIn") === "T") {
                try {
                   var data = {
                      cid: profile.get("internalid"),
@@ -163,7 +163,7 @@ define(
 
             var price = item.get('_price') && parseFloat(item.get('_price'));
 
-            if(x == ys || price <= 0){
+            if(x === ys || price <= 0){
                
                jQuery('#product-price-full-pdp').hide();
                jQuery('#in-modal-product-price-quick-view').hide();
@@ -180,7 +180,7 @@ define(
                jQuery('#in-modal-call-for-pricing-quick-view').show();
                jQuery('#call-for-pricing-full-pdp').show();
 
-            }else if(x == z){
+            }else if(x === z){
                jQuery('.product-views-price').show();
             }
          },

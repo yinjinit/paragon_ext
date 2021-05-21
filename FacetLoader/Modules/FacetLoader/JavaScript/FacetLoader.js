@@ -1,55 +1,45 @@
-
 define(
-    'FacetLoader',
-    [
-        'Facets.Browse.View',
-        'underscore',
-        'Utils'
-    ],
-    function (
-        FacetsBrowseView,
-        _,
-        Utils
+  'FacetLoader',
+  [
+    'Facets.Browse.View',
+    'underscore',
+    'Utils'
+  ],
+  function(
+    FacetsBrowseView,
+    _,
+    Utils
+  ) {
+    'use strict';
 
-    ) {
-        'use strict';
+    _.extend(FacetsBrowseView.prototype, {
 
-        _.extend(FacetsBrowseView.prototype, {
+      initialize: _.wrap(FacetsBrowseView.prototype.initialize, function(fn) {
 
-			initialize: _.wrap(FacetsBrowseView.prototype.initialize, function (fn) {
+        this.turnOnLoader();
 
-				this.turnOnLoader();
-				
-                var self = this;
-				var ret = fn.apply(this, _.toArray(arguments).slice(1));
-				
-				
-                
-                this.on('afterViewRender', function () {
-					
-                    _.defer(_.bind(self.turnOffLoader, this));
+        var self = this;
+        var ret = fn.apply(this, _.toArray(arguments).slice(1));
 
-                }, this);
+        this.on('afterViewRender', function() {
 
+          _.defer(_.bind(self.turnOffLoader, this));
 
-                return ret;
-            }),
+        }, this);
 
-          
+        return ret;
+      }),
 
+      turnOnLoader: function() {
 
+        jQuery('#facet-wrapper-loader').show();
 
-            turnOnLoader: function () {
-				
-                jQuery("#facet-wrapper-loader").show();
+      },
 
-            },
+      turnOffLoader: function() {
 
-            turnOffLoader: function () {
-				
-				
-                jQuery("#facet-wrapper-loader").hide();
-            },
+        jQuery('#facet-wrapper-loader').hide();
+      }
 
-		});
     });
+  });

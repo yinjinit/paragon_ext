@@ -1,0 +1,26 @@
+{
+    "name": "PM_Configuration",
+    "fantasyName": "PM_Configuration",
+    "vendor": "Paragon",
+    "version": "1.0.0",
+    "type": "extension",
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": ">=19.1.1",
+        "SCS": ">=19.1.1"
+    },
+    "description": "Enhances Configuration settings for Paragon Micro.",
+    "skins": [],
+    "configuration": {
+        "files": [
+            "Modules/Configuration/PM.Configuration.json"
+        ]
+    },
+    "ssp-libraries": {
+        "entry_point": "Modules/SuiteScript/PM.Configuration.js",
+        "files": [
+            "Modules/SuiteScript/PM.Configuration.js"
+        ]
+    },
+    "local_folder": "Workspace\\PM_Configuration"
+}

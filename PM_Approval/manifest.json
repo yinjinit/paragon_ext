@@ -1,0 +1,72 @@
+{
+    "name": "PM_Approval",
+    "fantasyName": "PM_Approval",
+    "vendor": "Paragon",
+    "version": "1.0.0",
+    "type": "extension",
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": ">=19.1.1",
+        "SCS": ">=19.1.1"
+    },
+    "description": "Adds Approval page to My Account.",
+    "skins": [],
+    "assets": {
+        "img": {
+            "files": []
+        },
+        "fonts": {
+            "files": []
+        },
+        "services": {
+            "files": [
+                "services/PM.Approval.Service.ss"
+            ]
+        }
+    },
+    "sass": {
+        "entry_points": {
+            "myaccount": "Modules/Sass/_pm-approval.scss"
+        },
+        "files": [
+            "Modules/Sass/_pm-approval.scss"
+        ]
+    },
+    "templates": {
+        "application": {
+            "myaccount": {
+                "files": [
+                    "Modules/Templates/pm_approval_details.tpl",
+                    "Modules/Templates/pm_approval_edit.tpl",
+                    "Modules/Templates/pm_approval_list.tpl"
+                ]
+            }
+        }
+    },
+    "javascript": {
+        "entry_points": {
+            "myaccount": "Modules/JavaScript/PM.Approval.js"
+        },
+        "application": {
+            "myaccount": {
+                "files": [
+                    "Modules/JavaScript/PM.Approval.Collection.js",
+                    "Modules/JavaScript/PM.Approval.Details.View.js",
+                    "Modules/JavaScript/PM.Approval.Edit.View.js",
+                    "Modules/JavaScript/PM.Approval.js",
+                    "Modules/JavaScript/PM.Approval.List.View.js",
+                    "Modules/JavaScript/PM.Approval.Model.js"
+                ]
+            }
+        }
+    },
+    "ssp-libraries": {
+        "entry_point": "Modules/SuiteScript/PM.Approval.js",
+        "files": [
+            "Modules/SuiteScript/PM.Approval.ServiceController.js",
+            "Modules/SuiteScript/PM.Approval.Model.js",
+            "Modules/SuiteScript/PM.Approval.js"
+        ]
+    },
+    "local_folder": "Workspace\\PM_Approval"
+}

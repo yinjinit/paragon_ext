@@ -6,14 +6,22 @@ define('PM.My_Team.PM.View', [
   'jQuery',
   'underscore',
   'Profile.Model',
-  'PM.MyTeam.Collection',
-], function (pm_my_team_pm_tpl, Utils, Backbone, jQuery, _, ProfileModel, PMMyTeamCollection) {
+  'PM.MyTeam.Collection'
+], function(
+  pm_my_team_pm_tpl,
+  Utils,
+  Backbone,
+  jQuery,
+  _,
+  ProfileModel,
+  PMMyTeamCollection
+) {
   'use strict';
 
   return Backbone.View.extend({
     template: pm_my_team_pm_tpl,
 
-    initialize: function (options) {
+    initialize: function(options) {
       this.message = '';
       var profile_model = ProfileModel.getInstance();
       this.user = profile_model.get('internalid');
@@ -23,7 +31,7 @@ define('PM.My_Team.PM.View', [
 
       var self = this;
 
-      this.collection.fetch({ data: { internalid: userId } }).done(function () {
+      this.collection.fetch({data: {internalid: userId}}).done(function() {
         self.render();
       });
       this.collection.on('reset', this.showContent, this);
@@ -36,12 +44,13 @@ define('PM.My_Team.PM.View', [
     childViews: {},
 
     getContext: function getContext() {
-      var salesRep = this.collection.models[0] ? this.collection.models[0].get('salesRep') : '[]';
+      var salesRep = this.collection.models[0] ?
+        this.collection.models[0].get('salesRep') : '[]';
 
       return {
         customerName: this.userName,
-        salesRep: JSON.parse(salesRep),
+        salesRep: JSON.parse(salesRep)
       };
-    },
+    }
   });
 });

@@ -1,15 +1,15 @@
 {
     "name": "PM_Renewal",
     "fantasyName": "PM_Renewal",
-    "vendor": "ParagonMicro",
-    "version": "1.0.7",
+    "vendor": "Paragon",
+    "version": "1.0.8",
     "type": "extension",
     "target": "SCA,SCS",
     "target_version": {
         "SCA": ">=19.1.1",
         "SCS": ">=19.1.1"
     },
-    "description": "PM_Renewal extension provides a contact the ability to  create, update and destroy Renewal Tracking Reminders that send an email notification on",
+    "description": "PM_Renewal extension provides a contact the ability to create, update and destroy Renewal Tracking Reminders that send an email notification on",
     "skins": [],
     "assets": {
         "img": {
@@ -20,58 +20,55 @@
         },
         "services": {
             "files": [
-                "services/PMRenewal.Service.ss"
+                "services/PM.Renewal.Service.ss"
             ]
         }
     },
-    "configuration": {
-        "files": []
-    },
     "sass": {
         "entry_points": {
-            "myaccount": "Modules/PMRenewal/Sass/_pm_renewal-pmrenewal.scss"
+            "myaccount": "Modules/Sass/_pm_renewal.scss"
         },
         "files": [
-            "Modules/PMRenewal/Sass/_pm_renewal-pmrenewal.scss"
+            "Modules/Sass/_pm_renewal.scss"
         ]
     },
     "templates": {
         "application": {
             "myaccount": {
                 "files": [
-                    "Modules/PMRenewal/Templates/renewal_details.tpl",
-                    "Modules/PMRenewal/Templates/renewal_edit.tpl",
-                    "Modules/PMRenewal/Templates/renewal_list.tpl",
-                    "Modules/PMRenewal/Templates/renewal_new.tpl",
-                    "Modules/PMRenewal/Templates/renewal_details_archive.tpl"
+                    "Modules/Templates/renewal_details.tpl",
+                    "Modules/Templates/renewal_edit.tpl",
+                    "Modules/Templates/renewal_list.tpl",
+                    "Modules/Templates/renewal_new.tpl",
+                    "Modules/Templates/renewal_details_archive.tpl"
                 ]
             }
         }
     },
     "javascript": {
         "entry_points": {
-            "myaccount": "Modules/PMRenewal/JavaScript/ParagonMicro.PM_Renewal.PMRenewal.js"
+            "myaccount": "Modules/JavaScript/PM.Renewal.js"
         },
         "application": {
             "myaccount": {
                 "files": [
-                    "Modules/PMRenewal/JavaScript/ParagonMicro.PM_Renewal.PMRenewal.js",
-                    "Modules/PMRenewal/JavaScript/PMRenewal.List.View.js",
-                    "Modules/PMRenewal/JavaScript/PMRenewal.Collection.js",
-                    "Modules/PMRenewal/JavaScript/PMRenewal.Model.js",
-                    "Modules/PMRenewal/JavaScript/PMRenewal.Details.View.js",
-                    "Modules/PMRenewal/JavaScript/PMRenewal.Add.View.js",
-                    "Modules/PMRenewal/JavaScript/PMRenewal.Edit.View.js"
+                    "Modules/JavaScript/PM.Renewal.List.View.js",
+                    "Modules/JavaScript/PM.Renewal.Collection.js",
+                    "Modules/JavaScript/PM.Renewal.Model.js",
+                    "Modules/JavaScript/PM.Renewal.Details.View.js",
+                    "Modules/JavaScript/PM.Renewal.Add.View.js",
+                    "Modules/JavaScript/PM.Renewal.Edit.View.js",
+                    "Modules/JavaScript/PM.Renewal.js"
                 ]
             }
         }
     },
     "ssp-libraries": {
-        "entry_point": "Modules/PMRenewal/SuiteScript/ParagonMicro.PM_Renewal.PMRenewal.js",
+        "entry_point": "Modules/SuiteScript/PM.Renewal.js",
         "files": [
-            "Modules/PMRenewal/SuiteScript/ParagonMicro.PM_Renewal.PMRenewal.js",
-            "Modules/PMRenewal/SuiteScript/PMRenewal.ServiceController.js",
-            "Modules/PMRenewal/SuiteScript/PMRenewal.Model.js"
+            "Modules/SuiteScript/PM.Renewal.js",
+            "Modules/SuiteScript/PM.Renewal.ServiceController.js",
+            "Modules/SuiteScript/PM.Renewal.Model.js"
         ]
     },
     "local_folder": "Workspace\\PM_Renewal"

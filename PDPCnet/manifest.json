@@ -2,7 +2,7 @@
     "name": "PDPCnet",
     "fantasyName": "PDPCnet",
     "vendor": "Tavano",
-    "version": "1.0.8",
+    "version": "1.0.9",
     "type": "extension",
     "target": "SCA,SCS",
     "target_version": {

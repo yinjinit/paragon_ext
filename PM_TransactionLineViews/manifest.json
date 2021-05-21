@@ -1,0 +1,27 @@
+{
+    "name": "PM_TransactionLineViews",
+    "fantasyName": "PM_TransactionLineViews",
+    "vendor": "Paragon",
+    "version": "1.0.0",
+    "type": "extension",
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": ">=19.1.1",
+        "SCS": ">=19.1.1"
+    },
+    "description": "Customizes Navigable View of Transaction Line Cell.",
+    "skins": [],
+    "javascript": {
+        "entry_points": {
+            "myaccount": "Modules/JavaScript/PM.Transaction.Line.Views.Cell.Navigable.View.js"
+        },
+        "application": {
+            "myaccount": {
+                "files": [
+                    "Modules/JavaScript/PM.Transaction.Line.Views.Cell.Navigable.View.js"
+                ]
+            }
+        }
+    },
+    "local_folder": "Workspace\\PM_TransactionLineViews"
+}

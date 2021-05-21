@@ -37,7 +37,7 @@ function () {
 			}, r = l.WordArray = t.extend({
 				init: function (a, c) {
 					a = this.words = a || [];
-					this.sigBytes = c != p ? c : 4 * a.length;
+					this.sigBytes = c !== p ? c : 4 * a.length;
 				},
 				toString: function (a) {
 					return (a || v).stringify(this);
@@ -118,7 +118,7 @@ function () {
 					this._nDataBytes = 0;
 				},
 				_append: function (a) {
-					'string' == typeof a && (a = x.parse(a));
+					'string' === typeof a && (a = x.parse(a));
 					this._data.concat(a);
 					this._nDataBytes += a.sigBytes;
 				},
@@ -192,7 +192,7 @@ function () {
 			},
 			parse: function (d) {
 				var l = d.length, s = this._map, t = s.charAt(64);
-				t && (t = d.indexOf(t), -1 != t && (l = t));
+				t && (t = d.indexOf(t), -1 !== t && (l = t));
 				for (var t = [], r = 0, w = 0; w < l; w++)
 					if (w % 4) {
 						var v = s.indexOf(d.charAt(w - 1)) << 2 * (w % 4), b = s.indexOf(d.charAt(w)) >>> 6 - 2 * (w % 4);
@@ -327,10 +327,10 @@ function () {
 				_createHelper: function (e) {
 					return {
 						encrypt: function (b, k, d) {
-							return ('string' == typeof k ? c : a).encrypt(e, b, k, d);
+							return ('string' === typeof k ? c : a).encrypt(e, b, k, d);
 						},
 						decrypt: function (b, k, d) {
-							return ('string' == typeof k ? c : a).decrypt(e, b, k, d);
+							return ('string' === typeof k ? c : a).decrypt(e, b, k, d);
 						}
 					};
 				}
@@ -394,7 +394,7 @@ function () {
 			reset: function () {
 				v.reset.call(this);
 				var a = this.cfg, b = a.iv, a = a.mode;
-				if (this._xformMode == this._ENC_XFORM_MODE)
+				if (this._xformMode === this._ENC_XFORM_MODE)
 					var c = a.createEncryptor;
 				else
 					c = a.createDecryptor, this._minBufferSize = 1;
@@ -405,7 +405,7 @@ function () {
 			},
 			_doFinalize: function () {
 				var a = this.cfg.padding;
-				if (this._xformMode == this._ENC_XFORM_MODE) {
+				if (this._xformMode === this._ENC_XFORM_MODE) {
 					a.pad(this._data, this.blockSize);
 					var b = this._process(!0);
 				} else
@@ -433,7 +433,7 @@ function () {
 				parse: function (a) {
 					a = r.parse(a);
 					var b = a.words;
-					if (1398893684 == b[0] && 1701076831 == b[1]) {
+					if (1398893684 === b[0] && 1701076831 === b[1]) {
 						var c = s.create(b.slice(2, 4));
 						b.splice(0, 4);
 						a.sigBytes -= 16;
@@ -467,7 +467,7 @@ function () {
 					return a.createDecryptor(c, d).finalize(b.ciphertext);
 				},
 				_parse: function (a, b) {
-					return 'string' == typeof a ? b.parse(a, this) : a;
+					return 'string' === typeof a ? b.parse(a, this) : a;
 				}
 			}), p = (p.kdf = {}).OpenSSL = {
 				execute: function (a, b, c, d) {
@@ -538,7 +538,7 @@ function () {
 							e[j] = c[j];
 						else {
 							var k = e[j - 1];
-							j % d ? 6 < d && 4 == j % d && (k = l[k >>> 24] << 24 | l[k >>> 16 & 255] << 16 | l[k >>> 8 & 255] << 8 | l[k & 255]) : (k = k << 8 | k >>> 24, k = l[k >>> 24] << 24 | l[k >>> 16 & 255] << 16 | l[k >>> 8 & 255] << 8 | l[k & 255], k ^= H[j / d | 0] << 24);
+							j % d ? 6 < d && 4 === j % d && (k = l[k >>> 24] << 24 | l[k >>> 16 & 255] << 16 | l[k >>> 8 & 255] << 8 | l[k & 255]) : (k = k << 8 | k >>> 24, k = l[k >>> 24] << 24 | l[k >>> 16 & 255] << 16 | l[k >>> 8 & 255] << 8 | l[k & 255], k ^= H[j / d | 0] << 24);
 							e[j] = e[j - d] ^ k;
 						}
 					c = this._invKeySchedule = [];

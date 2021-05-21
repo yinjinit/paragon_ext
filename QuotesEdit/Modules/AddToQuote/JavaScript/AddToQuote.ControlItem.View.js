@@ -38,7 +38,7 @@ define('AddToQuote.ControlItem.View', [
             var imagesUrl ={};
             var imgClassCheck = jQuery('div').hasClass('ccs-ds-cloud-main-image');
             var imgClassCheckTwo = jQuery('div').hasClass('ccs-fancybox-gallery');
-            if(imgClassCheck == true && imgClassCheckTwo == true){
+            if(imgClassCheck === true && imgClassCheckTwo === true){
             //must get the first thumbnail from fancy box
                 //var imagesUrlCheck = jQuery('.ccs-fancybox-gallery').find('img').attr('src');
                 var imagesUrlCheck = jQuery('div').closest('.ccs-slick-list').find('.ccs-cc-thumbnail-wrapper').attr('data-original-src');

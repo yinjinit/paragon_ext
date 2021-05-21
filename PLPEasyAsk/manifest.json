@@ -2,7 +2,7 @@
     "name": "PLPEasyAsk",
     "fantasyName": "PLPEasyAsk",
     "vendor": "Tavano",
-    "version": "1.0.12",
+    "version": "1.0.15",
     "type": "extension",
     "target": "SCA,SCS",
     "target_version": {

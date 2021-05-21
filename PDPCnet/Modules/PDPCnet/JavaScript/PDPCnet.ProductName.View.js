@@ -54,7 +54,7 @@ define('PDPCnet.ProductName.View'
                         //var sPageURL = window.location.search.substring(1);
                         var sPageURL = ''
                         var isModal = jQuery('div').hasClass('modal-dialog');
-                        if(isModal == true){
+                        if(isModal === true){
                             //console.log('is modal');
                             sPageURL = jQuery('.product-details-quickview-full-details').attr('data-hashtag');
                             //console.log('sPageURL: ' + sPageURL);
@@ -69,7 +69,7 @@ define('PDPCnet.ProductName.View'
                         {
                             var sParameterName = sURLVariables[i].split('=');
 
-                            if (sParameterName[0] == sParam)
+                            if (sParameterName[0] === sParam)
 
                             {
                                 return decodeURIComponent(sParameterName[1]);
@@ -84,21 +84,21 @@ define('PDPCnet.ProductName.View'
                         var stock_message_placement = '';
                         var stockcontent = '';
                         var isModal = jQuery('div').hasClass('modal-dialog');
-                        if(isModal == true){
+                        if(isModal === true){
                             var stock_message = GetUrlParameter('stockmessage');
                             //console.log('is modal');
                             //console.log('stockmessage: ' + stock_message);
 
                             //var modalUrl = jQuery('.product-details-quickview-full-details').attr('data-hashtag');
                             //console.log('modalUrl: ' + modalUrl);
-                            if(stock_message != ''){
-                                if(stock_message == 'Out of Stock'){
+                            if(stock_message !== ''){
+                                if(stock_message === 'Out of Stock'){
                                    stock_message_color = '#d62d20'; //red
 
-                                } else if(stock_message == 'Limited Quantities Available'){
+                                } else if(stock_message === 'Limited Quantities Available'){
                                     stock_message_color = '#ffa700'; //burnt orange
 
-                                } else if(stock_message == 'In Stock'){
+                                } else if(stock_message === 'In Stock'){
                                     stock_message_color = '#008744'; //Green
 
                                 } 
@@ -109,7 +109,7 @@ define('PDPCnet.ProductName.View'
                                   var dupeCheck = jQuery('div').hasClass('stock-message');
                                   //var detailCheck = jQuery('div').hasClass('product-details-full');
                                   //console.log(dupeCheck);
-                                 // if(dupeCheck != true){
+                                 // if(dupeCheck !== true){
                                       //jQuery('#in-modal-main-data-view-quick-view .cart-add-to-cart-button-container .cart-add-to-cart-button').append(stockcontent);
                                       //jQuery('#in-modal-product-price-quick-view[data-view="Product.Price"]').append(stockcontent);
                                       jQuery('#in-modal-quantity-quick-view').prepend(stockcontent);
@@ -121,18 +121,18 @@ define('PDPCnet.ProductName.View'
                             stock_message = GetUrlParameter('stockmessage');
                             //console.log('detail page')
                             //console.log('stockmessage: ' + stock_message);
-                            if(stock_message != ''){
-                                if(stock_message == 'Out of Stock'){
+                            if(stock_message !== ''){
+                                if(stock_message === 'Out of Stock'){
                                    stock_message_color = '#d62d20'; //red
 
-                                } else if(stock_message == 'Limited Quantities Available'){
+                                } else if(stock_message === 'Limited Quantities Available'){
                                     stock_message_color = '#ffa700'; //burnt orange
 
-                                } else if(stock_message == 'In Stock'){
+                                } else if(stock_message === 'In Stock'){
                                     stock_message_color = '#008744'; //Green
 
                                 //put in place because incoming from MyAccount Quote - remove this when issue is corrected.
-                                } else if(stock_message == undefined){
+                                } else if(stock_message === undefined){
                                     stock_message = 'In Stock';
                                     stock_message_color = '#008744'; //Green
                                 }
@@ -145,7 +145,7 @@ define('PDPCnet.ProductName.View'
 
                                     //console.log(dupeCheck);
                                     //console.log('modalCheck: ' +modalCheck);
-                                     if(dupeCheck == false){
+                                     if(dupeCheck === false){
                                         //jQuery('.cart-add-to-cart-button').append(stockcontent);
                                         //jQuery('#product-price-full-pdp[data-view="Product.Price"]').append(stockcontent);
                                         jQuery('#quantity-full-pdp').prepend(stockcontent);
@@ -178,7 +178,7 @@ define('PDPCnet.ProductName.View'
 
                         var qtyCheck = brand_parse.lastIndexOf("?");
 
-                        if(qtyCheck == '-1'){
+                        if(qtyCheck === '-1'){
                             brand_parse = quickview_brand.split('&');
                             brand_parse = brand_parse.slice(-2);
                             //console.log('QuickView: ' + brand_parse);
@@ -203,8 +203,8 @@ define('PDPCnet.ProductName.View'
 
                     function manufacturerBrand(){
 
-                        if(jQuery("section").hasClass("product-details-full-main-content") == true){
-                            if(jQuery("div").hasClass("img-brand") == false){
+                        if(jQuery("section").hasClass("product-details-full-main-content") === true){
+                            if(jQuery("div").hasClass("img-brand") === false){
                                 var brand = jQuery('meta[itemprop="url"]').attr("content");
                                 var brand_img = manufacturerBrandImg(brand);
                                 var brand_image_placement = '<div class="img-brand" style="width:100%; height:40px; text-align:center; display: inline-block;">\n <img width="100px" height="40px" style="width:100px; height:40px" src="/site/pm-imgs/brands/' + brand_img + '" onerror="this.onerror=null;this.src=\'/site/pm-imgs/brands/default.gif\';" />\n </div>';
@@ -213,8 +213,8 @@ define('PDPCnet.ProductName.View'
                             }
 
                            // console.log('product details true');
-                        } else if(jQuery('div').hasClass('product-details-quickview') == true){
-                            //if(jQuery("div").hasClass("img-brand") == false){
+                        } else if(jQuery('div').hasClass('product-details-quickview') === true){
+                            //if(jQuery("div").hasClass("img-brand") === false){
                                 var brand = jQuery('.product-details-quickview-full-details').attr("data-hashtag");
                                 //console.log('modal brand: ' + brand);
                                 var brand_img = manufacturerBrandImg(brand);
@@ -227,7 +227,7 @@ define('PDPCnet.ProductName.View'
                                     //alert('new image loaded: ' + this.src);
                                     var imgCheck = jQuery('.product-details-quickview-img div.img-brand img').attr('src');
                                     var brandCheck = imgCheck.search('no_image_available.jpeg');
-                                    if(brandCheck != '-1'){
+                                    if(brandCheck !== '-1'){
                                         jQuery('.product-details-quickview-img div.img-brand img').attr('src', '/site/pm-imgs/brands/default.gif');
                                     }
                                 });

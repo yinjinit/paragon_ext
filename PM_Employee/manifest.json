@@ -1,0 +1,72 @@
+{
+    "name": "PM_Employee",
+    "fantasyName": "PM_Employee",
+    "vendor": "Paragon",
+    "version": "1.0.0",
+    "type": "extension",
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": ">=19.1.1",
+        "SCS": ">=19.1.1"
+    },
+    "description": "Adds Employee page to My Account.",
+    "skins": [],
+    "assets": {
+        "img": {
+            "files": []
+        },
+        "fonts": {
+            "files": []
+        },
+        "services": {
+            "files": [
+                "services/PM.Employee.Service.ss"
+            ]
+        }
+    },
+    "sass": {
+        "entry_points": {
+            "myaccount": "Modules/Sass/_pm-employee.scss"
+        },
+        "files": [
+            "Modules/Sass/_pm-employee.scss"
+        ]
+    },
+    "templates": {
+        "application": {
+            "myaccount": {
+                "files": [
+                    "Modules/Templates/pm_employee_new.tpl",
+                    "Modules/Templates/pm_employee_details.tpl",
+                    "Modules/Templates/pm_employee_list.tpl"
+                ]
+            }
+        }
+    },
+    "javascript": {
+        "entry_points": {
+            "myaccount": "Modules/JavaScript/PM.Employee.js"
+        },
+        "application": {
+            "myaccount": {
+                "files": [
+                    "Modules/JavaScript/PM.Employee.Collection.js",
+                    "Modules/JavaScript/PM.Employee.Details.View.js",
+                    "Modules/JavaScript/PM.Employee.Edit.View.js",
+                    "Modules/JavaScript/PM.Employee.js",
+                    "Modules/JavaScript/PM.Employee.List.View.js",
+                    "Modules/JavaScript/PM.Employee.Model.js"
+                ]
+            }
+        }
+    },
+    "ssp-libraries": {
+        "entry_point": "Modules/SuiteScript/PM.Employee.js",
+        "files": [
+            "Modules/SuiteScript/PM.Employee.ServiceController.js",
+            "Modules/SuiteScript/PM.Employee.Model.js",
+            "Modules/SuiteScript/PM.Employee.js"
+        ]
+    },
+    "local_folder": "Workspace\\PM_Employee"
+}

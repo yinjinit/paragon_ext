@@ -188,7 +188,7 @@ define(
                 
 
 
-                if(brand_category != undefined){
+                if(brand_category !== undefined){
 
                     for (var i = 0; i < brand_category.length; i++) {
                         //remove replace for prod
@@ -222,7 +222,7 @@ define(
                  var brand_flag = url.search('Brand');
                  //console.log('brand_flag' + brand_flag);
                    //redirect_check = "";
-                 if(redirect_check == -1 && brand_flag != -1 && brand_category != undefined){
+                 if(redirect_check === -1 && brand_flag !== -1 && brand_category !== undefined){
                     //location.reload();
                     console.log('inside redirect');
                      //setTimeout(function(){
@@ -232,7 +232,7 @@ define(
                     
                     return false;
 
-                 } else if(brand_flag != -1){
+                 } else if(brand_flag !== -1){
                     //console.log(url);
 
                     var url_parse = url.split('Brand='); 
@@ -248,21 +248,21 @@ define(
                     var facets_main_category_title = jQuery('.facets-browse-category-heading-main-description h1').html().trim();
                     //console.log(facets_main_category_title);
                     //Sets major and minors based on Primary Item titles
-                    if(facets_main_category_title == 'Products' && brand_category != undefined){
+                    if(facets_main_category_title === 'Products' && brand_category !== undefined){
                         localStorage.setItem("major", JSON.stringify({brand_category_arr}));
 
-                    } else if(facets_main_category_title != 'Products' && brand_category != undefined){
+                    } else if(facets_main_category_title !== 'Products' && brand_category !== undefined){
 
                         localStorage.setItem("minor", JSON.stringify({brand_category_arr}));
 
                     }
 
-                    if(facets_category_title == 'Products'){
+                    if(facets_category_title === 'Products'){
                         var x = JSON.parse(localStorage.getItem("major"));
                         //console.log('facets_category_title Products x: ');
                         //console.log(x);
 
-                    } else if(facets_category_title != 'Products'){
+                    } else if(facets_category_title !== 'Products'){
                         var x = JSON.parse(localStorage.getItem("minor"));
                         //console.log('facets_category_title Not Products x: ');
                         //console.log(x);
@@ -279,19 +279,19 @@ define(
                     console.log(' ');
                     */
 
-                    if(jQuery('.facets-facet-browse-category').is(":visible") == true){
+                    if(jQuery('.facets-facet-browse-category').is(":visible") === true){
                         jQuery(".facets-category-cell").each(function( index ) {
                         var thumbnail_url = jQuery('.facets-category-cell-thumbnail a',this).attr('href');
                         var cell_title_url = jQuery('.facets-category-cell-title a',this).attr('href');
                         var category_text = jQuery('.facets-category-cell-title a',this).html().trim();
 
                         //Deon Doughty - fixes broken  brand categories
-                        if(thumbnail_url.search('notebooks') != -1 && thumbnail_url.search('notebooks/notebooks') == -1 && thumbnail_url.search('notebooks/tablets-tablet-pcs') == -1){
+                        if(thumbnail_url.search('notebooks') !== -1 && thumbnail_url.search('notebooks/notebooks') === -1 && thumbnail_url.search('notebooks/tablets-tablet-pcs') === -1){
                             thumbnail_url = thumbnail_url + '/notebooks';
                             cell_title_url = cell_title_url + '/notebooks';
                         }
 
-                        if(thumbnail_url.search('memory') != -1 && thumbnail_url.search('flash-memory') == -1){
+                        if(thumbnail_url.search('memory') !== -1 && thumbnail_url.search('flash-memory') === -1){
                             thumbnail_url = thumbnail_url + '/device-memory';
                             cell_title_url = cell_title_url + '/device-memory';
                         }
@@ -303,10 +303,10 @@ define(
                         //console.log(category_text + ': ' + n);
 
                         //console.log(brand_category_arr.includes(category_text));
-                        if(n == true){
+                        if(n === true){
                         jQuery('.facets-category-cell-thumbnail a',this).attr('href', thumbnail_url +'' +brand);
                         jQuery('.facets-category-cell-title a',this).attr('href', cell_title_url +''+ brand);
-                        } else if(n == false && brand_category_arr.length > -1){
+                        } else if(n === false && brand_category_arr.length > -1){
 
                             jQuery(this).remove();
 
@@ -321,11 +321,11 @@ define(
                         var category_facet_url = jQuery(this).attr('href');
                         var category_text = jQuery(this).html().trim();
 
-                        if(category_facet_url.search('notebooks') != -1 && category_facet_url.search('notebooks/notebooks') == -1 && category_facet_url.search('notebooks/tablets-tablet-pcs') == -1) {
+                        if(category_facet_url.search('notebooks') !== -1 && category_facet_url.search('notebooks/notebooks') === -1 && category_facet_url.search('notebooks/tablets-tablet-pcs') === -1) {
                             category_facet_url = category_facet_url + '/notebooks';
                         }
 
-                        if(category_facet_url.search('memory') != -1 && category_facet_url.search('flash-memory') == -1) {
+                        if(category_facet_url.search('memory') !== -1 && category_facet_url.search('flash-memory') === -1) {
                             category_facet_url = category_facet_url + '/device-memory';
                         }
 
@@ -343,19 +343,19 @@ define(
 
                         var productsCheck = jQuery('.global-views-breadcrumb-item-active').html().trim();
 
-                        if(category_facet_url.search('Brand') == -1 && n == true && productsCheck == 'Products'){
+                        if(category_facet_url.search('Brand') === -1 && n === true && productsCheck === 'Products'){
                         jQuery(this).attr('href', category_facet_url +''+brand);
                         //console.log( index + ": " + jQuery(this).attr('href') );
-                        //&& facets_category_title != 'Products'
+                        //&& facets_category_title !== 'Products'
                         /*
-                        } else if(n == false && brand_category_arr.length > -1){
+                        } else if(n === false && brand_category_arr.length > -1){
                            jQuery(this).closest('li').remove();
                           */ 
                         } else {
                            jQuery(this).attr('href', category_facet_url +''+brand); 
                         }
                         
-                        if(n == false && x.brand_category_arr.length > -1){
+                        if(n === false && x.brand_category_arr.length > -1){
                            jQuery(this).closest('li').remove();
                        }
                     });
@@ -364,11 +364,11 @@ define(
                         if(jQuery(this).attr('href') !== '/'){
                             var category_facet_url = jQuery(this).attr('href');
 
-                            if(category_facet_url.search('notebooks') != -1 && category_facet_url.search('notebooks/notebooks') == -1 && category_facet_url.search('notebooks/tablets-tablet-pcs') == -1) {
+                            if(category_facet_url.search('notebooks') !== -1 && category_facet_url.search('notebooks/notebooks') === -1 && category_facet_url.search('notebooks/tablets-tablet-pcs') === -1) {
                                 category_facet_url = category_facet_url + '/notebooks';
                             }
 
-                            if(category_facet_url.search('memory') != -1) {
+                            if(category_facet_url.search('memory') !== -1) {
                                 category_facet_url = category_facet_url + '/device-memory';
                             }
                             //memory/device-memory
@@ -387,14 +387,14 @@ define(
                 // console.log('brand_flag' + brand_flag);
 
                 //Deon Doughty - Checks to collapse brand menu
-                 if(brand_flag != -1){
+                 if(brand_flag !== -1){
                     var expaned = jQuery('a[title="Brand"]').closest('div').find('div').hasClass('in');
                     //console.log('expaned ' + expaned);
-                        if(expaned == true){
+                        if(expaned === true){
                             jQuery('a[title="Brand"]').trigger('click').trigger('tap');
                         }
                     //jQuery('.facets-facet-browse-category').hide();
-                        if(facets_main_category_title == "Products" && brand_category == undefined){
+                        if(facets_main_category_title === "Products" && brand_category === undefined){
                             jQuery('.facets-faceted-navigation-item-category').hide();
                         }
                     //expands facet menu
@@ -409,7 +409,7 @@ define(
                 
                 var profile = ProfileModel.getInstance();
 
-                if (profile.get("isLoggedIn") == "T"){
+                if (profile.get("isLoggedIn") === "T"){
 
                     checkBrandUrlToHideCategory();
 

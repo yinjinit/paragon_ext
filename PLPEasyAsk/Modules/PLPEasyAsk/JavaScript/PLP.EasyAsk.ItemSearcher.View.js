@@ -46,7 +46,7 @@ define(
                     self.$searchElement.data('ttTypeahead').dropdown.moveCursorDown();
                 }
 
-                if(self.options.componentId && self.options.componentId == 'quickaddSearch'){ // when it comes from the quickAdd use the native behaviour from NetSuite
+                if(self.options.componentId && self.options.componentId === 'quickaddSearch'){ // when it comes from the quickAdd use the native behaviour from NetSuite
                     
                     // silent = true makes it invisible to any listener that is waiting for the data to load
                     // We can use jQuery's .done, as the fetch method returns a promise
@@ -160,7 +160,7 @@ define(
                 setTimeout(function(){
                     var pre_input = jQuery('[data-view="ItemsSeacher"] .twitter-typeahead pre').html();
                      
-                    if(e.which == 13) {
+                    if(e.which === 13) {
                         var keyword = pre_input.replace(/[^a-zA-Z0-9 ]/g, "");
                         if(pre_input){
                             window.location.replace('/search?keywords='+ keyword);

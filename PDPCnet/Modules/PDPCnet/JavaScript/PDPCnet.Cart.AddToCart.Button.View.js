@@ -79,7 +79,7 @@ define(
                                 var imagesUrl = '';
                                 var imgClassCheck = jQuery('div').hasClass('ccs-ds-cloud-main-image');
                                 var imgClassCheckTwo = jQuery('div').hasClass('ccs-fancybox-gallery');
-                                if (imgClassCheck == true && imgClassCheckTwo == true) {
+                                if (imgClassCheck === true && imgClassCheckTwo === true) {
 
                                     var imagesUrl = jQuery('div').closest('.ccs-slick-list').find('.ccs-cc-thumbnail-wrapper').attr('data-original-src');
 
@@ -105,7 +105,7 @@ define(
                                 //console.log('status_check: ' + status_check);
                                 //console.log('item_id: ' + item_id);
 
-                                if(status_check == 'OK' && item_id){
+                                if(status_check === 'OK' && item_id){
 
                                     setTimeout(
                                       function() 
@@ -132,7 +132,7 @@ define(
                                         //pmThumbnailCheck.js
                                         var requestDelivered = sent[0].imageCheck;
                                         //var success_msg = '<p class="register-form-legend">Thank You for your interest.</p><p class="register-form-legend">Your request for ParagonMicro.com site access has been succesfully sent.</p><p class="register-form-legend">A sales representative will be in contact with you soon.</p><p class="register-form-legend">If you have not heard from us, please call: <a href="tel:18663808663 ">1 (866) 380-8663 </a> or email <a href="mailto: pheflin@paragonmicro.com">Online Sales </a> </p>';
-                                        if(requestDelivered == "success"){
+                                        if(requestDelivered === "success"){
                                             //jQuery('#request-site-access').replaceWith(success_msg);
                                             console.log('Thumbnail checked');
                                             //Backbone.history.loadUrl();
@@ -285,7 +285,7 @@ define(
                     var imagesUrl = '';
                     var imgClassCheck = jQuery('div').hasClass('ccs-ds-cloud-main-image');
                     var imgClassCheckTwo = jQuery('div').hasClass('ccs-fancybox-gallery');
-                    if (imgClassCheck == true && imgClassCheckTwo == true) {
+                    if (imgClassCheck === true && imgClassCheckTwo === true) {
 
                         var imagesUrl = jQuery('div').closest('.ccs-slick-list').find('.ccs-cc-thumbnail-wrapper').attr('data-original-src');
 
@@ -308,15 +308,15 @@ define(
                 var cnet_id = "";
                 var mpn_attr = "";
 
-                if(this.model.attributes.item.custitem_pm_cnet_id != undefined && this.model.attributes.item.mpn != undefined){
+                if(this.model.attributes.item.custitem_pm_cnet_id !== undefined && this.model.attributes.item.mpn !== undefined){
                     cnet_id = this.model.attributes.item.custitem_pm_cnet_id;
                     mpn_attr = this.model.attributes.item.mpn;
                 }
 
-                if(this.model.attributes.item.attributes.custitem_pm_cnet_id != undefined && this.model.attributes.item.attributes.mpn != undefined){
+                if(this.model.attributes.item.attributes.custitem_pm_cnet_id !== undefined && this.model.attributes.item.attributes.mpn !== undefined){
                     cnet_id = this.model.attributes.item.attributes.custitem_pm_cnet_id;
                     /*
-                    if(cnet_id == undefined){
+                    if(cnet_id === undefined){
                        cnet_id =  this.model.attributes.item.attributes.itemid
                     }
                     */
@@ -329,7 +329,7 @@ define(
 
                     function() 
                     {
-                        if(cnet_id != "" && cnet_id != undefined && mpn_attr != "" && mpn_attr != undefined){
+                        if(cnet_id !== "" && cnet_id !== undefined && mpn_attr !== "" && mpn_attr !== undefined){
                     //console.log('inside item check');
 
                         var mpn = encodeURIComponent(mpn_attr);
@@ -359,7 +359,7 @@ define(
 
 
               function checkAndAddThumbnailUrl(internalid_check, imagesUrl){
-                if(internalid_check != "" && internalid_check != 0   && imagesUrl != ""){
+                if(internalid_check !== "" && internalid_check !== 0   && imagesUrl !== ""){
 
                                // console.log('inside add image');
                                 var internalid = internalid_check;
@@ -383,7 +383,7 @@ define(
                                     //console.log(sent);
                                     var requestDelivered = sent[0].imageCheck;
                                     //var success_msg = '<p class="register-form-legend">Thank You for your interest.</p><p class="register-form-legend">Your request for ParagonMicro.com site access has been succesfully sent.</p><p class="register-form-legend">A sales representative will be in contact with you soon.</p><p class="register-form-legend">If you have not heard from us, please call: <a href="tel:18663808663 ">1 (866) 380-8663 </a> or email <a href="mailto: pheflin@paragonmicro.com">Online Sales </a> </p>';
-                                    if(requestDelivered == "success"){
+                                    if(requestDelivered === "success"){
                                         //jQuery('#request-site-access').replaceWith(success_msg);
                                         console.log('Thumbnail checked');
                                         //Backbone.history.loadUrl();
@@ -402,7 +402,7 @@ define(
                         //var sPageURL = window.location.search.substring(1);
                         var sPageURL = ''
                         var isModal = jQuery('div').hasClass('modal-dialog');
-                        if(isModal == true){
+                        if(isModal === true){
                             //console.log('is modal');
                             sPageURL = jQuery('.product-details-quickview-full-details').attr('data-hashtag');
                             //console.log('sPageURL: ' + sPageURL);
@@ -417,7 +417,7 @@ define(
                         {
                             var sParameterName = sURLVariables[i].split('=');
 
-                            if (sParameterName[0] == sParam)
+                            if (sParameterName[0] === sParam)
 
                             {
                                 return decodeURIComponent(sParameterName[1]);

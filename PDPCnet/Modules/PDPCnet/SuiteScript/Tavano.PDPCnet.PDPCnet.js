@@ -73,7 +73,7 @@ define('Tavano.PDPCnet.PDPCnet'
 
 			if(checkItem) {
 				var checkData = NetsuiteUtilsModel.checkItem();
-				if(checkData.status == "OK" && checkData.data > 0) {
+				if(checkData.status === "OK" && checkData.data > 0) {
 					itemCreatedId = checkData.data;
 				}
 			}

@@ -13,15 +13,9 @@ define('QuoteToSaleOrderWizard.ExtraFields', [
 
     return WizardModule.extend({
         template: quoteToSaleOrderExtraFieldsTpl,
-        errors: ['ERR_NOT_SET_PO_NUMBER'],
-        poNumberIsRequired: {
-            errorMessage: 'Please entera a PO Number',
-            errorCode: 'ERR_NOT_SET_PO_NUMBER'
-        },
         submit: function submit() {
             if (!this.options.isReview) {
-                var poNumber = this.$('#purchase-order-number').val() || '';
-                this.wizard.model.set('purchasenumber', poNumber);
+                this.wizard.model.set('purchasenumber', this.$('#purchase-order-number').val() || '');
                 this.wizard.model.set('customname', this.$('#quote-name').val() || '');
                 this.wizard.model.set('customnotes', this.$('#quote-notes').val() || '');
                 this.wizard.model.set('options', _.extend(this.wizard.model.get('options') || {}, {
@@ -29,12 +23,6 @@ define('QuoteToSaleOrderWizard.ExtraFields', [
                     custbody_web_notes: this.$('#quote-notes').val() || '',
                     custbody_cost_center: this.$('#cost-centre').val() || ''
                 }));
-            }
-            return jQuery.Deferred().resolve();
-        },
-        isValid: function(){
-            if (!this.wizard.model.get('purchasenumber')) {
-                return jQuery.Deferred().reject(this.poNumberIsRequired);
             }
             return jQuery.Deferred().resolve();
         },

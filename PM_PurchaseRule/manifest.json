@@ -1,0 +1,64 @@
+{
+    "name": "PM_PurchaseRule",
+    "fantasyName": "PM_PurchaseRule",
+    "vendor": "Paragon",
+    "version": "1.0.0",
+    "type": "extension",
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": ">=19.1.1",
+        "SCS": ">=19.1.1"
+    },
+    "description": "Adds Purchase Rules page to My Account.",
+    "skins": [],
+    "assets": {
+        "img": {
+            "files": []
+        },
+        "fonts": {
+            "files": []
+        },
+        "services": {
+            "files": [
+                "services/PM.PurchaseRule.Service.ss"
+            ]
+        }
+    },
+    "templates": {
+        "application": {
+            "myaccount": {
+                "files": [
+                    "Modules/Templates/pm_purchaserule_new.tpl",
+                    "Modules/Templates/pm_purchaserule_details.tpl",
+                    "Modules/Templates/pm_purchaserule_list.tpl"
+                ]
+            }
+        }
+    },
+    "javascript": {
+        "entry_points": {
+            "myaccount": "Modules/JavaScript/PM.PurchaseRule.js"
+        },
+        "application": {
+            "myaccount": {
+                "files": [
+                    "Modules/JavaScript/PM.PurchaseRule.Collection.js",
+                    "Modules/JavaScript/PM.PurchaseRule.Details.View.js",
+                    "Modules/JavaScript/PM.PurchaseRule.Edit.View.js",
+                    "Modules/JavaScript/PM.PurchaseRule.js",
+                    "Modules/JavaScript/PM.PurchaseRule.List.View.js",
+                    "Modules/JavaScript/PM.PurchaseRule.Model.js"
+                ]
+            }
+        }
+    },
+    "ssp-libraries": {
+        "entry_point": "Modules/SuiteScript/PM.PurchaseRule.js",
+        "files": [
+            "Modules/SuiteScript/PM.PurchaseRule.ServiceController.js",
+            "Modules/SuiteScript/PM.PurchaseRule.Model.js",
+            "Modules/SuiteScript/PM.PurchaseRule.js"
+        ]
+    },
+    "local_folder": "Workspace\\PM_PurchaseRule"
+}

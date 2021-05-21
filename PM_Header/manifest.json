@@ -1,0 +1,27 @@
+{
+    "name": "PM_Header",
+    "fantasyName": "PM_Header",
+    "vendor": "Paragon",
+    "version": "1.0.0",
+    "type": "extension",
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": ">=19.1.1",
+        "SCS": ">=19.1.1"
+    },
+    "description": "Overrides My Account Header Menu.",
+    "skins": [],
+    "javascript": {
+        "entry_points": {
+            "myaccount": "Modules/JavaScript/PM.Header.Menu.MyAccount.View.js"
+        },
+        "application": {
+            "myaccount": {
+                "files": [
+                    "Modules/JavaScript/PM.Header.Menu.MyAccount.View.js"
+                ]
+            }
+        }
+    },
+    "local_folder": "Workspace\\PM_Header"
+}

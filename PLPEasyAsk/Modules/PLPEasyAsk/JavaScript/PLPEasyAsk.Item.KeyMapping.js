@@ -38,7 +38,7 @@ define(
                     console.log(' ');
                     */
                     
-                    //if(item.get('_thumbnail') == undefined){
+                    //if(item.get('_thumbnail') === undefined){
                         //item.attributes;
                     //}
 
@@ -81,19 +81,19 @@ define(
 
                     //Deon Doughty - 10/28/2020 - new categories
                     //New cnetCategoryId, nsCategoryId, pricingGroupId
-                    if(item.get('cnet_category_id') != undefined){
+                    if(item.get('cnet_category_id') !== undefined){
                         var cnetCategoryId = item.get('cnet_category_id');
                     } else {
                         var cnetCategoryId = '';  
                     }
 
-                    if(item.get('ns_category_id') != undefined){
+                    if(item.get('ns_category_id') !== undefined){
                         var nsCategoryId = item.get('ns_category_id');
                     } else {
                         var nsCategoryId = '';
                     }
 
-                   if(item.get('pricing_group_id') != undefined){
+                   if(item.get('pricing_group_id') !== undefined){
                         var pricingGroupId = item.get('pricing_group_id');
                    } else {
                         var pricingGroupId = '';
@@ -112,7 +112,7 @@ define(
                     var stock_availability = item.get('total_quantity');
 
                     var stock_message = '';
-                    if(stock_availability == "" || stock_availability == undefined || stock_availability == 0){
+                    if(stock_availability === "" || stock_availability === undefined || stock_availability === 0){
 
                         stock_message = 'Out of Stock';
                         
@@ -124,7 +124,7 @@ define(
                         stock_message = 'In Stock';
                     }
 
-                    if(stock_message != ''){
+                    if(stock_message !== ''){
                         stock_message = encodeURIComponent(stock_message);
                     } else {
                         stock_message = 'null';
@@ -168,7 +168,7 @@ define(
                         var itemInNS = item.get('item_in_ns');
                         //console.log(profile);
                         var url = "";
-                        if(profile.get("isLoggedIn") == "T"){
+                        if(profile.get("isLoggedIn") === "T"){
                             if(itemInNS){
                                 console.log('inside no price');
                               url = item.get('urlcomponent') ?
@@ -203,7 +203,7 @@ define(
 
                         //Deon Doughty - 12/01/2020 - Adds Comma into price on thousands.
                         function numberWithCommas(x) {
-                            if(x && x != undefined){
+                            if(x && x !== undefined){
                                 return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                             }
                         }

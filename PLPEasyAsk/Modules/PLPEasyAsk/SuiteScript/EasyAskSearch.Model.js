@@ -1,193 +1,111 @@
 define('EasyAskSearch.Model',[
-    'SC.Model',
-    'underscore'
-], function(SCModel, _) {
-    'use strict';
+  'Backbone.CachedModel',
+  'underscore'
+], function(BackboneCachedModel, _) {
+  'use strict';
 
 
-    return SCModel.extend({
-        //prod is 9203
-        name : 'EasyAskSearchModel',
-        easyAskEndpoint : "https://prodea.paragonmicro.com:9203/EasyAsk/apps/Advisor.jsp?dct=paragonmicro&indexed=1&oneshot=1&disp=json",
-        currentEndpoint : null,
-        headers_session : {
-            "Content-Type": "application/json",
-            "Accept":'application/json'
-        },
-        _selectedFilters : {},
-        _filtersURL : "",
-        facets : [],
-        products : [],
-        category : null,
+  var original_fetch = BackboneCachedModel.prototype.fetch;
 
-        /**
-         * Generates the EasyAsk endpoint for search and for paginated types of search.
-         *
-         * @param {number} resultsPerPage The number of results per page
-         * @param {number} page The page number for paginated results
-         * @param {String} searchTerm The search provided
-         * @param {String} urlEncodeSeoPath No idea what this is TODO: Ask about it
-         * 
-         * @returns {String} Returns and set the endpoint 
-         */
-        generateEasyAskEndpoint : function( resultsPerPage, page, searchTerm, urlEncodeSeoPath, nsCategoryId ) {
+  /**
+   *
+   */
+  return BackboneCachedModel.extend({
+    url : _.getAbsoluteUrl(getExtensionAssetsPath('services/PLPEasyAsk.Service.ss')),
 
-            var url = this.easyAskEndpoint;
+    // ------------------------------------------------------------------------------
+    // Getters & Setters
+    // ------------------------------------------------------------------------------
+    getPaginationData : function(){
+      return this.get('data') && this.get('data').source && this.get('data').source.products && this.get('data').source.products.itemDescription;
+    },
 
-            nlapiLogExecution('DEBUG', '-- Easy Ask Endpoint url --', url);
-            nlapiLogExecution('DEBUG', '-- Easy Ask Endpoint resultsPerPage --', resultsPerPage);
-            nlapiLogExecution('DEBUG', '-- Easy Ask Endpoint page --', page);
-            nlapiLogExecution('DEBUG', '-- Easy Ask Endpoint searchTerm --', searchTerm);
-            nlapiLogExecution('DEBUG', '-- Easy Ask Endpoint urlEncodeSeoPath --', url);
-            nlapiLogExecution('DEBUG', '-- Easy Ask Endpoint nsCategoryId --', nsCategoryId);
-            
-            if( searchTerm && searchTerm != "__global__") {
-                // for search on EasyAsk (from documentation)
-                // Search –https://<EasyAskServer>:<EasyAskPort>/EasyAsk/apps/Advisor.jsp?dct=<dictionaryname>&disp=json&indexed=1&oneshot=1
-                // &q=<query>
-                // &RequestAction=advisor
-                // &ResultsPerPage=32
-                // &CatPath=<urlencodeseoPath>
-                // &RequestData=CA_Search
-                url += "&RequestAction=advisor&RequestData=CA_Search";
-                //url += "&CatPath=-" + encodeURIComponent(searchTerm) + this._filtersURL;
-                url += "&q=" + encodeURIComponent(searchTerm) + this._filtersURL;
+    getProducts : function() {
+      return this.get('data') && this.get('data').source && this.get('data').source.products && this.get('data').source.products.items;
+    },
 
-                if(page) {
-                    url += "&forcepage=true&currentpage=" + page; 
-                }
+    getFacets : function(){
 
-            } else {
-                // paginated (from documentation)
-                // https://<EasyAskServer>:<EasyAskPort>/EasyAsk/apps/Advisor.jsp?dct=<dictionaryname>&disp=json&indexed=1&oneshot=1
-                // &RequestAction=navbar
-                // &ResultsPerPage=32
-                // &CatPath=<seoPath>
-                // &RequestData=page<pageNumber>
-                //&RequestAction=advisor
-                //&RequestData=CA_BreadcrumbSelect
-                //url += "&RequestAction=navbar";
-                //https://prodea.paragonmicro.com:9200/EasyAsk/apps/Advisor.jsp?dct=paragonmicro&indexed=1&oneshot=1&disp=json&RequestAction=navbar&RequestData=page1&ResultsPerPage=24&CatPath=Systems
-                if(page > 1){     
-                    url += "&RequestAction=navbar";
-                } else {
-                    url += "&RequestAction=advisor&RequestData=CA_BreadcrumbSelect";
-                }
+      try{
+        var dataFacets = this.get('data');
+        //var attribute_price = dataFacets.source.attributes.attribute
+        //console.log(dataFacets);
+        // if(dataFacets.source.attributes.attribute){
+        var attribute_price = dataFacets.source.attributes.attribute;
 
-                if(page) {
-                    url += "&RequestData=page" + page; 
-                }
-            }
+        const needle = 'Price';
+        const index = attribute_price.findIndex(attribute_price => attribute_price.name === needle);
+        //console.log('index: ' + index);
 
-            // --------------------------------------------------------------------------
-            // add the additional common parameters
-            // --------------------------------------------------------------------------
-            
+        //var attribute_price_obj = $.grep(attribute_price, function(obj){return obj.name === 'Price';})[0];
+        //console.log(attribute_price_obj.attributeValueList);
+        //attribute_price_obj = attribute_price_obj.attributeValueList;
+        //console.log(attribute_price);
+        //.attributeValueList
+        var attribute_price_obj = attribute_price[index].attributeValueList;
+        //console.log(attribute_price_obj);
 
-            if(resultsPerPage && typeof resultsPerPage == 'number') {
-                url += "&ResultsPerPage=" + resultsPerPage;
-            } else {
-                url += "&ResultsPerPage=32";
-            }
+        attribute_price_obj.sort(function(a, b) {
+          var a_parse_price = a.attributeValue;
+          var a_parse_price = a_parse_price.replaceAll('$', '');
+          if(a_parse_price == 'Under 25'){
+            a_parse_price = "23-23"
+          }
+          if(a_parse_price == '3000 and above'){
+            a_parse_price = "3005-3005"
+          }
+
+          var a_parse_price = a_parse_price.split("-");
+          //console.log(a_parse_price);
+          a = a_parse_price[0];
+          var b_parse_price = b.attributeValue;
+          var b_parse_price = b_parse_price.replaceAll('$', '');
+          var b_parse_price = b_parse_price.split("-");
+          //console.log(b_parse_price);
+          var b = b_parse_price[0];
 
 
-            // search for Netsuite Category to see if we have a catPath
-            nlapiLogExecution('DEBUG', '-- Before Category nsCategoryId --', nsCategoryId);
-            //if( nsCategoryId ) {
-            if(nsCategoryId && nsCategoryId !== '1'){
-
-                var record = nlapiLoadRecord('commercecategory', nsCategoryId);
-                var catPath = record.getFieldValue('custrecord_tt_easy_ask_catpath');
-
-                if(catPath){
-                    urlEncodeSeoPath = catPath;
-                }
-            }
-
-            if(urlEncodeSeoPath && nsCategoryId !== '1'){
-                url += "&CatPath=" + urlEncodeSeoPath + this._filtersURL;
-            }
-
-            //new for brand
-            if(nsCategoryId === '1'){
-                url += "&CatPath=" + this._filtersURL;
-            }
-
-            nlapiLogExecution('DEBUG', '-- after Category url --', url);
-
-            this.currentEndpoint = url;
-
-            
-            // --------------------------------------------------------------------------
-
-            return url;
-        },
+          //console.log('a');
+          //console.log(a_parse_price.replaceAll('$', ''));
+          //console.log(a);
+          //console.log('b');
+          //console.log(b);
 
 
-        /**
-         * Set the filters and prepare for use it in the api call.
-         * @param {Object} filters 
-         * @returns {String} Returns the CatPath for use in api call.
-         */
-        setFilters : function(filters){
+          //console.log(b_parse_price.replaceAll('$', ''));
+          //return parseFloat(a.price) - parseFloat(b.price);
+          return parseFloat(a) - parseFloat(b);
+        });
 
-            this._filtersURL = "";
+        this.data = dataFacets.source.attributes.attribute[index].attributeValueList = attribute_price_obj;
+      }
+      catch(err){
+        //console.log(err);
 
-            // process the filters and unify the way we will be working on
-            for( var key in filters ) {
+      }
 
-                this._filtersURL += "/";
+      //console.log(dataFacets.source.attributes.attribute);
+      //console.log(this.get('data'));
+      return this.get('data') && this.get('data').source && this.get('data').source.attributes && this.get('data').source.attributes.attribute;
+    },
 
-                // if the price is a range filter
-                if( key == 'Price' && filters[key]['range'] ) {
+    getQuery : function() {
+      return this.get('data') && this.get('data').source && this.get('data').source.originalQuestion;
 
-                    this._selectedFilters[key] = filters[key]['range'].split(',');
-                    // get the min, max and range
-                    // first validate lenght
-                    if( this._selectedFilters[key].length > 2 ) {
-                        var min     = decodeURIComponent(this._selectedFilters[key][0]).replace('$', '');
-                        var max     = decodeURIComponent(this._selectedFilters[key][1]).replace('$', '');
-                        var range   = decodeURIComponent(this._selectedFilters[key][2]).replace('$', '');
-    
-                        this._filtersURL += key + ":" + min + "-" + max + '-' + range + '-' + max;
-                    } 
-                } else {
-                    this._selectedFilters[key] = filters[key].split(',');
-                    var len = this._selectedFilters[key].length;    
+    },
+    getTotal : function(){
+      return this.get('data') && this.get('data').source && this.get('data').source.products && this.get('data').source.products.itemDescription && this.get('data').source.products.itemDescription.totalItems
+    }
 
-                    for( var i = 0; i < len; i++ ) {
-                        this._filtersURL += key + ":" + decodeURIComponent(this._selectedFilters[key][i]).replace(/\s/g, '-') + ";";
-                    }
+    // @method fetch overrides fetch so we make sure that the cache is set to true, so we wrap it
+    ,	fetch: function (options)
+    {
+      options = _.extend(options || {}, this.options);
 
-                    if( this._filtersURL.charAt( this._filtersURL.length - 1 ) == ";" ) {
-                        // remove the last char since it is a ';'
-                        this._filtersURL = this._filtersURL.slice(0, this._filtersURL.length - 1);
-                    }
-                }
-            }
+      options.cache = true;
 
-            return this._filtersURL;
-        },
-
-
-
-        /**
-         * Makes the api call to easy ask to return the results in JSON format.
-         * Pre-condition : Call generateEasyAskEndpoint first.
-         * 
-         * @returns {Object} Returns the response from the api call.
-         */
-        makeAPICall : function(){
-            var results = nlapiRequestURL(this.currentEndpoint, null, this.headers_session, "GET").getBody();
-
-            try {
-                var data = JSON.parse(results);
-            } catch(error){
-
-            }
-
-            return results;
-        }
-
-    });
+      return original_fetch.apply(this, arguments);
+    }
+    // ------------------------------------------------------------------------------
+  });
 });

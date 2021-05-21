@@ -26,7 +26,7 @@ define(
             var sc = document.createElement('script');
             sc.type = 'text/javascript';
             sc.async = true;
-            sc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.cnetcontent.com/jsc/h.js';
+            sc.src = ('https:' === document.location.protocol ? 'https://' : 'http://') + 'cdn.cnetcontent.com/jsc/h.js';
             var n = document.getElementsByTagName('script')[0]; n.parentNode.insertBefore(sc, n);
         })(window,document);
 	}

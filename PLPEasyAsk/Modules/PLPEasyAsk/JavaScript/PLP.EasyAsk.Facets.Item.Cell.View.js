@@ -33,7 +33,7 @@ define(
 
                 var profile = ProfileModel.getInstance();
 
-                if (profile.get("isLoggedIn") == "T") {
+                if (profile.get("isLoggedIn") === "T") {
 
 
                     // Validate if the item exist in NS
@@ -137,7 +137,7 @@ define(
                     //console.log('manufacturer: ' + manufacturer);
                     var keyMapping_sku = this.model.get('keyMapping_sku');
                     //console.log('keyMapping_sku: ' + keyMapping_sku);
-                    //if(keyMapping_sku == "" || keyMapping_sku == undefined){
+                    //if(keyMapping_sku === "" || keyMapping_sku === undefined){
                     var item_id = this.model.get('itemid');
                     //}
                     //var 
@@ -150,7 +150,7 @@ define(
                         ret.displayAddToCartButton = false;
                     }
 
-                    if (this.model.get('isLoggedItemNotCreated') && this.model.get('isLoggedItemNotCreated') == 'not-created' || this.model.get('PLPTrigger')) {
+                    if (this.model.get('isLoggedItemNotCreated') && this.model.get('isLoggedItemNotCreated') === 'not-created' || this.model.get('PLPTrigger')) {
                         // @param {Boolean} dont_cache if true it won't return the cached attribute value.
                         ret.url = this.model.get('_url', true);
                     }
@@ -170,7 +170,7 @@ define(
                     var stock_message = '';
                     var stock_message_color ='#d62d20';
 
-                    if(stock_availability == 0){
+                    if(stock_availability === 0){
 
                         stock_message = 'Out of Stock';
                         stock_message_color = '#d62d20'; //red
@@ -198,7 +198,7 @@ define(
                         jQuery('div[data-item-id="'+ item_id +'"]').find('.product-line-stock').css({'text-align': 'center', 'font-weight' : 'bolder', 'font-size' : '14px', 'color' : stock_message_color});
                         //console.log(item_list_display);
 
-                        if(jQuery('[title="List"]').hasClass('active') == true){
+                        if(jQuery('[title="List"]').hasClass('active') === true){
                             setTimeout(
                                   function() 
                                   {
@@ -211,13 +211,13 @@ define(
 
                                     var check_brand = jQuery('div[data-item-id="'+ item_id +'"]').find('.img-brand img').attr('src');
                                     //$(this).find(".facets-item-cell-list-title").append(brand_image_placement);
-                                    if(check_brand == undefined || check_brand == ''){
+                                    if(check_brand === undefined || check_brand === ''){
                                         jQuery('div[data-item-id="'+ item_id +'"]').find(".facets-item-cell-list-image-wrapper").append(brand_image_placement);
                                     }
 
                                 }, 2000);
                             
-                        } else if(jQuery('[title="Table"]').hasClass('active') == true){
+                        } else if(jQuery('[title="Table"]').hasClass('active') === true){
                             
                             setTimeout(
                                   function() 
@@ -229,7 +229,7 @@ define(
 
                                     var check_brand = jQuery('div[data-item-id="'+ item_id +'"]').find('.img-brand img').attr('src');
 
-                                    if(check_brand == undefined || check_brand == ''){
+                                    if(check_brand === undefined || check_brand === ''){
                                         jQuery('div[data-item-id="'+ item_id +'"]').find(".facets-item-cell-table-image-wrapper").prepend(brand_image_placement);
                                     }
 
@@ -237,7 +237,7 @@ define(
                                
                             //console.log('Table true');
 
-                        } else if(jQuery('[title="Grid"]').hasClass('active') == true){
+                        } else if(jQuery('[title="Grid"]').hasClass('active') === true){
                             setTimeout(
                                   function() 
                                   {
@@ -250,7 +250,7 @@ define(
                                    //console.log('check_brand: ' + check_brand);
                                    //console.log('brandimage place item_id: ' + item_id);
                                    //console.log('[data-item-id="'+ item_id +'"]');
-                                   if(check_brand == undefined || check_brand == ''){
+                                   if(check_brand === undefined || check_brand === ''){
                                        jQuery('div[data-item-id="'+ item_id +'"]').find(".facets-item-cell-grid-details").prepend(brand_image_placement);
                                    }
 

@@ -30,7 +30,7 @@ define(
 				}
 			});
 
-			var isPunchoutSession = this.sessionId != null && this.sessionId != '';
+			var isPunchoutSession = this.sessionId !== null && this.sessionId !== '';
 			
 			
 

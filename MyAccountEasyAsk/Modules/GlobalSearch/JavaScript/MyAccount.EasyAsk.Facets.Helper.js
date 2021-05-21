@@ -40,7 +40,7 @@ define('MyAccount.EasyAsk.Facets.Helper'
              * Check if the cateogry is in this level
              */
             var category = _.find(categories, function (el) {
-               return el.fullurl == translator.getCategoryUrl();
+               return el.fullurl === translator.getCategoryUrl();
             });
 
             /**
@@ -182,7 +182,7 @@ define('MyAccount.EasyAsk.Facets.Helper'
             
             var profile = ProfileModel.getInstance();
 
-            if(onlinePrice || (profile.get("isLoggedIn") == "T")){
+            if(onlinePrice || (profile.get("isLoggedIn") === "T")){
                displayAddToCartButton = true;
             }            
 
@@ -290,7 +290,7 @@ define('MyAccount.EasyAsk.Facets.Helper'
                var pricingGroupId = product.NS_Pricing_Grp_ID
                
                console.log('online price' + onlinePrice);
-               if(onlinePrice || (profile.get("isLoggedIn") == "T")){
+               if(onlinePrice || (profile.get("isLoggedIn") === "T")){
                   displayAddToCartButton = true;
                }              
 

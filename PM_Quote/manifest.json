@@ -1,0 +1,29 @@
+{
+    "name": "PM_Quote",
+    "fantasyName": "PM_Quote",
+    "vendor": "Paragon",
+    "version": "1.0.0",
+    "type": "extension",
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": ">=19.1.1",
+        "SCS": ">=19.1.1"
+    },
+    "description": "Enhances Quote functionality.",
+    "skins": [],
+    "javascript": {
+        "entry_points": {
+            "myaccount": "Modules/JavaScript/PM.Quote.js"
+        },
+        "application": {
+            "myaccount": {
+                "files": [
+                    "Modules/JavaScript/PM.Quote.List.View.js",
+                    "Modules/JavaScript/PM.Quote.Collection.js",
+                    "Modules/JavaScript/PM.Quote.js"
+                ]
+            }
+        }
+    },
+    "local_folder": "Workspace\\PM_Quote"
+}

@@ -1,0 +1,35 @@
+{
+  "type": "object",
+  "properties": {
+    "customFields.estimate": {
+      "group": "advancedSettings",
+      "subtab": "customFields",
+      "type": "array",
+      "title": "Quote/Estimates",
+      "docRef": "",
+      "description": "Quote/Estimates custom field",
+      "items": {
+        "type": "string",
+        "title": "Field id",
+        "mandatory": true
+      },
+      "default": [
+      ]
+    },
+    "customFields.invoice": {
+      "group": "advancedSettings",
+      "subtab": "customFields",
+      "type": "array",
+      "title": "Invoice",
+      "docRef": "",
+      "description": "Invoice custom field",
+      "items": {
+        "type": "string",
+        "title": "Field id",
+        "mandatory": true
+      },
+      "default": [
+      ]
+    }
+  }
+}

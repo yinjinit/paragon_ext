@@ -41,7 +41,7 @@ define('EasyAskSearch.Model',[
             nlapiLogExecution('DEBUG', '-- Easy Ask Endpoint urlEncodeSeoPath --', url);
             nlapiLogExecution('DEBUG', '-- Easy Ask Endpoint nsCategoryId --', nsCategoryId);
             
-            if( searchTerm && searchTerm != "__global__") {
+            if( searchTerm && searchTerm !== "__global__") {
                 // for search on EasyAsk (from documentation)
                 // Search –https://<EasyAskServer>:<EasyAskPort>/EasyAsk/apps/Advisor.jsp?dct=<dictionaryname>&disp=json&indexed=1&oneshot=1
                 // &q=<query>
@@ -84,7 +84,7 @@ define('EasyAskSearch.Model',[
             // --------------------------------------------------------------------------
             
 
-            if(resultsPerPage && typeof resultsPerPage == 'number') {
+            if(resultsPerPage && typeof resultsPerPage === 'number') {
                 url += "&ResultsPerPage=" + resultsPerPage;
             } else {
                 url += "&ResultsPerPage=32";
@@ -139,7 +139,7 @@ define('EasyAskSearch.Model',[
                 this._filtersURL += "/";
 
                 // if the price is a range filter
-                if( key == 'Price' && filters[key]['range'] ) {
+                if( key === 'Price' && filters[key]['range'] ) {
 
                     this._selectedFilters[key] = filters[key]['range'].split(',');
                     // get the min, max and range
@@ -159,7 +159,7 @@ define('EasyAskSearch.Model',[
                         this._filtersURL += key + ":" + decodeURIComponent(this._selectedFilters[key][i]).replace(/\s/g, '-') + ";";
                     }
 
-                    if( this._filtersURL.charAt( this._filtersURL.length - 1 ) == ";" ) {
+                    if( this._filtersURL.charAt( this._filtersURL.length - 1 ) === ";" ) {
                         // remove the last char since it is a ';'
                         this._filtersURL = this._filtersURL.slice(0, this._filtersURL.length - 1);
                     }

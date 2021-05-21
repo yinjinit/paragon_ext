@@ -1,0 +1,48 @@
+{
+    "name": "PM_EasyAsk",
+    "fantasyName": "PM_EasyAsk",
+    "vendor": "Paragon",
+    "version": "1.0.0",
+    "type": "extension",
+    "target": "SCA,SCS",
+    "target_version": {
+        "SCA": ">=19.1.1",
+        "SCS": ">=19.1.1"
+    },
+    "description": "EasyAsk modules.",
+    "skins": [],
+    "assets": {
+        "img": {
+            "files": []
+        },
+        "fonts": {
+            "files": []
+        },
+        "services": {
+            "files": [
+                "services/PM.EasyAsk.Service.ss"
+            ]
+        }
+    },
+    "templates": {
+        "application": {
+            "shopping": {
+                "files": [
+                    "Modules/Templates/pm_easyask.tpl"
+                ]
+            },
+            "myaccount": {
+                "files": [
+                    "Modules/Templates/pm_easyask.tpl"
+                ]
+            }
+        }
+    },
+    "ssp-libraries": {
+        "entry_point": "Modules/SuiteScript/PM.EasyAsk.ServiceController.js",
+        "files": [
+            "Modules/SuiteScript/PM.EasyAsk.ServiceController.js"
+        ]
+    },
+    "local_folder": "Workspace\\PM_EasyAsk"
+}

@@ -49,7 +49,7 @@ define(
                     var imagesUrl = '';
                     var imgClassCheck = jQuery('div').hasClass('ccs-ds-cloud-main-image');
                     var imgClassCheckTwo = jQuery('div').hasClass('ccs-fancybox-gallery');
-                    if (imgClassCheck == true && imgClassCheckTwo == true) {
+                    if (imgClassCheck === true && imgClassCheckTwo === true) {
 
                         var imagesUrl = jQuery('div').closest('.ccs-slick-list').find('.ccs-cc-thumbnail-wrapper').attr('data-original-src');
 
@@ -60,7 +60,7 @@ define(
                     //var sPageURL = window.location.search.substring(1);
                     var sPageURL = ''
                     var isModal = jQuery('div').hasClass('modal-dialog');
-                    if(isModal == true){
+                    if(isModal === true){
                         //console.log('is modal');
                         sPageURL = jQuery('.product-details-quickview-full-details').attr('data-hashtag');
                         //console.log('sPageURL: ' + sPageURL);
@@ -75,7 +75,7 @@ define(
                     {
                         var sParameterName = sURLVariables[i].split('=');
 
-                        if (sParameterName[0] == sParam)
+                        if (sParameterName[0] === sParam)
 
                         {
                             return decodeURIComponent(sParameterName[1]);

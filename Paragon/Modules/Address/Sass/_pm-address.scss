@@ -1,0 +1,129 @@
+.button-address-back {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.address-details-actions {
+  margin-top: $sc-margin-lv4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+
+  > :last-child {
+    margin-right: 0;
+  }
+
+  @media (max-width: $screen-md-max) {
+    text-align: left;
+  }
+
+  @media (max-width: $screen-xs-max) {
+    text-align: center;
+  }
+}
+
+.address-details-selected-address {
+  color: $sc-color-success;
+  font-weight: bold;
+  margin-right: $sc-margin-lv2;
+  margin-bottom: $sc-margin-lv2;
+
+  .icon-container-success {
+    margin-right: $sc-margin-lv1;
+  }
+}
+
+.address-details-select-address {
+  @extend .button-small;
+  margin-right: $sc-margin-lv2;
+  margin-bottom: $sc-margin-lv2;
+  width: auto;
+}
+
+.address-details-change-address {
+  margin-bottom: $sc-margin-lv2;
+}
+
+.address-search-control {
+  position: relative;
+  margin-bottom: $sc-margin-lv2;
+
+  .address-search-input-wrapper {
+    position: relative;
+  }
+
+  .address-search-input {
+    margin: 0;
+  }
+
+  .address-search-cancel {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    margin-top: -10px;
+    background: $sc-color-theme-border;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background-color: $sc-button-tertiary-hover-background-color;
+      color: $sc-button-tertiary-hover-text-color;
+    }
+  }
+
+  .address-search-notice {
+    font-style: italic;
+    font-size: .9em;
+    text-align: right;
+    display: block;
+    line-height: 1.1;
+  }
+
+  .address-search-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    max-height: 270px;
+    background: $theme-color-paragon-white;
+    z-index: 1;
+    border: 1px solid $sc-color-theme-border;
+    border-top: 0;
+    overflow-y: auto;
+
+    .address-item {
+      display: flex;
+      align-items: center;
+      padding: $sc-padding-lv1 $sc-padding-lv2;
+
+      &:nth-child(odd) {
+        background: #f8f8f8;
+      }
+
+      .address-line {
+        flex: 1;
+      }
+
+      button {
+        margin-left: $sc-margin-lv1;
+      }
+    }
+  }
+}

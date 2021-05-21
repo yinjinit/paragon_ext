@@ -27,7 +27,7 @@ define(
 				layout.addToViewContextDefinition('Cart.Lines.View', 'displayName', 'string', function (context)
 				{
 
-					if(context && context.linkAttributes && context.linkAttributes != "" && context.linkAttributes != undefined && context.linkAttributes != null){
+					if(context && context.linkAttributes && context.linkAttributes !== "" && context.linkAttributes !== undefined && context.linkAttributes !== null){
 						var displayName = context.linkAttributes.match(/name=(.*?)\&/);
 						displayName =  decodeURIComponent(displayName[1]);
 
@@ -38,7 +38,7 @@ define(
 				layout.addToViewContextDefinition('ProductList.DetailsLaterMacro.View', 'displayName', 'string', function (context)
 				{ 
 
-					if(context && context.itemDetailsUrl && context.itemDetailsUrl != '' && context.itemDetailsUrl != undefined && context.itemDetailsUrl != null){
+					if(context && context.itemDetailsUrl && context.itemDetailsUrl !== '' && context.itemDetailsUrl !== undefined && context.itemDetailsUrl !== null){
 						var displayName = context.itemDetailsUrl.match(/name=(.*?)\&/);
 						displayName =  decodeURIComponent(displayName[1]);
 

@@ -452,7 +452,7 @@
         //checks for a cnet_id
         var check_product_code = urlParse.search(/\/\?/ig);
         console.log('check_product_code: ' + check_product_code);
-        if (check_product_code != -1) {
+        if (check_product_code !== -1) {
           //stop propigation
           jQuery(this).css('cursor', 'default');
           jQuery(this).attr('title', 'Product Not Available.');
@@ -467,7 +467,7 @@
 
           if (check_price) {
             check_price_flag = check_price.search(/\./ig);
-            if (check_price_flag == -1) {
+            if (check_price_flag === -1) {
               var correct_price = check_price + '.00';
               urlParse = urlParse.replace(check_price, correct_price);
             }
@@ -491,7 +491,7 @@
         var check_product_code = urlParse.search(/\/\?/ig);
         console.log('check_product_code: ' + check_product_code);
 
-        if (check_product_code != -1) {
+        if (check_product_code !== -1) {
           //stop propigation
           jQuery(this).css('cursor', 'default');
           jQuery(this).attr('title', 'Product Not Available.');
@@ -507,7 +507,7 @@
 
           if (check_price) {
             check_price_flag = check_price.search(/\./ig);
-            if (check_price_flag == -1) {
+            if (check_price_flag === -1) {
               var correct_price = check_price + '.00';
               urlParse = urlParse.replace(check_price, correct_price);
             }

@@ -2,7 +2,7 @@
     "name": "QuotesEdit",
     "fantasyName": "Quotes Edit",
     "vendor": "AwaLabs",
-    "version": "1.0.5",
+    "version": "1.0.7",
     "type": "extension",
     "target": "SCA,SCS",
     "target_version": {

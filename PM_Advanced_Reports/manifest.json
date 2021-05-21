@@ -1,7 +1,7 @@
 {
     "name": "PM_Advanced_Reports",
     "fantasyName": "PM_Advanced_Reports",
-    "vendor": "PM",
+    "vendor": "Paragon",
     "version": "1.0.7",
     "type": "extension",
     "target": "SCA,SCS",
@@ -9,7 +9,7 @@
         "SCA": ">=19.1.1",
         "SCS": ">=19.1.1"
     },
-    "description": "Advanced Reports",
+    "description": "Advanced Reports on My Account",
     "skins": [],
     "assets": {
         "img": {
@@ -20,53 +20,50 @@
         },
         "services": {
             "files": [
-                "services/PMAdvancedReports.Service.ss"
+                "services/PM.AdvancedReports.Service.ss"
             ]
         }
     },
-    "configuration": {
-        "files": []
-    },
     "sass": {
         "entry_points": {
-            "myaccount": "Modules/PMAdvancedReports/Sass/_pm_advanced_reports-pmadvancedreports.scss"
+            "myaccount": "Modules/Sass/_pm_advanced-reports.scss"
         },
         "files": [
-            "Modules/PMAdvancedReports/Sass/_pm_advanced_reports-pmadvancedreports.scss"
+            "Modules/Sass/_pm_advanced-reports.scss"
         ]
     },
     "templates": {
         "application": {
             "myaccount": {
                 "files": [
-                    "Modules/PMAdvancedReports/Templates/reports_details.tpl",
-                    "Modules/PMAdvancedReports/Templates/reports_list.tpl"
+                    "Modules/Templates/reports_details.tpl",
+                    "Modules/Templates/reports_list.tpl"
                 ]
             }
         }
     },
     "javascript": {
         "entry_points": {
-            "myaccount": "Modules/PMAdvancedReports/JavaScript/PM.PM_Advanced_Reports.PMAdvancedReports.js"
+            "myaccount": "Modules/JavaScript/PM.AdvancedReports.js"
         },
         "application": {
             "myaccount": {
                 "files": [
-                    "Modules/PMAdvancedReports/JavaScript/PM.PM_Advanced_Reports.PMAdvancedReports.js",
-                    "Modules/PMAdvancedReports/JavaScript/PMAdvancedReports.Collection.js",
-                    "Modules/PMAdvancedReports/JavaScript/PMAdvancedReports.Details.View.js",
-                    "Modules/PMAdvancedReports/JavaScript/PMAdvancedReports.Model.js",
-                    "Modules/PMAdvancedReports/JavaScript/PMAdvancedReports.View.js"
+                    "Modules/JavaScript/PM.AdvancedReports.js",
+                    "Modules/JavaScript/PM.AdvancedReports.Collection.js",
+                    "Modules/JavaScript/PM.AdvancedReports.Details.View.js",
+                    "Modules/JavaScript/PM.AdvancedReports.Model.js",
+                    "Modules/JavaScript/PM.AdvancedReports.View.js"
                 ]
             }
         }
     },
     "ssp-libraries": {
-        "entry_point": "Modules/PMAdvancedReports/SuiteScript/PM.PM_Advanced_Reports.PMAdvancedReports.js",
+        "entry_point": "Modules/SuiteScript/PM.AdvancedReports.js",
         "files": [
-            "Modules/PMAdvancedReports/SuiteScript/PM.PM_Advanced_Reports.PMAdvancedReports.js",
-            "Modules/PMAdvancedReports/SuiteScript/PMAdvancedReports.Model.js",
-            "Modules/PMAdvancedReports/SuiteScript/PMAdvancedReports.ServiceController.js"
+            "Modules/SuiteScript/PM.AdvancedReports.js",
+            "Modules/SuiteScript/PM.AdvancedReports.Model.js",
+            "Modules/SuiteScript/PM.AdvancedReports.ServiceController.js"
         ]
     },
     "local_folder": "Workspace\\PM_Advanced_Reports"

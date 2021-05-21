@@ -23,7 +23,7 @@ define(
 					if(categories && categories[0].categories) {
 
 						var found = _.find(categories[0].categories, function(subCat) {
-							return subCat.id == "shop-by-brand";
+							return subCat.id === "shop-by-brand";
 						});
 
 						if( ! found ) {
